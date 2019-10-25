@@ -29,7 +29,7 @@ ja">
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
     
-</head>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <body>
@@ -602,7 +602,25 @@ ja">
 <p>var scope = “global scope”;//全局变量<br>function checkscope(){<br>    var scope = “local scope”;//局部变量<br>    function f(){<br>        return scope;  //在作用域中返回这个值<br>    }<br>    return f;<br>}<br>checkscope()() //local scope</p>
 <p>JavaScript函数的执行用到了作用域链，这个作用域链时函数定义的时候创建的，嵌套的f()定义在作用域链里，其中的scope一直是局部变量，不管在任何时候执行，这种绑定在f()依然有效，</p>
 <p>闭包可以捕捉到局部变量（和参数），并一直保存下来，看起来像这些变量绑定到了在其中定义它们的外部函数</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -627,7 +645,7 @@ ja">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Haris-ha.github.io/2019/10/24/%E7%8A%80%E7%89%9B%E4%B9%A6/">http://Haris-ha.github.io/2019/10/24/%E7%8A%80%E7%89%9B%E4%B9%A6/</a>
+                    <a href="http://Haris-ha.github.io/2019/10/24/xi-niu-shu/">http://Haris-ha.github.io/2019/10/24/xi-niu-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -834,7 +852,7 @@ ja">
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2019/10/24/%E7%8A%80%E7%89%9B%E4%B9%A6/">
+                <a href="/2019/10/24/xi-niu-shu/">
                     <div class="card-image">
                         
                         
@@ -888,6 +906,9 @@ ja
                     <div class="summary block-with-text">
                         
                             
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return
                         
                     </div>
                     <div class="publish-info">
