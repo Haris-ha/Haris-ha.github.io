@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>�����ƵĲ���</title>
+  <title>Mr.Ha&#39;s blogs</title>
   
-  <subtitle>���������ݿ���ʦ</subtitle>
+  <subtitle>第二个我</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Haris-ha.github.io/"/>
@@ -10,7 +10,7 @@
   <id>http://Haris-ha.github.io/</id>
   
   <author>
-    <name>������</name>
+    <name>哈立势</name>
     
   </author>
   
