@@ -207,10 +207,10 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2019/10/28/jQuery复习总结（九）jQuery最好的练习 （to do list项目  源码解析）/">jQuery复习总结（九）jQuery最好的练习 （to do list项目  源码解析）</a></h3>
+                    <h3><a href="/2019/10/28/荷兰国旗问题详解/">荷兰国旗问题详解</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2019-10-28T03:46:51.996Z" itemprop="datePublished">
+      <time datetime="2019-10-28T03:31:12.104Z" itemprop="datePublished">
           2019-10-28
       </time>
     
@@ -220,16 +220,14 @@
                 <div class="col-md-8">
                     <p>
                       
-                        
-通过前面的复习，这里做一个jQuery的练习，制作一个网页版的to do list
-
-四个步骤逐步完成整个项目第一步：完成基本的页面布局大致是四个区域，分别是待处理、正在处理、已完成和最后的项目添加区域，为其简单的设定css和日期选择器
-1234567891011121314151617181920212223242526272829303132333435363738&lt;!DOCTYPE html&gt;&lt;html&gt;
+                        荷兰国旗问题代码是Javascript语言写的（几乎是伪代码）
+问题描述荷兰国旗问题 给定一个数组arr，和一个数num，请把小于num的数放在数组的左边，等于num的数放在数组的中间，大于num的数放在数组的右边。要求额外空间复杂度O(1)，时间复杂度O(N)
+解决思想在数组两边个准备一个区域，一个小于num区域放在数组左边，一个大于num区域放在数组右边，通过对数组里的数字与num进行比较，如果小于num就将其放在小于区域，如果等于
                       
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2019/10/28/jQuery复习总结（九）jQuery最好的练习 （to do list项目  源码解析）/">Read More...</a>
+                        <a href="/2019/10/28/荷兰国旗问题详解/">Read More...</a>
                     </p>
                     
                 </div>
@@ -241,10 +239,10 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2019/10/28/jQuery复习总结（八）编程规范 让代码从二比变为文艺++++/">jQuery复习总结（八）编程规范 让代码从二比变为文艺++++</a></h3>
+                    <h3><a href="/2019/10/28/归并排序/">归并排序</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2019-10-28T03:46:25.922Z" itemprop="datePublished">
+      <time datetime="2019-10-28T03:29:46.618Z" itemprop="datePublished">
           2019-10-28
       </time>
     
@@ -254,16 +252,15 @@
                 <div class="col-md-8">
                     <p>
                       
-                        jQuery编程规范DOM MANIPULATION二比// Set's an element's title attribute using it's current text
-$(".container input#item").attr("title", $(".container input#item").text());
-
-// Set's an element's text color to red
-$(".containe
+                        归并排序代码是Javascript语言写的（几乎是伪代码）
+算法介绍归并排序（Merge Sort）把两个排好序的序列合并成一个排好序的序列
+算法原理我们在拿到一个无序的序列时，其实用了“分治”的思想，先“分”后“治”，先将整个序列通过划分为子序列，再将子序列不断划分为子序列，直到只有单个元素为止，再通过两两合并使其有序，再将合并后的数组继续通过比较大小拷贝的方法继续合并，最终实现整体有序。
+算法简单记忆说明“分” 阶段采用递归的方法，
                       
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2019/10/28/jQuery复习总结（八）编程规范 让代码从二比变为文艺++++/">Read More...</a>
+                        <a href="/2019/10/28/归并排序/">Read More...</a>
                     </p>
                     
                 </div>
@@ -275,10 +272,10 @@ $(".containe
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2019/10/28/jQuery复习总结（七）UI小部件/">jQuery复习总结（七）UI小部件</a></h3>
+                    <h3><a href="/2019/10/28/插入排序/">插入排序</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2019-10-28T03:45:49.942Z" itemprop="datePublished">
+      <time datetime="2019-10-28T03:28:05.439Z" itemprop="datePublished">
           2019-10-28
       </time>
     
@@ -288,19 +285,14 @@ $(".containe
                 <div class="col-md-8">
                     <p>
                       
-                        
-jQuery UI 是一个建立在 jQuery JavaScript 库上的小部件和交互库
-
-jQuery UIjQuery UI 特性
-jQuery UI 下载下载生成器
-jQuery UI实例
-拖动（Draggable）在任意的 DOM 元素上启用 draggable 功能。通过鼠标点击并在视区中拖动来移动 draggable 对象
-12345678910111213141516171819202122232425&lt;html
+                        插入排序代码是Javascript语言写的（几乎是伪代码）
+算法介绍插入排序（Insertion Sort）引用左老师的一句话理解：“就像是手里抓好了一副排好顺序的牌，新抓一张以后，从后往前划，一张张比较，最后在合适的位置把它插进去”
+算法原理划分“手牌区”以及将待插入元素与“手牌区”里排好序的元素进行大小比较，依此向前逐个比较，待插入的元素小于比较的元素，则交换位置，完成插入后“手牌区”向后扩一，再将“手牌区”后的元素依此进行上述操作
                       
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2019/10/28/jQuery复习总结（七）UI小部件/">Read More...</a>
+                        <a href="/2019/10/28/插入排序/">Read More...</a>
                     </p>
                     
                 </div>
@@ -312,10 +304,10 @@ jQuery UI实例
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2019/10/28/jQuery复习总结（六）ajax异步请求/">jQuery复习总结（六）ajax异步请求</a></h3>
+                    <h3><a href="/2019/10/28/选择排序/">选择排序</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2019-10-28T03:45:21.885Z" itemprop="datePublished">
+      <time datetime="2019-10-28T03:23:00.946Z" itemprop="datePublished">
           2019-10-28
       </time>
     
@@ -325,15 +317,15 @@ jQuery UI实例
                 <div class="col-md-8">
                     <p>
                       
-                        ajax异步请求原生ajaxAJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）
-AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加载整个页面的情况下
-通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新，这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新
-XMLHttpRequest 是 AJAX 的基础，XMLHttpRequ
+                        选择排序代码是Javascript语言写的（几乎是伪代码）
+算法介绍选择排序（Selection Sort），是一种简单直观的排序算法
+通过每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到全部待排序的数据元素排完。
+算法原理==记忆方法==相当于反向的冒泡排序，从0到n-1这些数里找到一个最小的放在0位置，再从1到n-
                       
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2019/10/28/jQuery复习总结（六）ajax异步请求/">Read More...</a>
+                        <a href="/2019/10/28/选择排序/">Read More...</a>
                     </p>
                     
                 </div>
@@ -345,10 +337,10 @@ XMLHttpRequest 是 AJAX 的基础，XMLHttpRequ
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
-                    <h3><a href="/2019/10/28/jQuery复习总结（五）动画效果/">jQuery复习总结（五）动画效果</a></h3>
+                    <h3><a href="/2019/10/28/冒泡排序/">冒泡排序</a></h3>
                     <span>
                         <span class="post-meta">
-      <time datetime="2019-10-28T03:44:51.756Z" itemprop="datePublished">
+      <time datetime="2019-10-28T03:20:27.857Z" itemprop="datePublished">
           2019-10-28
       </time>
     
@@ -358,255 +350,16 @@ XMLHttpRequest 是 AJAX 的基础，XMLHttpRequ
                 <div class="col-md-8">
                     <p>
                       
-                        jQuery 动画（动起来）显示、隐藏、开关滑动、淡入、淡出，还有自定义动画
-基本动画（show、hide和toggle）$(selector).hide(speed,callback);
-$(selector).show(speed,callback);
-$(selector).toggle(speed,callback);
-show、hide很好理解就是显示隐藏，toggle是开关，显示被隐藏的元素，并隐藏已显示的元素
-它们都接受可
+                        冒泡排序算法介绍冒泡排序（Bubble Sort），是一种计算机科学领域的较简单的排序算法。
+通过循环遍历元素列来比较两个相邻的元素，然后交换大小顺序错误的两个元素的位置，直到不需要交换元素，也表明排序完成。
+因为在排序的过程中大的元素会慢慢被换到最后像气泡浮到水面所以称为“冒泡排序”。
+算法原理比较相邻的元素。如果第一个比第二个大，就交换他们两个。
+对每一对相邻元素做同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会
                       
                     </p>
                     
                     <p class="pull-right readMore">
-                        <a href="/2019/10/28/jQuery复习总结（五）动画效果/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/10/28/jQuery复习总结（四）DOM操作/">jQuery复习总结（四）DOM操作</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-10-28T03:44:17.152Z" itemprop="datePublished">
-          2019-10-28
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        jQuery DOM 操作jQuery 中非常重要的部分，就是操作 DOM（Document Object Model） 的能力
-test()、html() and val()
-text() - 设置或返回所选元素的文本内容
-html() - 设置或返回所选元素的内容（包括 HTML 标记）
-val() - 设置或返回表单字段的值
-
-获取内容：123456789101112131415161718192021222324&lt;html
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/10/28/jQuery复习总结（四）DOM操作/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/10/28/jQuery复习总结（三）事件处理/">jQuery复习总结（三）事件处理</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-10-28T03:43:15.628Z" itemprop="datePublished">
-          2019-10-28
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        总概我们常说响应一词，与事件息息相关
-事件处理程序指的是当 HTML 中发生某些事件时所调用的方法。术语由事件“触发”（或“激发”）经常会被使用
-鬼知道这一句话想表达什么，更通俗一点的是“鼠标移到这个段子上了”、“鼠标点了这个按钮”、“键盘按下了组合键”等等==触发==事件，也就开始调用函数和进行操作了……
-以上是jQuery中常用的事件处理
-$(document).ready(function)$(document).ready() 
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/10/28/jQuery复习总结（三）事件处理/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/10/28/jQuery复习总结（二）选择器/">jQuery复习总结（二）选择器</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-10-28T03:40:52.569Z" itemprop="datePublished">
-          2019-10-28
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        常用选择器Basics$(‘code’) ——元素选择器
-JavaScript原生方法实现在DOM中选择指定类型元素
-document.getElementsByTagName("tagName")
-jQuery简化后
-$("p") — 选择&lt;p&gt;标签元素
-$("div") — 选择&lt;div&gt;标签元素$(‘#myid’) ——id选择器
-12345JavaScript原生方法实现在DOM中选择指定id值的元素do
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/10/28/jQuery复习总结（二）选择器/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/10/28/jQuery复习总结（一）起步/">jQuery复习总结（一）起步</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-10-28T03:39:19.479Z" itemprop="datePublished">
-          2019-10-28
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        
-近几日在用bootstrap开发项目，因为框架里js效果是基于jQuery来实现的，就决定从头整理一下jQuery
-
-什么是jQueryjQuery是一个快速、简洁的JavaScript框架,jQuery设计宗旨是：Write Less,Do More（写更少的代码,做更多的事情）
-jQuery优势1.轻量级，话不多说看大小2.兼容主流浏览器jQuery 团体知道JS在不同浏览器中存在着大量的兼容性问题，目前jQuery兼容于所有主流
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/10/28/jQuery复习总结（一）起步/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/10/28/《HTML5揭秘》读书笔记整理（下）/">《HTML5揭秘》读书笔记整理（下）</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-10-28T03:36:20.551Z" itemprop="datePublished">
-          2019-10-28
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        《HTML5探秘》第6章 地理位置地理位置API调用地理位置API从全局navigator对象的geolocation属性开始
-123function get_location(){	navigator.geolocation.getCurrentPosition(show_map);	}
-使用前进行检测，使用navigator对geolocation检测调用==getCurrentPosition()==方法会触发浏览器弹出信息条，该
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/10/28/《HTML5揭秘》读书笔记整理（下）/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/10/28/《HTML5揭秘》读书笔记整理（上）/">《HTML5揭秘》读书笔记整理（上）</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-10-28T03:34:22.852Z" itemprop="datePublished">
-          2019-10-28
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        《HTML5揭秘》第1章 从开始到现在每当web浏览器请求一个页面时，服务器会在发送实际页面之前先发送一些头信息（header），头信息通常不可见。
-最重要的头信息是 Content-Type，比如：Content-Type：text/html
-“text/html”就是这个页面的“内容类型”，或者称为“MIME类型”，这个头信息将唯一确定某个资源本质是什么，因而决定其如何被呈现。
-JPEG图片的MIME类型：image/jpeg（本质
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/10/28/《HTML5揭秘》读书笔记整理（上）/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2019/10/28/掌握归并排序前首先理解递归行为/">掌握归并排序前首先理解递归行为</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2019-10-28T03:32:10.856Z" itemprop="datePublished">
-          2019-10-28
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        递归行为“大事化小” 讲的就是一个递归的思想，把一个规模大的问题通过划分成小问题去解决，小问题继续划分
-递归的联想理解递归像是你在金字塔的顶端，要收集最底的宝藏，你每下一层看没有宝藏，找到了去往下一层的门，继续去下一层，层和层之间的楼梯都是一样的，看上去走的行程是一样的，实际上它们是不同的楼梯，等你走到底拿了宝藏，你还要一层一层再爬回去。
-递归的基本思想“有来有回” 以及常听到的 “自己调用自己”
-当划分为多个子问题处理时，重要的一点是
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2019/10/28/掌握归并排序前首先理解递归行为/">Read More...</a>
+                        <a href="/2019/10/28/冒泡排序/">Read More...</a>
                     </p>
                     
                 </div>
@@ -616,8 +369,8 @@ JPEG图片的MIME类型：image/jpeg（本质
         </div>
         
         <nav class="pagination" role="pagination">
+          <a class="pull-left" href="/">← Newer Posts</a>
           
-          <a class="pull-right" href="/page/2/">Older Posts →</a>
         </nav>
     </div>
 </section>

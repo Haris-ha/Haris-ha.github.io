@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>归并排序 | Mr.Ha&#39;s blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Mr.Ha's blog">
+    <meta name="author" content="哈立势">
+    <meta name="description" content="第二个我" />
+    <meta name="keywords" content="blog" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Mr.Ha&#39;s blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://haharris.com/" target="_blank" rel="noopener" class="animsition-link">Harris</a></li>
+                    
+                    <li><a href="http://domain.com/" target="_blank" rel="noopener" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo3.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Mr.Ha's blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-10-28T03:29:46.618Z" itemprop="datePublished">
+          2019-10-28
+      </time>
+    
+</span>
+                <h1>归并排序</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><p>代码是Javascript语言写的（几乎是伪代码）</p>
+<h2 id="算法介绍"><a href="#算法介绍" class="headerlink" title="算法介绍"></a>算法介绍</h2><p><strong>归并排序</strong>（Merge Sort）把两个排好序的序列合并成一个排好序的序列</p>
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>我们在拿到一个无序的序列时，其实用了“分治”的思想，先“分”后“治”，先将整个序列通过划分为子序列，再将子序列不断划分为子序列，直到只有单个元素为止，再通过两两合并使其有序，再将合并后的数组继续通过比较大小拷贝的方法继续合并，最终实现整体有序。</p>
+<h2 id="算法简单记忆说明"><a href="#算法简单记忆说明" class="headerlink" title="算法简单记忆说明"></a>算法简单记忆说明</h2><p><img src="https://img-blog.csdnimg.cn/20181115100805928.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>“分”</strong> 阶段采用递归的方法，将整个数组不断划分为最小的数组个体</p>
+<p>代码实现：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function mergeSort(arr,l,r){</span><br><span class="line">	if (l == r) {</span><br><span class="line">			return;</span><br><span class="line">		}</span><br><span class="line">		var mid = l + ((r - l) &gt;&gt; 1);</span><br><span class="line">		mergeSort(arr, l, mid);</span><br><span class="line">		mergeSort(arr, mid + 1, r);</span><br><span class="line">	}</span><br></pre></td></tr></tbody></table></figure>
+<p>与我们上一篇文章的递归思想举的例子完全一样，mid为序列的中间数的位置，通过递归让它们不断一分为二。</p>
+<p><strong>“治”</strong> 阶段将划分好的子序列两两归并排序合并在一起，合并后的序列继续两两合并，最终全部整合形成完整的有序序列</p>
+<p>“治”的过程的实现时通是通过准备一个拷贝数组，比较两个待合并的序列，分别给两个索引，谁小拿下来填谁，谁的索引向后移动一位，直到有一边的序列全部被填入拷贝数组，则把剩下的序列的剩下的数填入拷贝数组，最后将拷贝后的数组拷贝回原数组。<br>待合并两数组<br>|8| 3 |<br>|–|–|<br>| i |j  |<br>help辅助拷贝数组<br>|  |  |<br>|–|–|<br>3&lt;8，将3填入help数组，j向后移，但是数组耗尽了，所以将8拷入help数组中得到<br>| 3 | 8 |<br>|–|–|<br>同理2和9也通过比较拷贝得到<br>|2  | 9 |<br>|–|–|<br>继续合并合并后的数组<br>小的填入而后索引后移直到耗尽一方，然后将剩下的序列的剩下的元素填入数组中。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[2	3 8 9]</span><br><span class="line">B[1 4 5 7]</span><br></pre></td></tr></tbody></table></figure>
+<p>最后大合并</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[1 2	3 4 5 6 7 8 9]</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="算法复杂度和稳定性"><a href="#算法复杂度和稳定性" class="headerlink" title="算法复杂度和稳定性"></a>算法复杂度和稳定性</h2><p><strong>归并排序的时间复杂度是O(N*logN)</strong><br>归并排序采用递归的思想来做<br>master公式 T(N) = a*T(N/b) + O(N^d^)</p>
+<p>从父问题与子问题的大层面关系来看，整个数组样本量为N，左边一半，样本量为N/2，右边一般，样本量为N/2，左边跑完跑右边，样本量为N/2的过程发生了2次，得到两个排好序的子样本，剩下要做的是在外排的过程中划过N个数，因为两个下标依此在动，最后整体拷贝回数组，剩下的操作为N<br>则a=2，b=2，d=1<br>由==log(b,a) = d -&gt; 复杂度为O(Nd * logN)==<br>得到归并排序的时间复杂度是O(N*logN)</p>
+<p><strong>归并排序是稳定排序算法</strong></p>
+<p>算法稳定性的定义： 假设在数列中存在a[i]=a[j]，若在排序之前，a[i]在a[j]前面；并且排序之后，a[i]仍然在a[j]前面。则这个排序算法是稳定的。<br>举例<br>1，3，2，5，==2==，4<br>排序的过程中1，2，3与==2==，4，5排序后为1，2，==2==，3，4，5<br>所以为稳定排序</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">function mergeSort(arr,l,r){ //递归</span><br><span class="line">	if (l == r) {</span><br><span class="line">			return;</span><br><span class="line">		}</span><br><span class="line">		var mid = l + ((r - l) &gt;&gt; 1);</span><br><span class="line">		mergeSort(arr, l, mid);</span><br><span class="line">		mergeSort(arr, mid + 1, r);</span><br><span class="line">		merge(arr, l, mid, r);</span><br><span class="line">	}</span><br><span class="line">function merge(arr,l,m,r){</span><br><span class="line">	var help = new Array(r-l+1);//创立辅助数组用来拷贝数字</span><br><span class="line">	var i = 0;</span><br><span class="line">	var p1 = l;//左边部分首位</span><br><span class="line">	var p2 = m+1;//右边部分首位</span><br><span class="line">	while(p1 &lt;= m&amp;&amp;p2 &lt;= r){</span><br><span class="line">		help[i++] = arr[p1]&lt;arr[p2]?arr[p1++]:arr[p2++];</span><br><span class="line">		//完成比较合并，p1小填p1，p2小填p2，填入数组的那个部分++向后移动一位，辅助数组也要向后移动一位</span><br><span class="line">	} //必定有且只有一个部分越界</span><br><span class="line">	while(p1&lt;=m){</span><br><span class="line">		help[i++] = arr[p1++]; //p2越界，把p1剩下的填了</span><br><span class="line">	}</span><br><span class="line">	while(p2&lt;=r){</span><br><span class="line">		help[i++] = arr[p2++]; //p1越界，把p2剩下的填了</span><br><span class="line">	}</span><br><span class="line">	for(i = 0;i&lt;help.length;i++){</span><br><span class="line">		arr[l+i] = help[i]; //拷贝回原数组</span><br><span class="line">	}</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line">function startMerge(arr){</span><br><span class="line">	if(arr == null||arr.length&lt;2){</span><br><span class="line">		return arr;</span><br><span class="line">	}</span><br><span class="line">	mergeSort(arr,0,arr.length-1);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">//对数器</span><br><span class="line">function sortNumber(a,b){</span><br><span class="line">return a - b</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">function rightMethod(arr) {</span><br><span class="line">    arr.sort(sortNumber);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">function generateRandomArray(maxSize, maxValue) {</span><br><span class="line">    var arr = new Array(Math.floor((maxSize + 1) * Math.random()));</span><br><span class="line">    for (var i = 0; i &lt; arr.length; i++) {</span><br><span class="line">        arr[i] = Math.floor((maxValue + 1) * Math.random())-Math.floor(maxValue * Math.random());</span><br><span class="line">    }</span><br><span class="line">    return arr;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">function isEqual(arr1, arr2) {</span><br><span class="line">    if ((arr1 == null &amp;&amp; arr2 != null ) || (arr1 != null &amp;&amp; arr2 == null)) {</span><br><span class="line">        return false;</span><br><span class="line">    }</span><br><span class="line">    if (arr1 == null &amp;&amp; arr2 == null) {</span><br><span class="line">        return true;</span><br><span class="line">    }</span><br><span class="line">    if (arr1.length != arr2.length) {</span><br><span class="line">        return false;</span><br><span class="line">    }</span><br><span class="line">    for (let i = 0; i &lt; arr1.length; i++) {</span><br><span class="line">        if (arr1[i] != arr2[i]) {</span><br><span class="line">            return false</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    return true;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">function copyArray(arr) {</span><br><span class="line">    if (arr == null) {</span><br><span class="line">        return null;</span><br><span class="line">    }</span><br><span class="line">    return [].concat(arr);</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">function Test() {</span><br><span class="line">    var testTimes = 10000;</span><br><span class="line">    var maxmaxSize = 10;</span><br><span class="line">    var maxValue = 100;</span><br><span class="line">    var succeed = true;</span><br><span class="line">    for (var i = 0; i &lt; testTimes; i++) {</span><br><span class="line">        var arr1 = generateRandomArray(maxmaxSize,maxValue);</span><br><span class="line">        var arr2 = copyArray(arr1);</span><br><span class="line">        var arr3 = copyArray(arr1);</span><br><span class="line">        startMerge(arr1);</span><br><span class="line">        rightMethod(arr2);</span><br><span class="line">        console.log(arr1);</span><br><span class="line">        if (!isEqual(arr1, arr2)) {</span><br><span class="line">            succeed = false;</span><br><span class="line">            console.log(arr3);</span><br><span class="line">            break;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    console.log(succeed ? "Good job!" : "Damn it！");</span><br><span class="line">}</span><br><span class="line">Test();</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20181115110714911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>通过对数器的验证！Good job！</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/10/28/%E8%8D%B7%E5%85%B0%E5%9B%BD%E6%97%97%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/" style="float: left;">
+        ← 荷兰国旗问题详解
+    </a>
+    
+    
+    <a class="pull-right" href="/2019/10/28/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">
+        插入排序 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2015<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 哈立势. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//haharris.com" style="color: #767D84">Harris</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

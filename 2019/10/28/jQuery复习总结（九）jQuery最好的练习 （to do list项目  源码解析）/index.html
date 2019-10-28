@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>jQuery复习总结（九）jQuery最好的练习 （to do list项目  源码解析） | Mr.Ha&#39;s blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Mr.Ha's blog">
+    <meta name="author" content="哈立势">
+    <meta name="description" content="第二个我" />
+    <meta name="keywords" content="blog" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Mr.Ha&#39;s blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://haharris.com/" target="_blank" rel="noopener" class="animsition-link">Harris</a></li>
+                    
+                    <li><a href="http://domain.com/" target="_blank" rel="noopener" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo3.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Mr.Ha's blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-10-28T03:46:51.996Z" itemprop="datePublished">
+          2019-10-28
+      </time>
+    
+</span>
+                <h1>jQuery复习总结（九）jQuery最好的练习 （to do list项目  源码解析）</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<blockquote>
+<p>通过前面的复习，这里做一个jQuery的练习，制作一个网页版的to do list</p>
+</blockquote>
+<h1 id="四个步骤逐步完成整个项目"><a href="#四个步骤逐步完成整个项目" class="headerlink" title="四个步骤逐步完成整个项目"></a>四个步骤逐步完成整个项目</h1><h2 id="第一步：完成基本的页面布局"><a href="#第一步：完成基本的页面布局" class="headerlink" title="第一步：完成基本的页面布局"></a>第一步：完成基本的页面布局</h2><p><img src="https://img-blog.csdnimg.cn/20181219142015263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>大致是四个区域，分别是待处理、正在处理、已完成和最后的项目添加区域，为其简单的设定css和日期选择器</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset="utf-8"&gt;</span><br><span class="line">		&lt;title&gt;to do list program&lt;/title&gt;</span><br><span class="line">		&lt;link rel="stylesheet" href="jquery-ui.css"&gt;</span><br><span class="line">		&lt;link rel="stylesheet" href="style.css"&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div class="task-list" id="pending"&gt;</span><br><span class="line">			&lt;h3&gt;待处理&lt;/h3&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div class="task-list" id="inprogress"&gt;</span><br><span class="line">			&lt;h3&gt;进行中&lt;/h3&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div class="task-list" id="completed"&gt;</span><br><span class="line">			&lt;h3&gt;已完成&lt;/h3&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div class="task-list"&gt;</span><br><span class="line">			&lt;h3&gt;添加项目&lt;/h3&gt;</span><br><span class="line">			&lt;form action="" method="post"&gt;</span><br><span class="line">				&lt;input type="text" placeholder="标题" class="addtitle" /&gt;</span><br><span class="line">				&lt;textarea placeholder="内容" class="adddescription"&gt;&lt;/textarea&gt;</span><br><span class="line">				&lt;input type="text" id="datepicker" class="addtime" placeholder="添加日期(月/年/日)" /&gt;</span><br><span class="line">				&lt;input type="button" class="btn" value="添加项目" /&gt;</span><br><span class="line">				&lt;input type="button" class="clear" value="清空所有项目" /&gt;</span><br><span class="line">			&lt;/form&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="app.js"&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script src="jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script src="jquery-ui.js"&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		$(document).ready(function(){</span><br><span class="line">			$("#datepicker").datepicker();</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<h4 id="随后我们再创建一个任务区域，由标题、时间以及内容组成，这个区域可以放在任意三个区域里，并且可以被删除"><a href="#随后我们再创建一个任务区域，由标题、时间以及内容组成，这个区域可以放在任意三个区域里，并且可以被删除" class="headerlink" title="随后我们再创建一个任务区域，由标题、时间以及内容组成，这个区域可以放在任意三个区域里，并且可以被删除"></a>随后我们再创建一个任务区域，由标题、时间以及内容组成，这个区域可以放在任意三个区域里，并且可以被删除</h4><p><img src="https://img-blog.csdnimg.cn/20181219145511780.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们将要添加的区域加一些css，它是我们插入到待处理里的一个div</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="task-list" id="pending"&gt;</span><br><span class="line">	&lt;h3&gt;待处理&lt;/h3&gt;</span><br><span class="line">	&lt;div class="todo-task"&gt;</span><br><span class="line">		&lt;div class="task-header"&gt;题目&lt;/div&gt;</span><br><span class="line">		&lt;div class="task-date"&gt;19/12/2018&lt;/div&gt;</span><br><span class="line">		&lt;div class="task-description"&gt;内容&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>这个todo-task是个动态的，由区域四动态生成并且可以移动删除，这是初步的设定</p>
+<h2 id="第二步：实现后台代码的事件添加"><a href="#第二步：实现后台代码的事件添加" class="headerlink" title="第二步：实现后台代码的事件添加"></a>第二步：实现后台代码的事件添加</h2><p>通过js我们先实现后台添加一个事件<br><img src="https://img-blog.csdnimg.cn/20181219162826857.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset="utf-8"&gt;</span><br><span class="line">		&lt;title&gt;to do list program&lt;/title&gt;</span><br><span class="line">		&lt;link rel="stylesheet" href="jquery-ui.css"&gt;</span><br><span class="line">		&lt;link rel="stylesheet" href="style.css"&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div class="task-list" id="pending"&gt;</span><br><span class="line">			&lt;h3&gt;待处理&lt;/h3&gt;</span><br><span class="line">			&lt;div class="todo-task" id="task-001"&gt;</span><br><span class="line">				&lt;div class="task-header"&gt;题目&lt;/div&gt;</span><br><span class="line">				&lt;div class="task-date"&gt;19/12/2018&lt;/div&gt;</span><br><span class="line">				&lt;div class="task-description"&gt;内容&lt;/div&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div class="task-list" id="inprogress"&gt;</span><br><span class="line">			&lt;h3&gt;进行中&lt;/h3&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div class="task-list" id="completed"&gt;</span><br><span class="line">			&lt;h3&gt;已完成&lt;/h3&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div class="task-list"&gt;</span><br><span class="line">			&lt;h3&gt;添加项目&lt;/h3&gt;</span><br><span class="line">			&lt;form id="todo-form"&gt;</span><br><span class="line">				&lt;input type="text" placeholder="标题" class="addtitle" /&gt;</span><br><span class="line">				&lt;textarea placeholder="内容" class="adddescription"&gt;&lt;/textarea&gt;</span><br><span class="line">				&lt;input type="text" id="datepicker" class="addtime" placeholder="添加日期(月/年/日)" /&gt;</span><br><span class="line">				&lt;input type="button" class="btn" value="添加项目" /&gt;</span><br><span class="line">				&lt;input type="button" class="clear" value="清空所有项目" /&gt;</span><br><span class="line">			&lt;/form&gt;</span><br><span class="line">			&lt;div id="delete-div" class="hidden"&gt;拖动到这里删除&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="app.js"&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script src="jquery-3.2.1.js"&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script src="jquery-ui.js"&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		$(document).ready(function(){</span><br><span class="line">			var myTodoList = new MyTodoList();</span><br><span class="line">			console.log("hello");</span><br><span class="line">			myTodoList.generateElement({</span><br><span class="line">				id:"123",</span><br><span class="line">				code:"2",</span><br><span class="line">				title:"console test",</span><br><span class="line">				date:"18/12/2018",</span><br><span class="line">				description:"this is a test"</span><br><span class="line">			})</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">var MyTodoList = (function(){</span><br><span class="line">	var defaults ={   //这里我们定义一些常量，用于在js里使用，它们分别是html中的类名以及id标识</span><br><span class="line">		todoTask:"todo-task",</span><br><span class="line">		taskHeader:"task-header",</span><br><span class="line">		taskDate:"task-date",</span><br><span class="line">		taskDescription:"task-description",</span><br><span class="line">		taskID:"task-",</span><br><span class="line">		formID:"todo-form",</span><br><span class="line">		deleteDiv:"delete-div"</span><br><span class="line">	},</span><br><span class="line">	codes = {  //这里我们用三个数字分别代替三个区块，即让数字索引它们的id</span><br><span class="line">		"1":"#pending",</span><br><span class="line">		"2":"#inprogress",</span><br><span class="line">		"3":"#completed"</span><br><span class="line">	};</span><br><span class="line">	var MyTodoList =function(){</span><br><span class="line"></span><br><span class="line">	};</span><br><span class="line"></span><br><span class="line">	MyTodoList.prototype.generateElement = function(params){ //定义一个prototype function</span><br><span class="line">		var parent = $(codes[params.code]), //这里获取我们传入的参数让我们往哪个区块去添加，即找这个区域的父区域</span><br><span class="line">		wrapper;</span><br><span class="line"></span><br><span class="line">		if(!parent){</span><br><span class="line">			return;</span><br><span class="line">		}</span><br><span class="line"></span><br><span class="line">		wrapper = $('&lt;div /&gt;',{  定义这个区域</span><br><span class="line">			"class":defaults.todoTask,</span><br><span class="line">			"id":defaults.taskID+params.id,</span><br><span class="line">			"data":params.id</span><br><span class="line">		});</span><br><span class="line"></span><br><span class="line">		$('&lt;div /&gt;',{  //定义它里面的标题小div</span><br><span class="line">			"class":defaults.taskHeader,</span><br><span class="line">			"text":params.title</span><br><span class="line"></span><br><span class="line">		}).appendTo(wrapper); //把他插入到wrapper里</span><br><span class="line">		$('&lt;div /&gt;',{  //定义它里面的时间小div</span><br><span class="line">			"class":defaults.taskDate,</span><br><span class="line">			"text":params.date</span><br><span class="line">		}).appendTo(wrapper);</span><br><span class="line"></span><br><span class="line">		$('&lt;div /&gt;',{  //定义它里面的内容小div</span><br><span class="line">			"class":defaults.taskDescription,</span><br><span class="line">			"text":params.description</span><br><span class="line">		}).appendTo(wrapper);</span><br><span class="line">		wrapper.appendTo(parent);  //最后将创建好的整个div加到需要加的区域里</span><br><span class="line">	};</span><br><span class="line">	return MyTodoList;</span><br><span class="line">})()</span><br></pre></td></tr></tbody></table></figure>
+<p>==重点是app.js里的代码==</p>
+<h2 id="第三步：实现添加删除以及按钮的绑定"><a href="#第三步：实现添加删除以及按钮的绑定" class="headerlink" title="第三步：实现添加删除以及按钮的绑定"></a>第三步：实现添加删除以及按钮的绑定</h2><p><img src="https://img-blog.csdnimg.cn/20181219191316206.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>我们此步完成在最右区域填写信息添加内容，并且可以用内容右上角的“X”删除相关内容</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">var MyTodoList = (function() {</span><br><span class="line">    var defaults = {</span><br><span class="line">            // CSS selectors and attributes that would be used by the JavaScript functions</span><br><span class="line">            todoTask: "todo-task",</span><br><span class="line">            todoHeader: "task-header",</span><br><span class="line">            todoDate: "task-date",</span><br><span class="line">            todoDescription: "task-description",</span><br><span class="line">            taskId: "task-",</span><br><span class="line">            formId: "todo-form",</span><br><span class="line">            dataAttribute: "data",</span><br><span class="line">            deleteDiv: "delete-div",</span><br><span class="line">            remove: "remove"</span><br><span class="line">        },</span><br><span class="line">        codes = {  // For pending tasks</span><br><span class="line">            "1": "#pending",</span><br><span class="line">            "2": "#inProgress",</span><br><span class="line">            "3": "#completed"</span><br><span class="line">        },</span><br><span class="line">        data = {};</span><br><span class="line"></span><br><span class="line">    var MyTodoList = function() {</span><br><span class="line">        var _this = this;</span><br><span class="line">        $('#datepicker').datepicker();  //实现日期选择器</span><br><span class="line">        $('#addItem').click(function() {  //添加项目内容绑定</span><br><span class="line">            var title = $(this).siblings('.addTitle').val(),</span><br><span class="line">                description = $(this).siblings('.addDescriptions').val(),</span><br><span class="line">                date = $(this).siblings('.addDate').val(),</span><br><span class="line">                //通过找到按钮的兄弟并且获得输入的内容</span><br><span class="line">                id = Date.now() + '';</span><br><span class="line">            _this.generateElement({  //调用构造内容的函数</span><br><span class="line">                id: id,  //为了使id不重复 采用Date.now()获取唯一当前时间</span><br><span class="line">                code: "1",</span><br><span class="line">                title: title,</span><br><span class="line">                date: date,</span><br><span class="line">                description: description</span><br><span class="line">            });</span><br><span class="line">            $(this).siblings('.addTitle').val(''),</span><br><span class="line">            $(this).siblings('.addDescriptions').val(''),</span><br><span class="line">            $(this).siblings('.addDate').val('');</span><br><span class="line">             //  添加内容之后 清空输入框里的数据</span><br><span class="line">        $('body').on('click', '.todo-task .remove', function() {</span><br><span class="line">            var id = $(this).parent().attr('id').substring(defaults.taskId.length);</span><br><span class="line">            //为了调用删除函数 并且删除函数只需要一个id参数即可</span><br><span class="line">            _this.removeElement({</span><br><span class="line">                id: id</span><br><span class="line">            });</span><br><span class="line">        });</span><br><span class="line">    });</span><br><span class="line">	};</span><br><span class="line"></span><br><span class="line">    MyTodoList.prototype.generateElement = function(params) {</span><br><span class="line">        var parent = $(codes[params.code]),</span><br><span class="line">            wrapper;</span><br><span class="line"></span><br><span class="line">        if (!parent) {</span><br><span class="line">            return;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        wrapper = $("&lt;div /&gt;", {</span><br><span class="line">            "class": defaults.todoTask,</span><br><span class="line">            "id": defaults.taskId + params.id,</span><br><span class="line">            "data": params.id</span><br><span class="line">        });</span><br><span class="line">        $("&lt;div /&gt;", {  //加一个删除按钮</span><br><span class="line">            "class": defaults.remove,</span><br><span class="line">            "text": 'X'</span><br><span class="line">        }).appendTo(wrapper);</span><br><span class="line"></span><br><span class="line">        $("&lt;div /&gt;", {</span><br><span class="line">            "class": defaults.todoHeader,</span><br><span class="line">            "text": params.title</span><br><span class="line">        }).appendTo(wrapper);</span><br><span class="line"></span><br><span class="line">        $("&lt;div /&gt;", {</span><br><span class="line">            "class": defaults.todoDate,</span><br><span class="line">            "text": params.date</span><br><span class="line">        }).appendTo(wrapper);</span><br><span class="line"></span><br><span class="line">        $("&lt;div /&gt;", {</span><br><span class="line">            "class": defaults.todoDescription,</span><br><span class="line">            "text": params.description</span><br><span class="line">        }).appendTo(wrapper);</span><br><span class="line"></span><br><span class="line">        wrapper.appendTo(parent);</span><br><span class="line"></span><br><span class="line">    };</span><br><span class="line">    MyTodoList.prototype.removeElement = function(params) {</span><br><span class="line">        $("#" + defaults.taskId + params.id).remove();</span><br><span class="line">        //通过id删除内容</span><br><span class="line">    };</span><br><span class="line">    return MyTodoList;</span><br><span class="line">})()</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="第四步：实现LocalStorage-本地存储"><a href="#第四步：实现LocalStorage-本地存储" class="headerlink" title="第四步：实现LocalStorage 本地存储"></a>第四步：实现LocalStorage 本地存储</h2><p> 实现本地存储的步骤是</p>
+<ol>
+<li>setItem</li>
+<li>getItem</li>
+<li>removeItem<br>分别绑定到添加项目和删除项目相应的handler中</li>
+</ol>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MyTodoList.prototype.persistData = function() {</span><br><span class="line">   localStorage.setItem('Haris', JSON.stringify(this.data));</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_this.data = JSON.parse(localStorage.getItem('Haris'))</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">for (var property in _this.data) {</span><br><span class="line">            if (_this.data.hasOwnProperty(property)) {  //该对象是否有该方法</span><br><span class="line">                _this.generateElement({</span><br><span class="line">                    id: property,</span><br><span class="line">                    code: _this.data[property].code,</span><br><span class="line">                    title: _this.data[property].title,</span><br><span class="line">                    date: _this.data[property].date,</span><br><span class="line">                    description: _this.data[property].description</span><br><span class="line">                });</span><br><span class="line">            }</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">_this.data[id] = {</span><br><span class="line">                code: "1",</span><br><span class="line">                title: title,</span><br><span class="line">                date: date,</span><br><span class="line">                description: description</span><br><span class="line">            };</span><br><span class="line">_this.persistData();</span><br></pre></td></tr></tbody></table></figure>
+<p>removeItem绑定在“X”上</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete _this.data[id];</span><br><span class="line">_this.persistData();</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20181219202920153.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="第五步：实现拖曳，将内容拖到任何区域，拖到删除区域进行删除"><a href="#第五步：实现拖曳，将内容拖到任何区域，拖到删除区域进行删除" class="headerlink" title="第五步：实现拖曳，将内容拖到任何区域，拖到删除区域进行删除"></a>第五步：实现拖曳，将内容拖到任何区域，拖到删除区域进行删除</h2><p>首先，我们将三个区域变成draggable 将四个区域（三个内容区域以及一个删除区域）删除区域我们让它只有拖拽时显示出来，不拖拽不显示<br><strong>第一小步：</strong> 我们让每一个产生的内容区域都是可拖拽的，方法是在初始化时让其可拖拽</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wrapper.draggable({</span><br><span class="line">            opacity: 0.5,  //拖拽时 透明度减半</span><br><span class="line">            start: function() {  //两个event start 和 stop 让删除区域显示和隐藏</span><br><span class="line">                $('#' + defaults.deleteDiv).show('fast');</span><br><span class="line">            },</span><br><span class="line">            stop: function() {</span><br><span class="line">                $('#' + defaults.deleteDiv).hide('fast');</span><br><span class="line">            }</span><br><span class="line">        });</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>第二小步：</strong> 为三个区域加上可拖拽属性</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$.each(codes, function(index, value) {  //用each遍历</span><br><span class="line">    $(value).droppable({  //给每个区域droppable添加drop以及回调函数</span><br><span class="line">        drop: function(event, ui) {</span><br><span class="line">            var element = ui.helper,  //element是我们真在拖曳的内容</span><br><span class="line">                id = element.attr('id').substring(defaults.taskId.length), //获取id</span><br><span class="line">                item = _this.data[id];</span><br><span class="line">                item.code = index;  //我们拖到哪个区域对应的code 就是each过程中的index</span><br><span class="line">                _this.removeElement({ //我们为了拖动时原来位置的内容就消失</span><br><span class="line">                id: id</span><br><span class="line">                });</span><br><span class="line">                _this.generateElement({  在托动结束的地方生成该内容</span><br><span class="line">                    id: id,</span><br><span class="line">                    code: item.code,</span><br><span class="line">                    title: item.title,</span><br><span class="line">                    date: item.date,</span><br><span class="line">                    description: item.description</span><br><span class="line">                });</span><br><span class="line">                _this.persistData();</span><br><span class="line">            }</span><br><span class="line">        });</span><br><span class="line">    });</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>第三小步：</strong> 设置删除区域</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$('#' + defaults.deleteDiv).droppable({  //选择器选到该区域</span><br><span class="line">	drop: function(event, ui) { //添加drop</span><br><span class="line">		var element = ui.helper,</span><br><span class="line">			id = element.attr('id').substring(defaults.taskId.length);</span><br><span class="line">		_this.removeElement({  //同样传入id即可删除</span><br><span class="line">			id: id</span><br><span class="line">		});</span><br><span class="line">		delete _this.data[id]; //删掉这个内容</span><br><span class="line">		_this.persistData();  //更新数据库</span><br><span class="line">	}</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20181219210055491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="项目完成！！！good-job"><a href="#项目完成！！！good-job" class="headerlink" title="项目完成！！！good job~"></a>项目完成！！！good job~</h2><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83%20%E8%AE%A9%E4%BB%A3%E7%A0%81%E4%BB%8E%E4%BA%8C%E6%AF%94%E5%8F%98%E4%B8%BA%E6%96%87%E8%89%BA++++/">
+        jQuery复习总结（八）编程规范 让代码从二比变为文艺++++ →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2015<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 哈立势. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//haharris.com" style="color: #767D84">Harris</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

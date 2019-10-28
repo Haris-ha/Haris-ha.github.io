@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>jQuery复习总结（八）编程规范 让代码从二比变为文艺++++ | Mr.Ha&#39;s blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Mr.Ha's blog">
+    <meta name="author" content="哈立势">
+    <meta name="description" content="第二个我" />
+    <meta name="keywords" content="blog" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Mr.Ha&#39;s blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://haharris.com/" target="_blank" rel="noopener" class="animsition-link">Harris</a></li>
+                    
+                    <li><a href="http://domain.com/" target="_blank" rel="noopener" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo3.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Mr.Ha's blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-10-28T03:46:25.922Z" itemprop="datePublished">
+          2019-10-28
+      </time>
+    
+</span>
+                <h1>jQuery复习总结（八）编程规范 让代码从二比变为文艺++++</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="jQuery编程规范"><a href="#jQuery编程规范" class="headerlink" title="jQuery编程规范"></a>jQuery编程规范</h1><h2 id="DOM-MANIPULATION"><a href="#DOM-MANIPULATION" class="headerlink" title="DOM MANIPULATION"></a>DOM MANIPULATION</h2><h5 id="二比"><a href="#二比" class="headerlink" title="二比"></a>二比</h5><pre><code>// Set's an element's title attribute using it's current text
+$(".container input#item").attr("title", $(".container input#item").text());
+
+// Set's an element's text color to red
+$(".container input#item").css("color", "red");
+
+// Makes the element fade out
+$(".container input#item").fadeOut();</code></pre><h5 id="普通"><a href="#普通" class="headerlink" title="普通"></a>普通</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Set's an element's title attribute using it's current text</span><br><span class="line">   $("#item").attr("title", $("#item").text());</span><br><span class="line"></span><br><span class="line">   // Set's an element's text color to red</span><br><span class="line">   $("#item").css("color", "red");</span><br><span class="line"></span><br><span class="line">   // Makes the element fade out</span><br><span class="line">   $("#item").fadeOut();</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="文艺"><a href="#文艺" class="headerlink" title="文艺"></a>文艺</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// Stores the live DOM element inside of a variable</span><br><span class="line">	var elem = $("#item");</span><br><span class="line"></span><br><span class="line">// Set's an element's title attribute using it's current text</span><br><span class="line">	elem.attr("title", elem.text());</span><br><span class="line"></span><br><span class="line">// Set's an element's text color to red</span><br><span class="line">	elem.css("color", "red");</span><br><span class="line"></span><br><span class="line">// Makes the element fade out</span><br><span class="line">	elem.fadeOut();</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="文艺-1"><a href="#文艺-1" class="headerlink" title="文艺++"></a>文艺++</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Stores the live DOM element inside of a variable</span><br><span class="line">   var elem = $("#item");</span><br><span class="line"></span><br><span class="line">// Chaining</span><br><span class="line">   elem.attr("title", elem.text()).css("color", "red").fadeOut();</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p><strong>要尽量减少dom的操作，dom操作代价是巨大的，能用简单的selector就用简单的，当我们能直接用id选择就直接用id，而不是像二比版本的使用复杂无意义的选择器，其次我们可以将jquery搜索匹配到的dom元素用变量存储起来，再次使用时即可不必再进行dom搜索匹配，最后当我们作用的元素是同一个，我们把所有的操作都chain起来，这样代码简洁易维护，要充分利用jQuery的优点</strong></p>
+</blockquote>
+<h2 id="DOM-INSERTION"><a href="#DOM-INSERTION" class="headerlink" title="DOM INSERTION"></a>DOM INSERTION</h2><h5 id="普通-1"><a href="#普通-1" class="headerlink" title="普通"></a>普通</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// Dynamically building an unordered list from an array</span><br><span class="line">    var localArr = ["Greg", "Peter", "Kyle", "Danny", "Mark"],</span><br><span class="line">    list = $("ul.people");</span><br><span class="line">    $.each(localArr, function(index, value) {</span><br><span class="line">    list.append("&lt;li id=" + index + "&gt;" + value + "&lt;/li&gt;");</span><br><span class="line">    });</span><br></pre></td></tr></tbody></table></figure>
+<h5 id="文艺-2"><a href="#文艺-2" class="headerlink" title="文艺"></a>文艺</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Dynamically building an unordered list from an array</span><br><span class="line">    var localArr = ["Greg", "Peter", "Kyle", "Danny", "Mark"],</span><br><span class="line">        list = $("ul.people"),</span><br><span class="line">        dynamicItems = "";</span><br><span class="line">    $.each(localArr, function(index, value) {</span><br><span class="line">        dynamicItems += "&lt;li id=" + index + "&gt;" + value + "&lt;/li&gt;";</span><br><span class="line">    });</span><br><span class="line">    list.append(dynamicItems);</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p><strong>我们碰到向页面中插入元素的操作时，特别是在for循环里插入，插入的次数较多时，我们应尽量减少dom的操作，方法是文艺方法里，用一个类似buffer的东西先全部整理好li，最后再一起插入到list里，这样减少了大量的重复的dom操作</strong></p>
+</blockquote>
+<h2 id="EVENT-HANDLING"><a href="#EVENT-HANDLING" class="headerlink" title="EVENT HANDLING"></a>EVENT HANDLING</h2><h5 id="二比-1"><a href="#二比-1" class="headerlink" title="二比"></a>二比</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$("#longlist li").on("mouseenter", function() {</span><br><span class="line">        $(this).text("Click me!");</span><br><span class="line">    });</span><br><span class="line">    $("#longlist li").on("click", function() {</span><br><span class="line">        $(this).text("Why did you click me?!");</span><br><span class="line">    });</span><br></pre></td></tr></tbody></table></figure>
+<h5 id="普通-2"><a href="#普通-2" class="headerlink" title="普通"></a>普通</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var listItems = $("#longlist li");</span><br><span class="line">   listItems.on({</span><br><span class="line">       "mouseenter": function() {</span><br><span class="line">           $(this).text("Click me!");</span><br><span class="line">       },</span><br><span class="line">       "click": function() {</span><br><span class="line">           $(this).text("Why did you click me?!");</span><br><span class="line">       }</span><br><span class="line">   });</span><br></pre></td></tr></tbody></table></figure>
+<h5 id="文艺-3"><a href="#文艺-3" class="headerlink" title="文艺"></a>文艺</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var list = $("#longlist");</span><br><span class="line">    list.on("mouseenter", "li", function(){</span><br><span class="line">        $(this).text("Click me!");</span><br><span class="line">    });</span><br><span class="line">    list.on("click", "li", function() {</span><br><span class="line">        $(this).text("Why did you click me?!");</span><br><span class="line">    });</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p><strong>二比犯了同样的错误，我们最好将jQuery查询dom操作节省，再查出后我们赋值给一个变量，普通版本进行了改进，但是，除了查询赋值给变量优化了一点，剩下一模一样。假如我们现在的list里有n个li，前两种方法，它们在on下要进行总共2n个handler，代价是昂贵的，但文艺方法让handler绑定在list上，然后在内部生成一个过滤器，如果list的子元素是li，就实现后面的方法，这样总共绑定的handler只有两个，巨大的优化</strong></p>
+</blockquote>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89jQuery%E6%9C%80%E5%A5%BD%E7%9A%84%E7%BB%83%E4%B9%A0%20%EF%BC%88to%20do%20list%E9%A1%B9%E7%9B%AE%20%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%EF%BC%89/" style="float: left;">
+        ← jQuery复习总结（九）jQuery最好的练习 （to do list项目  源码解析）
+    </a>
+    
+    
+    <a class="pull-right" href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89UI%E5%B0%8F%E9%83%A8%E4%BB%B6/">
+        jQuery复习总结（七）UI小部件 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2015<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 哈立势. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//haharris.com" style="color: #767D84">Harris</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>jQuery复习总结（一）起步 | Mr.Ha&#39;s blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Mr.Ha's blog">
+    <meta name="author" content="哈立势">
+    <meta name="description" content="第二个我" />
+    <meta name="keywords" content="blog" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Mr.Ha&#39;s blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://haharris.com/" target="_blank" rel="noopener" class="animsition-link">Harris</a></li>
+                    
+                    <li><a href="http://domain.com/" target="_blank" rel="noopener" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo3.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Mr.Ha's blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-10-28T03:39:19.479Z" itemprop="datePublished">
+          2019-10-28
+      </time>
+    
+</span>
+                <h1>jQuery复习总结（一）起步</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<blockquote>
+<p>近几日在用bootstrap开发项目，因为框架里js效果是基于jQuery来实现的，就决定从头整理一下jQuery</p>
+</blockquote>
+<h1 id="什么是jQuery"><a href="#什么是jQuery" class="headerlink" title="什么是jQuery"></a>什么是jQuery</h1><p>jQuery是一个快速、简洁的JavaScript框架,jQuery设计宗旨是：Write Less,Do More（写更少的代码,做更多的事情）</p>
+<h1 id="jQuery优势"><a href="#jQuery优势" class="headerlink" title="jQuery优势"></a>jQuery优势</h1><p>1.轻量级，话不多说看大小<br><img src="https://img-blog.csdnimg.cn/20181213150310663.png" alt="在这里插入图片描述"><br>2.兼容主流浏览器<br>jQuery 团体知道JS在不同浏览器中存在着大量的兼容性问题，目前jQuery兼容于所有主流浏览器, 包括Internet Explorer 6<br>3.操作比较方便<br>jQuery提供了强大的HTML元素选择功能。Sizzle引擎功能强大，能够支持CSS1到CSS3的所有选择器、Xpath选择器以及Jquery自定义选择器<br>4.优雅的语法规则<br>jQuery中最具特色的莫过于它的链式操作方式，即对发生在同一jQuery对象上的一组动作可直接连写而无需重复获取对象，这一点使得jQuery代码无比优雅<br>例：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(this).addClass("highlight").children("a").show().end()</span><br></pre></td></tr></tbody></table></figure>
+<p>5.完善的ajax<br>jQuery将所有的ajax操作封装到$.ajax()中，使得用户在处理ajax操作的时候能够专心处理业务逻辑而无需关注复杂的浏览器兼容性以及XMLHttpRequest对象创建和使用的问题</p>
+<pre><code>$.ajax()可以完成 load( url, [data], [callback] ) 、$.get( url, [data], [callback] ) 、$.post( url, [data], [callback], [type] )以及$.getScript( url, [callback] ) 所做的事情</code></pre><h1 id="网页中添加jQuery"><a href="#网页中添加jQuery" class="headerlink" title="网页中添加jQuery"></a>网页中添加jQuery</h1><p>两种方法：</p>
+<ul>
+<li>从 jquery.com 下载 jQuery 库</li>
+<li>从 CDN 中载入 jQuery, 如从 Google 中加载 jQuery<br><img src="https://img-blog.csdnimg.cn/20181213152028269.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ul>
+<p>也可以使用百度CDN：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="入门-hello-world"><a href="#入门-hello-world" class="headerlink" title="入门 hello world"></a>入门 hello world</h1><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery Intro&lt;/title&gt;</span><br><span class="line">        &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;button&gt;Click Me&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $(document).ready(function(){</span><br><span class="line">        $('button').on('click', function() { //event handler</span><br><span class="line">            alert('hello world');</span><br><span class="line">        });</span><br><span class="line">    });</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p>运行点击按钮“Click Me”弹出一个提示框“hello world”</p>
+<p><code>$(document).ready(function())</code>和我们熟悉的<code>window.onload</code>作用类似，它是为了防止文档在完全加载（就绪）之前运行 jQuery 代码，但两者有区别<br><code>window.onload</code>是页面中所有元素(包含元素关联的所有文件)都加载完毕后才执行<br>通过jQuery的<code>$(function())</code>，在DOM完全就绪时就可以被调用，此时页面上的所有元素对于jQuery而言都是可以访问的，但是这并不意味这这些元素的关联文件都已经加载完毕</p>
+<p>举例：一个大型图库网站，加载页面的时候为所有图片添加了某些样式。当我们使用<code>window.onload</code>的时候，需要等到页面上所有的图片都加载出来之后才执行给图片添加样式的行为。而<code>$(function())</code>只需要DOM就绪就可以执行了，不需要等待所有图片加载完毕，显而易见，<code>$(function())</code>相比于<code>window.onload</code>效果更好，它能提高web页面的加载速度</p>
+<h1 id="对于-的理解"><a href="#对于-的理解" class="headerlink" title="对于$的理解"></a>对于<code>$</code>的理解</h1><p>jQuery 语法是通过选取 HTML 元素，并对选取的元素执行某些操作</p>
+<p>基础语法： <code>$(selector).action()</code></p>
+<ul>
+<li>美元符号定义 jQuery</li>
+<li>选择符（selector）“查询”和“查找” HTML 元素</li>
+<li>jQuery 的 action() 执行对元素的操作</li>
+</ul>
+<p>$相当于定义这一系列操作都在jQuery上操作</p>
+<p>举例：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(this).hide() - 隐藏当前元素</span><br><span class="line">$("p").hide() - 隐藏所有 &lt;p&gt; 元素</span><br><span class="line">$("p.test").hide() - 隐藏所有 class="test" 的 &lt;p&gt; 元素</span><br></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89%E9%80%89%E6%8B%A9%E5%99%A8/" style="float: left;">
+        ← jQuery复习总结（二）选择器
+    </a>
+    
+    
+    <a class="pull-right" href="/2019/10/28/%E3%80%8AHTML5%E6%8F%AD%E7%A7%98%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%8B%EF%BC%89/">
+        《HTML5揭秘》读书笔记整理（下） →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2015<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 哈立势. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//haharris.com" style="color: #767D84">Harris</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>jQuery复习总结（四）DOM操作 | Mr.Ha&#39;s blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Mr.Ha's blog">
+    <meta name="author" content="哈立势">
+    <meta name="description" content="第二个我" />
+    <meta name="keywords" content="blog" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Mr.Ha&#39;s blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://haharris.com/" target="_blank" rel="noopener" class="animsition-link">Harris</a></li>
+                    
+                    <li><a href="http://domain.com/" target="_blank" rel="noopener" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo3.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Mr.Ha's blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-10-28T03:44:17.152Z" itemprop="datePublished">
+          2019-10-28
+      </time>
+    
+</span>
+                <h1>jQuery复习总结（四）DOM操作</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="jQuery-DOM-操作"><a href="#jQuery-DOM-操作" class="headerlink" title="jQuery DOM 操作"></a>jQuery DOM 操作</h1><p><img src="https://img-blog.csdnimg.cn/20181214162029831.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>jQuery 中非常重要的部分，就是操作 DOM（Document Object Model） 的能力</p>
+<h2 id="test-、html-and-val"><a href="#test-、html-and-val" class="headerlink" title="test()、html() and val()"></a>test()、html() and val()</h2><ul>
+<li>text() - 设置或返回所选元素的文本内容</li>
+<li>html() - 设置或返回所选元素的内容（包括 HTML 标记）</li>
+<li>val() - 设置或返回表单字段的值</li>
+</ul>
+<h3 id="获取内容："><a href="#获取内容：" class="headerlink" title="获取内容："></a>获取内容：</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery DOM Manipulation&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class="hello"&gt;&lt;p&gt;这是返回文本内容&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class="world"&gt;&lt;p&gt;这是返回包括HTML文本&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">	    &lt;p&gt;&lt;input type="text" class="test" value="Haris is a handsome boy"&gt;&lt;/input&gt;&lt;/p&gt;</span><br><span class="line">        &lt;button&gt;Click me&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $("document").ready(function() {</span><br><span class="line">       $('button').on('click', function(){</span><br><span class="line">         alert('Text: '+$('.hello').text());</span><br><span class="line">	     alert('HTML: '+$('.world').html());</span><br><span class="line">	     alert('Value: '+$('.test').val());</span><br><span class="line">		});</span><br><span class="line">		});</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20181214164649813.png" alt="在这里插入图片描述"><br>第一次alert弹出<code>&lt;p&gt;&lt;/p&gt;</code>里的文本内容不包含html标签，第二次alert会弹出带有<code>&lt;p&gt;&lt;/p&gt;</code>包裹的文字，第三次弹出为表单控件的value值，val为value的缩写</p>
+<h3 id="设定内容："><a href="#设定内容：" class="headerlink" title="设定内容："></a>设定内容：</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;JQuery DOM Manipulation&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;p id="test1"&gt;this is the first test&lt;/p&gt;</span><br><span class="line">		&lt;p id="test2"&gt;this is the other test&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;Input field: &lt;input type="text" id="test3" value="handsome Haris"&gt;&lt;/p&gt;</span><br><span class="line">		&lt;button id="btn1"&gt;设置文本&lt;/button&gt;</span><br><span class="line">		&lt;button id="btn2"&gt;设置 HTML&lt;/button&gt;</span><br><span class="line">		&lt;button id="btn3"&gt;设置值&lt;/button&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		$("document").ready(function() {</span><br><span class="line">			$("#btn1").click(function() {</span><br><span class="line">				$("#test1").text("Hello world!");</span><br><span class="line">			});</span><br><span class="line">			$("#btn2").click(function() {</span><br><span class="line">				$("#test2").html("&lt;b&gt;Hello world!&lt;/b&gt;");</span><br><span class="line">			});</span><br><span class="line">			$("#btn3").click(function() {</span><br><span class="line">				$("#test3").val("are you kidding me?");</span><br><span class="line">			});</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	&lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20181214165419142.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="attr-and-removeAttr"><a href="#attr-and-removeAttr" class="headerlink" title="attr() and removeAttr()"></a>attr() and removeAttr()</h2><p>attr() 方法用于获取属性值： <code>$(selector).attr(attribute)</code><br>removeAttr() 方法从被选元素中移除属性：<code>$(selector).removeAttr(attribute)</code></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;JQuery DOM Manipulation&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;p&gt;&lt;a href="http://baidu.com" id="baidu"&gt;baidu.com&lt;/a&gt;&lt;/p&gt;</span><br><span class="line">		&lt;span style="font-size:120%;color:red"&gt;这是一个段落。&lt;/span&gt;</span><br><span class="line">		&lt;button class="btn1"&gt;显示 href 值&lt;/button&gt;</span><br><span class="line">		&lt;button class="btn2"&gt;删除span元素的 style 属性&lt;/button&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		$("document").ready(function() {</span><br><span class="line">			$(".btn1").click(function() {</span><br><span class="line">				alert($("a").attr("href"));</span><br><span class="line">			});</span><br><span class="line">			$(".btn2").click(function() {</span><br><span class="line">				$("span").removeAttr("style");</span><br><span class="line">			});</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	&lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20181214172054954.png" alt="在这里插入图片描述"><br>设置格式：<code>$(selector).attr('attribute name','value')</code></p>
+<h2 id="css-、addClass-、removeClass-and-toggleClass"><a href="#css-、addClass-、removeClass-and-toggleClass" class="headerlink" title="css() 、addClass()、removeClass() and  toggleClass()"></a>css() 、addClass()、removeClass() and  toggleClass()</h2><ul>
+<li>css() - 设置或返回样式属性</li>
+<li>addClass() - 向被选元素添加一个或多个类</li>
+<li>removeClass() - 从被选元素删除一个或多个类</li>
+<li>toggleClass() - 对被选元素进行添加/删除类的切换操作</li>
+</ul>
+<p>==toggle==就像一个开关，有类就删除，无类则添加</p>
+<p>css()方法：<br>css(“propertyname”) 返回指定的 CSS 属性的值<br>css(“propertyname”,”value”) 设置指定的 CSS 属性<br>css({“propertyname”:”value”,”propertyname”:”value”,…})<br>设置多个 CSS 属性</p>
+<p>css()方法就不举例了</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;JQuery DOM Manipulation&lt;/title&gt;</span><br><span class="line">		&lt;style&gt;</span><br><span class="line">			.move</span><br><span class="line">					{</span><br><span class="line">				    background-color: yellow;</span><br><span class="line">					}</span><br><span class="line">			.blue</span><br><span class="line">					{</span><br><span class="line">					color:blue;</span><br><span class="line">					}</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;h1&gt;标题 1&lt;/h1&gt;</span><br><span class="line">		&lt;h2&gt;标题 2&lt;/h2&gt;</span><br><span class="line">		&lt;p&gt;这是一个段落&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;这是另一个段落&lt;/p&gt;</span><br><span class="line">		&lt;div class="move"&gt;去除这个黄色类&lt;/div&gt;</span><br><span class="line">		&lt;br&gt;</span><br><span class="line">		&lt;button class="btn1"&gt;向元素添加类&lt;/button&gt;</span><br><span class="line">		&lt;button class="btn2"&gt;移出元素的类&lt;/button&gt;</span><br><span class="line">		&lt;button class="btn3"&gt;toggle测试开关&lt;/button&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		$("document").ready(function() {</span><br><span class="line">			$(".btn1").click(function() {</span><br><span class="line">				$("h1,h2,p").addClass("blue");</span><br><span class="line">			});</span><br><span class="line">			$(".btn2").click(function() {</span><br><span class="line">				$("div").removeClass("move");</span><br><span class="line">			});</span><br><span class="line">			$(".btn3").click(function() {</span><br><span class="line">				$("div").toggleClass("move");</span><br><span class="line">			});</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	&lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20181214174702100.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="append-and-prepend-appendTo-and-prependTo-before-and-after-insertBefore-and-insertAfter"><a href="#append-and-prepend-appendTo-and-prependTo-before-and-after-insertBefore-and-insertAfter" class="headerlink" title="append() and prepend() | appendTo() and prependTo() | before() and after() | insertBefore() and insertAfter()"></a>append() and prepend() | appendTo() and prependTo() | before() and after() | insertBefore() and insertAfter()</h2><p>append()和appendTo()、prepend()和prependTo()这两对实际上是在玩文字游戏<br>append() - 在被选元素的结尾插入内容<br>例：<code>$('p').append('text')</code><br>appendTo() - 将内容插入到元素结尾<br>例：<code>$('text').append('p')</code><br>prepend() - 在被选元素的开头插入内容<br>例：<code>$('p').prepend('text')</code><br>prependTo() - 将内容插入到元素开头<br>例：<code>$('text').prepend('p')</code><br>after() - 在被选元素之后插入内容<br>before() - 在被选元素之前插入内容<br>insertBefore() - 把匹配的元素插入到另一个指定的元素集合的前面<br>insertAfter() - 把匹配的元素插入到另一个指定的元素集合的后面</p>
+<pre><code>$(content).insertBefore(selector)
+$(content).insertAfter(selector)</code></pre><p>   全部例子：</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery DOM Manipulation&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p id="i1"&gt;This is a paragraph.&lt;/p&gt;
+        &lt;p id="i2"&gt;This is another paragraph.&lt;/p&gt;
+        &lt;ol&gt;
+            &lt;li&gt;List item 1&lt;/li&gt;
+            &lt;li&gt;List item 2&lt;/li&gt;
+            &lt;li&gt;List item 3&lt;/li&gt;
+        &lt;/ol&gt;
+        &lt;p&gt;&lt;span class="s1"&gt;前&lt;/span&gt;&lt;span class="s2"&gt;后&lt;/span&gt;&lt;/p&gt;
+        &lt;div&gt;
+            &lt;div id="1"&gt;
+                1
+            &lt;/div&gt;
+            &lt;div id="2"&gt;
+                2
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;br/&gt;&lt;br/&gt;
+        &lt;button id="btn1"&gt;追加文本&lt;/button&gt;
+        &lt;button id="btn2"&gt;追加列表项&lt;/button&gt;
+        &lt;br/&gt;&lt;br/&gt;
+        &lt;button id="btn3"&gt;before&lt;/button&gt;
+        &lt;button id="btn4"&gt;after&lt;/button&gt;
+        &lt;br/&gt;&lt;br/&gt;
+        &lt;button id="btn5"&gt;insertBefore&lt;/button&gt;
+        &lt;button id="btn6"&gt;insrtAfter&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+        $("document").ready(function() {
+                    $("#btn1").click(function() {
+                        $("#i1,#i2").append("&lt;b&gt;Appended text&lt;/b&gt;.");
+                        $("#i1,#i2").prepend("&lt;b&gt;Prepended text&lt;/b&gt;.");
+                    });
+
+                    $("#btn2").click(function() {
+                        $("ol").append("&lt;li&gt;Appended item&lt;/li&gt;");
+                        $("ol").prepend("&lt;li&gt;Prepended item&lt;/li&gt;");
+                    });
+                    $("#btn3").click(function() {
+                        $(".s1").before("&lt;span&gt;在前之前插入的文本&lt;/span&gt;&lt;/br&gt;");
+                    });
+                    $("#btn4").click(function() {
+                        $(".s2").after("&lt;/br&gt;&lt;span&gt;在后之后插入的文本&lt;/span&gt;");
+                    });
+                    $("#btn5").click(function() {
+                            $("&lt;div&gt;3&lt;/div&gt;").insertBefore("#1");
+                            });
+                    $("#btn6").click(function() {
+                            $("&lt;div&gt;4&lt;/div&gt;").insertAfter("#2");
+                            });
+                    });
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181214185243891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="remove-、empty-and-detach"><a href="#remove-、empty-and-detach" class="headerlink" title="remove()、empty() and detach()"></a>remove()、empty() and detach()</h2><p>通过 jQuery，可以很容易地删除已有的 HTML 元素</p>
+<ul>
+<li>remove() - 删除被选元素（及其子元素）</li>
+<li>empty() - 从被选元素中删除子元素</li>
+<li>detach() - 移除被选元素，包括所有文本和子节点</li>
+</ul>
+<p>detach() 会保留所有绑定的事件、附加的数据，这一点与 remove() 不同,    <code>$(selector).detach()</code></p>
+<p>remove()方法不会把匹配的元素从 jQuery 对象中删除，因而可以在将来再使用这些匹配的元素,但除了这个元素本身得以保留之外，remove() 不会保留元素的 jQuery 数据,其他的比如绑定的事件、附加的数据等都会被移除,<code>$(selector).remove()</code></p>
+<p>很简单不举例了</p>
+<h2 id="unwrap-、wrapInner-、wrap-and-wrapAll"><a href="#unwrap-、wrapInner-、wrap-and-wrapAll" class="headerlink" title="unwrap()、wrapInner()、wrap() and wrapAll()"></a>unwrap()、wrapInner()、wrap() and wrapAll()</h2><ul>
+<li>wrap() - 把匹配的元素用指定的内容或元素包裹起来</li>
+<li>unwrap() - 移除并替换指定元素的父元素</li>
+<li>wrapAll() - 把所有匹配的元素用指定的内容或元素包裹起来</li>
+<li>wrapInner() - 将每一个匹配的元素的子内容用指定的内容或元素包裹起来</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(".btn1").click(function(){</span><br><span class="line">   $("p").wrap("&lt;div&gt;&lt;/div&gt;");</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<p><code>&lt;p&gt;</code>标签外层再套一层<code>&lt;div&gt;</code></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$("button").click(function(){</span><br><span class="line">  $("p").unwrap();</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<p>与wrap相反，去掉<code>&lt;p&gt;</code>标签外的标签</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(".btn1").click(function(){</span><br><span class="line">   $("p").wrapAll("&lt;div&gt;&lt;/div&gt;");</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<p>与wrap的不同点就是他可以将许多<code>&lt;p&gt;</code>都一同套上<code>&lt;div&gt;</code></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(".btn1").click(function(){</span><br><span class="line">   $("p").wrapInner("&lt;b&gt;&lt;/b&gt;");</span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure>
+<p>将<code>&lt;p&gt;</code>标签里的内容套上<code>&lt;b&gt;</code></p>
+<h2 id="replaceWith-and-replaceAll"><a href="#replaceWith-and-replaceAll" class="headerlink" title="replaceWith() and replaceAll()"></a>replaceWith() and replaceAll()</h2><p>replaceWith() 方法用指定的 HTML 内容或元素替换被选元素</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).replaceWith(content)</span><br></pre></td></tr></tbody></table></figure>
+<p>replaceAll() 方法用指定的 HTML 内容或元素替换被选元素</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(content).replaceAll(selector)</span><br></pre></td></tr></tbody></table></figure>
+<p>显而易见，这两个方法的作用是相同的，区别在于内容和选择器的位置</p>
+<h2 id="clone"><a href="#clone" class="headerlink" title="clone()"></a>clone()</h2><p>clone() 方法生成被选元素的副本，包含子节点、文本和属性</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).clone(includeEvents)</span><br></pre></td></tr></tbody></table></figure>
+
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;JQuery DOM Manipulation&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;p class="p1"&gt;这个段落是append直接操作&lt;/p&gt;</span><br><span class="line">		&lt;p class="p2"&gt;这个段落是append操作克隆过&lt;/p&gt;</span><br><span class="line">		&lt;button id="bt1"&gt;直接append内容在body后&lt;/button&gt;</span><br><span class="line">		&lt;br/&gt;</span><br><span class="line">		&lt;br/&gt;</span><br><span class="line">		&lt;button id="bt2"&gt;append克隆后的内容在body后&lt;/button&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		$("document").ready(function() {</span><br><span class="line">			$("#bt1").click(function() {</span><br><span class="line">				$("body").append($(".p1"));</span><br><span class="line">			});</span><br><span class="line">			$("#bt2").click(function() {</span><br><span class="line">				$("body").append($(".p2").clone());</span><br><span class="line">			});</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	&lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20181214192240202.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>==注意==：<br>append操作相当于是“剪切—粘贴”的操作，如图，它是将原来的<code>&lt;p&gt;</code>剪切下来后加在了body后<br>经过克隆过后的<code>&lt;p&gt;</code>它每触发一次按钮点击，都会进行一次复制与粘贴的过程，并且复制过程中基数会是上一次的个数</p>
+<h2 id="更多查文档"><a href="#更多查文档" class="headerlink" title="更多查文档"></a>更多查文档</h2><p><a href="http://www.w3school.com.cn/jquery/jquery_ref_manipulation.asp" target="_blank" rel="noopener">jQuery 参考手册 - 文档操作</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%94%EF%BC%89%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/" style="float: left;">
+        ← jQuery复习总结（五）动画效果
+    </a>
+    
+    
+    <a class="pull-right" href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86/">
+        jQuery复习总结（三）事件处理 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2015<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 哈立势. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//haharris.com" style="color: #767D84">Harris</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

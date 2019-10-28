@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>掌握归并排序前首先理解递归行为 | Mr.Ha&#39;s blog</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Mr.Ha's blog">
+    <meta name="author" content="哈立势">
+    <meta name="description" content="第二个我" />
+    <meta name="keywords" content="blog" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="Mr.Ha&#39;s blog" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="atom.xml">
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://haharris.com/" target="_blank" rel="noopener" class="animsition-link">Harris</a></li>
+                    
+                    <li><a href="http://domain.com/" target="_blank" rel="noopener" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo3.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">Mr.Ha's blog</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2019-10-28T03:32:10.856Z" itemprop="datePublished">
+          2019-10-28
+      </time>
+    
+</span>
+                <h1>掌握归并排序前首先理解递归行为</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h1 id="递归行为"><a href="#递归行为" class="headerlink" title="递归行为"></a>递归行为</h1><p><strong>“大事化小”</strong> 讲的就是一个递归的思想，把一个规模大的问题通过划分成小问题去解决，小问题继续划分</p>
+<h1 id="递归的联想理解"><a href="#递归的联想理解" class="headerlink" title="递归的联想理解"></a>递归的联想理解</h1><p>递归像是你在金字塔的顶端，要收集最底的宝藏，你每下一层看没有宝藏，找到了去往下一层的门，继续去下一层，层和层之间的楼梯都是一样的，看上去走的行程是一样的，实际上它们是不同的楼梯，等你走到底拿了宝藏，你还要一层一层再爬回去。</p>
+<h1 id="递归的基本思想"><a href="#递归的基本思想" class="headerlink" title="递归的基本思想"></a>递归的基本思想</h1><p><strong>“有来有回”</strong> 以及常听到的 <strong>“自己调用自己”</strong></p>
+<p>当划分为多个子问题处理时，重要的一点是子问题解决了，才可以继续解决基于子问题的问题</p>
+<h1 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h1><p>一个数组左边界是L，右边界是R，（L和R都是位置），我们想要寻找这个数组的最大值，我们现在将数组一分为二，分别找出数组左部分的最大值，和数组右部分的最大值，最后返回二者之中的最大值。<br>5，3，1，8，6，2<br><em>==L==，1，2，3，4，==R==</em></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var maxArr = [5,3,1,8,6,2];</span><br><span class="line">function getMax(arr,L,R){</span><br><span class="line">	if(L == R){</span><br><span class="line">	return arr[L];</span><br><span class="line">	}</span><br><span class="line">	var mid = (L+R)/2;</span><br><span class="line">	var maxLeft = getMax(arr,L,mid);</span><br><span class="line">	var maxRight = getMax(arr,mid+1,R);</span><br><span class="line">	return max = Math.max(maxLeft,maxRight);</span><br><span class="line">}</span><br><span class="line">getMax(maxArr,0,maxArr.length-1);</span><br><span class="line">console.log(max);</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20181114135423524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>可以看到提示代码错误：<br><strong>“Maximum call stack size exceeded”</strong> 超过最大调用栈大小</p>
+<p>原来系统用的是栈结构来解决这个问题，不过我们先改写代码使它通过随后详细讲解。</p>
+<p>我们将<code>var mid = (L+R)/2;</code>改为<code>var mid = L + ((R - L) &gt;&gt; 1);</code><br><img src="https://img-blog.csdnimg.cn/20181114140731874.png" alt="在这里插入图片描述"><br>打印出数组最大值8</p>
+<p>因为L，R表示下标时，L不会溢出，R不会溢出，L+R可能溢出，mid = (L+R)/2算出的mid可能是错误的，这样是不安全的，但mid = （L+(R-L)/2）&lt;R，R不溢出，所以绝对不会有溢出问题，最后用右移运算抖机灵。</p>
+<h1 id="深入剖析递归行为"><a href="#深入剖析递归行为" class="headerlink" title="深入剖析递归行为"></a>深入剖析递归行为</h1><p>==递归就是系统帮你压栈==<br>递归函数getMax(arr,L,R)开始，系统准备一个栈，首先L和R相等吗，相等则说明数组只有一个元素则直接返回，否则继续。首先L=0，R=5，产生一个变量mid = 2，随后变量maxLeft需要子过程来产生，系统做的工作是把getMax(arr,0,5)以及代码跑到第几行，mid = 2等信息全部压入栈中，然后调用子过程，先当与这个函数被归挡，先跑子过程，继续跑getMax(arr,0,2),一直继续直到触发L == R，即执行 return arr[L]返回。然后进行弹栈操作，读取弹栈后的栈顶的信息，完全还原现场当时的信息，即发生到哪个子过程，代码跑到第几行，再继续执行之后的子过程，最终串起来子过程和父过程的通信。</p>
+<p>==<strong>任何递归行为都可以改成非递归</strong>==<br>将系统压栈改成自己压栈，就变成了非递归，即迭代</p>
+<h1 id="递归行为的复杂度"><a href="#递归行为的复杂度" class="headerlink" title="递归行为的复杂度"></a>递归行为的复杂度</h1><p>==<strong>Master公式</strong>==<br>T(N) = aT(N/b) + O(N^d^)<br>T(N)表示样本量为N的时间复杂度<br>T(N/b)表示子样本的样本量<br>a表示子过程发生的次数<br>O(N^d^)表示除过子样本发生之后剩下的操作的时间复杂度</p>
+<p>以之前的例子为例，在一个数组中寻找最大值，数组一切为2，整个数组样本量为N，左边一半，样本量为N/2，右边一般，样本量为N/2，左边跑完跑右边，样本量为N/2的过程发生了2次，跑完子过程之后，比对最大的数值然后返回，是常数量的复杂度。<br>即：T(N) = 2T(N/2)+O(1)</p>
+<p>==Master公式的使用==</p>
+<p><strong>T(N) = a*T(N/b) + O(N^d^)</strong></p>
+<ol>
+<li>log(b,a) &gt; d -&gt; 复杂度为O(N^log(b,a)^)</li>
+<li>log(b,a) = d -&gt; 复杂度为O(N^d^ * logN)</li>
+<li>log(b,a) &lt; d -&gt; 复杂度为O(N^d^)</li>
+</ol>
+<p>==划分子问题的规模一样才可以用master公式==</p>
+<p>上面的例子，a = 2， b = 2，d = 0 则O(N) = O(N）</p>
+<h1 id="一些补充"><a href="#一些补充" class="headerlink" title="一些补充"></a>一些补充</h1><p>我们在分析一个问题写算法的时候，只关心一步，即父问题转换为子问题那一步，我们只需要知道它们大层面的关系，子问题继续转换子问题以及如何转换，转换多少次，不需要去关心。<br>划分是一个大范围对等的划分，例如：如果是奇数个数数组，划分为两部分，数据不对等也属于正确。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/10/28/%E3%80%8AHTML5%E6%8F%AD%E7%A7%98%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89/" style="float: left;">
+        ← 《HTML5揭秘》读书笔记整理（上）
+    </a>
+    
+    
+    <a class="pull-right" href="/2019/10/28/%E8%8D%B7%E5%85%B0%E5%9B%BD%E6%97%97%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/">
+        荷兰国旗问题详解 →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2015<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By 哈立势. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//haharris.com" style="color: #767D84">Harris</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>
