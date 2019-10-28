@@ -179,7 +179,7 @@
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="search" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -530,7 +530,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                           </div>
                     
                 </div>
@@ -541,7 +541,7 @@
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>publishDate:&nbsp;&nbsp;
                     2019-10-28
                 </div>
                 
@@ -551,7 +551,7 @@
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="far fa-eye fa-fw"></i>readCount:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -563,32 +563,172 @@
                 <h1 id="总概"><a href="#总概" class="headerlink" title="总概"></a>总概</h1><p>我们常说响应一词，与事件息息相关</p>
 <p>事件处理程序指的是当 HTML 中发生某些事件时所调用的方法。术语由事件“触发”（或“激发”）经常会被使用</p>
 <p>鬼知道这一句话想表达什么，更通俗一点的是“鼠标移到这个段子上了”、“鼠标点了这个按钮”、“键盘按下了组合键”等等==触发==事件，也就开始调用函数和进行操作了……</p>
-<p><img src="https://img-blog.csdnimg.cn/20181213202108152.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>以上是jQuery中常用的事件处理</p>
+<p><img src="https://img-blog.csdnimg.cn/20181213202108152.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""><br>以上是jQuery中常用的事件处理</p>
 <h2 id="document-ready-function"><a href="#document-ready-function" class="headerlink" title="$(document).ready(function)"></a>$(document).ready(function)</h2><p>$(document).ready() 方法允许我们在文档完全加载完后执行函数，这样确保jQuery将整个Dom树渲染完成，来进行接下来的一系列操作，我们之前的一些例子都是以这样的格式开始的</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type="text/javascript"&gt;</span><br><span class="line">   $(document).ready(function(){</span><br><span class="line">	//举例</span><br><span class="line">	$('button').on('click',function(){</span><br><span class="line">		});</span><br><span class="line">   })</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="click-and-dblclick"><a href="#click-and-dblclick" class="headerlink" title="click() and dblclick()"></a>click() and dblclick()</h2><p>这是两个很常见常用的方法，俗称“单击”和“双击”<br>我们在这两个方法里写接下来的逻辑，就等于是当我们单击或双击前面绑定的被选元素后开始触发后面的逻辑发生</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery Event Handlers&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">		&lt;div&gt;&lt;h1&gt;JQuery Event Handlers&lt;/h1&gt;&lt;/div&gt;</span><br><span class="line">		&lt;div&gt;&lt;h3&gt;Click&lt;/h3&gt;&lt;/div&gt;</span><br><span class="line">	    &lt;button id="btn1"&gt;Single Click&lt;/button&gt;</span><br><span class="line">	    &lt;button id="btn2"&gt;Double Click&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $("document").ready(function() {</span><br><span class="line">        $('#btn1').on('click', function(event){</span><br><span class="line">            alert('click');</span><br><span class="line">			debugger;</span><br><span class="line">        });</span><br><span class="line"></span><br><span class="line">        $('#btn2').on('dblclick', function(){</span><br><span class="line">            alert('dblclick');</span><br><span class="line">        });</span><br><span class="line">		});</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<pre><code>&lt;script type="text/javascript"&gt;
+   $(document).ready(function(){
+       //举例
+       $('button').on('click',function(){
+           });
+   })
+&lt;/script&gt;</code></pre><h2 id="click-and-dblclick"><a href="#click-and-dblclick" class="headerlink" title="click() and dblclick()"></a>click() and dblclick()</h2><p>这是两个很常见常用的方法，俗称“单击”和“双击”<br>我们在这两个方法里写接下来的逻辑，就等于是当我们单击或双击前面绑定的被选元素后开始触发后面的逻辑发生</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery Event Handlers&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;&lt;h1&gt;JQuery Event Handlers&lt;/h1&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;h3&gt;Click&lt;/h3&gt;&lt;/div&gt;
+        &lt;button id="btn1"&gt;Single Click&lt;/button&gt;
+        &lt;button id="btn2"&gt;Double Click&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
 
-<p><img src="https://img-blog.csdnimg.cn/20181213203841861.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+    &lt;script type="text/javascript"&gt;
+    $("document").ready(function() {
+        $('#btn1').on('click', function(event){
+            alert('click');
+            debugger;
+        });
+
+        $('#btn2').on('dblclick', function(){
+            alert('dblclick');
+        });
+        });
+
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181213203841861.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
 <p>当单击的时候用了debugger然后我们可以看到它是MouseEvent</p>
 <h2 id="mouseover-、mouseout-、mousedown-and-mouseup"><a href="#mouseover-、mouseout-、mousedown-and-mouseup" class="headerlink" title="mouseover()、mouseout()、mousedown() and mouseup()"></a>mouseover()、mouseout()、mousedown() and mouseup()</h2><p>我们直接拿一个例子来看，鼠标悬在按钮和移出按钮会将上方的div中的文本分别改为mouseover和mousedown，而当我们按下按钮不松开会在下方显示mousedown，松开的一瞬间分别显示mouseup和click<br>==敲重点== mouseup总发生在click之前，它相当于释放鼠标，它相当于少了按下的过程，而click是一整个过程，通常mouseup和click绑定的事件效果相同，mouseup相当于鼠标点击，它们的差别在这里</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery Event Handlers&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">		&lt;div&gt;&lt;h3&gt;Mouse&lt;/h3&gt;&lt;/div&gt;</span><br><span class="line">		&lt;div id="result2"&gt;waiting for event&lt;/div&gt;</span><br><span class="line">		&lt;button id="btn3"&gt;Mouse&lt;/button&gt;</span><br><span class="line">		&lt;div id="result3"&gt;waiting another event&lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $("document").ready(function() {</span><br><span class="line">        $('#btn3').on('mousedown', function(){</span><br><span class="line">               $('#result3').append('&lt;br/&gt;mousedown');</span><br><span class="line">           });</span><br><span class="line"></span><br><span class="line">           $('#btn3').on('mouseup', function(){</span><br><span class="line">               $('#result3').append('&lt;br/&gt;mouseup');</span><br><span class="line">           });</span><br><span class="line"></span><br><span class="line">           $('#btn3').on('click', function(){</span><br><span class="line">               $('#result3').append('&lt;br/&gt;click');</span><br><span class="line">           });</span><br><span class="line"></span><br><span class="line">           $('#btn3').on('mouseover', function(){</span><br><span class="line">               $('#result2').html('mouseover');</span><br><span class="line">           });</span><br><span class="line"></span><br><span class="line">           $('#btn3').on('mouseout', function(){</span><br><span class="line">               $('#result2').html('mouseout');</span><br><span class="line">           });</span><br><span class="line">		});</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery Event Handlers&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;&lt;h3&gt;Mouse&lt;/h3&gt;&lt;/div&gt;
+        &lt;div id="result2"&gt;waiting for event&lt;/div&gt;
+        &lt;button id="btn3"&gt;Mouse&lt;/button&gt;
+        &lt;div id="result3"&gt;waiting another event&lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
 
-<p><img src="https://img-blog.csdnimg.cn/20181213210405230.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+    &lt;script type="text/javascript"&gt;
+    $("document").ready(function() {
+        $('#btn3').on('mousedown', function(){
+               $('#result3').append('&lt;br/&gt;mousedown');
+           });
+
+           $('#btn3').on('mouseup', function(){
+               $('#result3').append('&lt;br/&gt;mouseup');
+           });
+
+           $('#btn3').on('click', function(){
+               $('#result3').append('&lt;br/&gt;click');
+           });
+
+           $('#btn3').on('mouseover', function(){
+               $('#result2').html('mouseover');
+           });
+
+           $('#btn3').on('mouseout', function(){
+               $('#result2').html('mouseout');
+           });
+        });
+
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181213210405230.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
 <h2 id="keydown-、keypress-and-keyup"><a href="#keydown-、keypress-and-keyup" class="headerlink" title="keydown()、keypress() and keyup()"></a>keydown()、keypress() and keyup()</h2><p>按键按下会触发keydown事件，没插入一个字符便会产生一个keypress，注意和mouseup与click的区别，松开按键keyup</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery Event Handlers&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div&gt;&lt;h3&gt;Key&lt;/h3&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div id="result3"&gt;waiting for event&lt;/div&gt;</span><br><span class="line">        &lt;input type="text" id="ip2"/&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $("document").ready(function() {</span><br><span class="line">        $('#ip2').on('keydown', function(){</span><br><span class="line">                $('#result3').append('&lt;br/&gt;keydown');</span><br><span class="line">            });</span><br><span class="line"></span><br><span class="line">            $('#ip2').on('keyup', function(){</span><br><span class="line">                $('#result3').append('&lt;br/&gt;keyup');</span><br><span class="line">            });</span><br><span class="line"></span><br><span class="line">            $('#ip2').on('keypress', function(){</span><br><span class="line">                $('#result3').append('&lt;br/&gt;keypress');</span><br><span class="line">            });</span><br><span class="line">		});</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery Event Handlers&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
 
-<p><img src="https://img-blog.csdnimg.cn/2018121321185923.png" alt="在这里插入图片描述"></p>
+        &lt;div&gt;&lt;h3&gt;Key&lt;/h3&gt;&lt;/div&gt;
+        &lt;div id="result3"&gt;waiting for event&lt;/div&gt;
+        &lt;input type="text" id="ip2"/&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+    $("document").ready(function() {
+        $('#ip2').on('keydown', function(){
+                $('#result3').append('&lt;br/&gt;keydown');
+            });
+
+            $('#ip2').on('keyup', function(){
+                $('#result3').append('&lt;br/&gt;keyup');
+            });
+
+            $('#ip2').on('keypress', function(){
+                $('#result3').append('&lt;br/&gt;keypress');
+            });
+        });
+
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/2018121321185923.png" alt=""></p>
 <h2 id="change-and-submit"><a href="#change-and-submit" class="headerlink" title="change() and submit()"></a>change() and submit()</h2><p>当元素的值发生改变时，会发生 change 事件<br>该事件仅适用于文本域（text field），以及 textarea 和 select 元素<br>当文本域失去焦点时，即系统认为改写完成后会触发change事件</p>
 <p>当提交表单时，会发生 submit 事件，该事件只适用于表单元素</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery Event Handlers&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div&gt;&lt;h3&gt;Change&lt;/h3&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div id="result4"&gt;waiting for event&lt;/div&gt;</span><br><span class="line">        &lt;input type="text" id="ip3" value="test"/&gt;</span><br><span class="line">        &lt;div&gt;&lt;h3&gt;Submit&lt;/h3&gt;&lt;/div&gt;</span><br><span class="line">        &lt;form id="form1"&gt;</span><br><span class="line">			&lt;input type="submit"/&gt;</span><br><span class="line">        &lt;/form&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $("document").ready(function() {</span><br><span class="line">       $('#ip3').on('change', function(){</span><br><span class="line">               $('#result4').html('changed');</span><br><span class="line">           });</span><br><span class="line"></span><br><span class="line">           $('#form1').on('submit', function(){</span><br><span class="line">               alert('submit!');</span><br><span class="line">           });</span><br><span class="line">		});</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery Event Handlers&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;&lt;h3&gt;Change&lt;/h3&gt;&lt;/div&gt;
+        &lt;div id="result4"&gt;waiting for event&lt;/div&gt;
+        &lt;input type="text" id="ip3" value="test"/&gt;
+        &lt;div&gt;&lt;h3&gt;Submit&lt;/h3&gt;&lt;/div&gt;
+        &lt;form id="form1"&gt;
+            &lt;input type="submit"/&gt;
+        &lt;/form&gt;
 
-<p><img src="https://img-blog.csdnimg.cn/20181213212728851.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+    $("document").ready(function() {
+       $('#ip3').on('change', function(){
+               $('#result4').html('changed');
+           });
+
+           $('#form1').on('submit', function(){
+               alert('submit!');
+           });
+        });
+
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181213212728851.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
 <h2 id="blur-and-focus"><a href="#blur-and-focus" class="headerlink" title="blur() and focus()"></a>blur() and focus()</h2><p>当元素获得焦点时，发生 focus 事件<br>当通过鼠标点击选中元素或通过 tab 键定位到元素时，该元素就会获得焦点</p>
 <p>当元素失去焦点时发生 blur 事件<br>blur() 函数触发 blur 事件，或者如果设置了 function 参数，该函数也可规定当发生 blur 事件时执行的代码</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery Event Handlers&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div&gt;&lt;h3&gt;Focus/Blur&lt;/h3&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div id="result1"&gt;waiting for event&lt;/div&gt;</span><br><span class="line">        &lt;input type="text" id="ip1"/&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $("document").ready(function() {</span><br><span class="line">       $('#ip1').on('focus', function(){</span><br><span class="line">               $('#result1').html('focused');</span><br><span class="line">           });</span><br><span class="line"></span><br><span class="line">           $('#ip1').on('blur', function(){</span><br><span class="line">               $('#result1').html('blured');</span><br><span class="line">           });</span><br><span class="line">		});</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery Event Handlers&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;&lt;h3&gt;Focus/Blur&lt;/h3&gt;&lt;/div&gt;
+        &lt;div id="result1"&gt;waiting for event&lt;/div&gt;
+        &lt;input type="text" id="ip1"/&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
 
-<p><img src="https://img-blog.csdnimg.cn/20181213213131912.png" alt="在这里插入图片描述"></p>
+    &lt;script type="text/javascript"&gt;
+    $("document").ready(function() {
+       $('#ip1').on('focus', function(){
+               $('#result1').html('focused');
+           });
+
+           $('#ip1').on('blur', function(){
+               $('#result1').html('blured');
+           });
+        });
+
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181213213131912.png" alt=""></p>
 <h2 id="还有一些事件处理用时自查，文档是个好东西"><a href="#还有一些事件处理用时自查，文档是个好东西" class="headerlink" title="还有一些事件处理用时自查，文档是个好东西"></a>还有一些事件处理用时自查，文档是个好东西</h2><p><a href="http://www.w3school.com.cn/jquery/jquery_ref_events.asp" target="_blank" rel="noopener">jQuery 参考手册 - 事件</a></p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -619,7 +759,7 @@
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        文章作者:
+                        author:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -629,7 +769,7 @@
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        文章链接:
+                        link:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -639,13 +779,13 @@
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        版权声明:
+                        reprint:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
+                    use
+                    <a href="cc_by_url" rel="external nofollow noreferrer" target="_blank">cc_by_name</a>
+                    licensed
                     <a href="http://Haris-ha.github.io" target="_blank">哈立势</a>
                     !
                 </span>
@@ -655,7 +795,7 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        let toastHTML = '<span>pleaseFollowReprintPolicy</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">checkPolicy</a>';
         M.toast({html: toastHTML})
       });
 
@@ -670,7 +810,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                         </div>
                     
                 </div>
@@ -733,7 +873,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;prev</div>
             <div class="card">
                 <a href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E5%9B%9B%EF%BC%89DOM%E6%93%8D%E4%BD%9C/">
                     <div class="card-image">
@@ -772,7 +912,7 @@ html()
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89%E9%80%89%E6%8B%A9%E5%99%A8/">
@@ -837,15 +977,11 @@ $("p") — 选
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;toc</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -982,7 +1118,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                     var today = new Date();
                     var startYear = "2019";
                     var startMonth = "10";
-                    var startDate = "27";
+                    var startDate = "24";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1055,8 +1191,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;search</span>
+            <input type="search" id="searchInput" name="s" placeholder="searchTip"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

@@ -179,7 +179,7 @@ $(selector).show(speed,ca">
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="search" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -530,7 +530,7 @@ $(selector).show(speed,ca">
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                           </div>
                     
                 </div>
@@ -541,7 +541,7 @@ $(selector).show(speed,ca">
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>publishDate:&nbsp;&nbsp;
                     2019-10-28
                 </div>
                 
@@ -551,7 +551,7 @@ $(selector).show(speed,ca">
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="far fa-eye fa-fw"></i>readCount:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -560,26 +560,85 @@ $(selector).show(speed,ca">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="jQuery-动画（动起来）"><a href="#jQuery-动画（动起来）" class="headerlink" title="jQuery 动画（动起来）"></a>jQuery 动画（动起来）</h1><p>显示、隐藏、开关滑动、淡入、淡出，还有自定义动画<br><img src="https://img-blog.csdnimg.cn/20181214193207866.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+                <h1 id="jQuery-动画（动起来）"><a href="#jQuery-动画（动起来）" class="headerlink" title="jQuery 动画（动起来）"></a>jQuery 动画（动起来）</h1><p>显示、隐藏、开关滑动、淡入、淡出，还有自定义动画<br><img src="https://img-blog.csdnimg.cn/20181214193207866.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
 <h2 id="基本动画（show、hide和toggle）"><a href="#基本动画（show、hide和toggle）" class="headerlink" title="基本动画（show、hide和toggle）"></a>基本动画（show、hide和toggle）</h2><p><strong>$(selector).hide(speed,callback);</strong></p>
 <p><strong>$(selector).show(speed,callback);</strong></p>
 <p><strong>$(selector).toggle(speed,callback);</strong></p>
 <p>show、hide很好理解就是显示隐藏，toggle是开关，显示被隐藏的元素，并隐藏已显示的元素</p>
 <p>它们都接受可选的 speed 参数规定隐藏/显示的速度，可以取以下值：”slow”、”fast” 或毫秒</p>
 <p>可选的 callback 参数是隐藏或显示完成后所执行的函数名称</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;JQuery Animation&lt;/title&gt;</span><br><span class="line">		&lt;style type="text/css"&gt;</span><br><span class="line">        div{</span><br><span class="line">					width: 200px;</span><br><span class="line">					height: 100px;</span><br><span class="line">					background-color: yellow;</span><br><span class="line">				}</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;button id="bt1" type="button"&gt;show&lt;/button&gt;</span><br><span class="line">		&lt;button id="bt2"type="button"&gt;hide&lt;/button&gt;</span><br><span class="line">		&lt;button id="bt3"type="button"&gt;toggle&lt;/button&gt;</span><br><span class="line">		&lt;div &gt;这是一个段落。&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		$("document").ready(function() {</span><br><span class="line">			$("#bt1").click(function() {</span><br><span class="line">				$("div").show(1000);</span><br><span class="line">			});</span><br><span class="line">			$("#bt2").click(function() {</span><br><span class="line">				$("div").hide(2000);</span><br><span class="line">			});</span><br><span class="line">			$("#bt3").click(function() {</span><br><span class="line">				$("div").toggle();</span><br><span class="line">			});</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	&lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery Animation&lt;/title&gt;
+        &lt;style type="text/css"&gt;
+        div{
+                    width: 200px;
+                    height: 100px;
+                    background-color: yellow;
+                }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button id="bt1" type="button"&gt;show&lt;/button&gt;
+        &lt;button id="bt2"type="button"&gt;hide&lt;/button&gt;
+        &lt;button id="bt3"type="button"&gt;toggle&lt;/button&gt;
+        &lt;div &gt;这是一个段落。&lt;/div&gt;
 
-<p><img src="https://img-blog.csdnimg.cn/20181214200132492.png" alt="在这里插入图片描述"><br><strong>默认以对角线方向就行展示隐藏</strong></p>
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+        $("document").ready(function() {
+            $("#bt1").click(function() {
+                $("div").show(1000);
+            });
+            $("#bt2").click(function() {
+                $("div").hide(2000);
+            });
+            $("#bt3").click(function() {
+                $("div").toggle();
+            });
+        });
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181214200132492.png" alt=""><br><strong>默认以对角线方向就行展示隐藏</strong></p>
 <h2 id="预制动画（slide和fade）"><a href="#预制动画（slide和fade）" class="headerlink" title="预制动画（slide和fade）"></a>预制动画（slide和fade）</h2><p><strong>jQuery 拥有以下三种slide方法：</strong></p>
 <ul>
 <li>slideDown()  //向下滑动元素</li>
 <li>slideUp()  //向上滑动元素</li>
 <li>slideToggle()  // slideDown() 与 slideUp() 方法之间进行切换</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(selector).slideDown(speed,callback)</span><br><span class="line">$(selector).slideUp(speed,callback)</span><br><span class="line">$(selector).slideToggle(speed,callback)</span><br></pre></td></tr></tbody></table></figure>
-<p>如果元素向下滑动，则 slideToggle() 可向上滑动它们<br>如果元素向上滑动，则 slideToggle() 可向下滑动它们</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;JQuery Animation&lt;/title&gt;</span><br><span class="line">		&lt;style type="text/css"&gt;</span><br><span class="line">        div{</span><br><span class="line">					width: 200px;</span><br><span class="line">					height: 100px;</span><br><span class="line">					background-color: yellow;</span><br><span class="line">				}</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div class="result"&gt;Hello Wolrd&lt;/div&gt;</span><br><span class="line">		&lt;button&gt;Click 1&lt;/button&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		$("document").ready(function() {</span><br><span class="line">			$('button').on('click', function() {</span><br><span class="line">				$('.result').slideUp('1000', function(){</span><br><span class="line">					$('.result').slideDown('fast');</span><br><span class="line">				});</span><br><span class="line">			});</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	&lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20181214201013994.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>一秒的时间从下到上收完，再以很快的速度放下，slidedown()是在slideup()函数的回调函数，表示当slideup()完成后执行slidedown()</p>
+<pre><code>$(selector).slideDown(speed,callback)
+$(selector).slideUp(speed,callback)
+$(selector).slideToggle(speed,callback)</code></pre><p>如果元素向下滑动，则 slideToggle() 可向上滑动它们<br>如果元素向上滑动，则 slideToggle() 可向下滑动它们</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery Animation&lt;/title&gt;
+        &lt;style type="text/css"&gt;
+        div{
+                    width: 200px;
+                    height: 100px;
+                    background-color: yellow;
+                }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="result"&gt;Hello Wolrd&lt;/div&gt;
+        &lt;button&gt;Click 1&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+        $("document").ready(function() {
+            $('button').on('click', function() {
+                $('.result').slideUp('1000', function(){
+                    $('.result').slideDown('fast');
+                });
+            });
+        });
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181214201013994.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""><br>一秒的时间从下到上收完，再以很快的速度放下，slidedown()是在slideup()函数的回调函数，表示当slideup()完成后执行slidedown()</p>
 <p><strong>Query 拥有下面四种 fade 方法：</strong></p>
 <ul>
 <li>fadeIn()  //淡入已隐藏的元素</li>
@@ -587,21 +646,142 @@ $(selector).show(speed,ca">
 <li>fadeToggle()  // fadeIn() 与 fadeOut() 方法之间进行切换</li>
 <li>fadeTo()  //允许渐变为给定的不透明度（值介于 0 与 1 之间）</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(selector).fadeIn(speed,callback)</span><br><span class="line">$(selector).fadeOut(speed,callback)</span><br><span class="line">$(selector).fadeToggle(speed,callback)</span><br><span class="line">$(selector).fadeTo(speed,opacity,callback)</span><br></pre></td></tr></tbody></table></figure>
+<pre><code>$(selector).fadeIn(speed,callback)
+$(selector).fadeOut(speed,callback)
+$(selector).fadeToggle(speed,callback)
+$(selector).fadeTo(speed,opacity,callback)
 
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;JQuery Animation&lt;/title&gt;</span><br><span class="line">		&lt;style type="text/css"&gt;</span><br><span class="line">			.result1 {</span><br><span class="line">				width: 200px;</span><br><span class="line">				height: 100px;</span><br><span class="line">				background-color: yellow;</span><br><span class="line">				margin-bottom: 50px;</span><br><span class="line">			}</span><br><span class="line">			.result2 {</span><br><span class="line">				width: 200px;</span><br><span class="line">				height: 100px;</span><br><span class="line">				background-color: blue;</span><br><span class="line">				margin-bottom: 50px;</span><br><span class="line">			}</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div class="result1"&gt;Hello Wolrd&lt;/div&gt;</span><br><span class="line">		&lt;div class="result2"&gt;Hello Wolrd&lt;/div&gt;</span><br><span class="line">		&lt;button class="btn1"&gt;Click 1&lt;/button&gt;</span><br><span class="line">		&lt;button class="btn2"&gt;Click 2&lt;/button&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		$("document").ready(function() {</span><br><span class="line">			$('.btn1').on('click', function() {</span><br><span class="line">				$('.result1').fadeOut('normal', function() {</span><br><span class="line">					$('.result1').fadeIn('slow');</span><br><span class="line">				});</span><br><span class="line">			});</span><br><span class="line">			$('.btn2').on('click', function() {</span><br><span class="line">				$('.result2').fadeTo('normal', 0.5);</span><br><span class="line">			});</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	&lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
 
-<p><img src="https://img-blog.csdnimg.cn/20181214202044315.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery Animation&lt;/title&gt;
+        &lt;style type="text/css"&gt;
+            .result1 {
+                width: 200px;
+                height: 100px;
+                background-color: yellow;
+                margin-bottom: 50px;
+            }
+            .result2 {
+                width: 200px;
+                height: 100px;
+                background-color: blue;
+                margin-bottom: 50px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="result1"&gt;Hello Wolrd&lt;/div&gt;
+        &lt;div class="result2"&gt;Hello Wolrd&lt;/div&gt;
+        &lt;button class="btn1"&gt;Click 1&lt;/button&gt;
+        &lt;button class="btn2"&gt;Click 2&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+        $("document").ready(function() {
+            $('.btn1').on('click', function() {
+                $('.result1').fadeOut('normal', function() {
+                    $('.result1').fadeIn('slow');
+                });
+            });
+            $('.btn2').on('click', function() {
+                $('.result2').fadeTo('normal', 0.5);
+            });
+        });
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181214202044315.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
 <h2 id="自定义动画（animate）"><a href="#自定义动画（animate）" class="headerlink" title="自定义动画（animate）"></a>自定义动画（animate）</h2><p><strong>jQuery animate() 方法用于创建自定义动画</strong></p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).animate({params},speed,callback)</span><br></pre></td></tr></tbody></table></figure>
-<p>必需的 params 参数定义形成动画的 CSS 属性<br>可选的 speed 参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒<br>可选的 callback 参数是动画完成后所执行的函数名称</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;JQuery Animation&lt;/title&gt;</span><br><span class="line">		&lt;style type="text/css"&gt;</span><br><span class="line">		  .block {</span><br><span class="line">		      position: relative;</span><br><span class="line">		      background-color: #abc;</span><br><span class="line">		      width: 40px;</span><br><span class="line">		      height: 40px;</span><br><span class="line">		      float: left;</span><br><span class="line">		      margin: 5px;</span><br><span class="line">		  }</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div class="block"&gt;&lt;/div&gt;</span><br><span class="line">		&lt;div class="block"&gt;&lt;/div&gt;</span><br><span class="line">		&lt;div class="block"&gt;&lt;/div&gt;</span><br><span class="line">		&lt;div class="block"&gt;&lt;/div&gt;</span><br><span class="line">		&lt;div class="block"&gt;&lt;/div&gt;</span><br><span class="line">		&lt;div class="block"&gt;&lt;/div&gt;</span><br><span class="line">		&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;</span><br><span class="line">		&lt;button&gt;click&lt;/button&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		$("document").ready(function() {</span><br><span class="line">        $("button").click(function(){</span><br><span class="line">            $( ".block:first" ).animate({</span><br><span class="line">                left: 100</span><br><span class="line">            }, {</span><br><span class="line">                duration: 1000,</span><br><span class="line">                step: function( now, fx ){</span><br><span class="line">                    $( ".block:gt(0)" ).css( "left", now );</span><br><span class="line">                }</span><br><span class="line">            });</span><br><span class="line">        });</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	&lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20181214202817823.png" alt="在这里插入图片描述"><br>这个例子是让一排矩形都向右移动100px<br>默认地，所有 HTML 元素都有一个静态位置，且无法移动<br>如需对位置进行操作，要记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute！</p>
+<pre><code>$(selector).animate({params},speed,callback)</code></pre><p>必需的 params 参数定义形成动画的 CSS 属性<br>可选的 speed 参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒<br>可选的 callback 参数是动画完成后所执行的函数名称</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery Animation&lt;/title&gt;
+        &lt;style type="text/css"&gt;
+          .block {
+              position: relative;
+              background-color: #abc;
+              width: 40px;
+              height: 40px;
+              float: left;
+              margin: 5px;
+          }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="block"&gt;&lt;/div&gt;
+        &lt;div class="block"&gt;&lt;/div&gt;
+        &lt;div class="block"&gt;&lt;/div&gt;
+        &lt;div class="block"&gt;&lt;/div&gt;
+        &lt;div class="block"&gt;&lt;/div&gt;
+        &lt;div class="block"&gt;&lt;/div&gt;
+        &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+        &lt;button&gt;click&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+        $("document").ready(function() {
+        $("button").click(function(){
+            $( ".block:first" ).animate({
+                left: 100
+            }, {
+                duration: 1000,
+                step: function( now, fx ){
+                    $( ".block:gt(0)" ).css( "left", now );
+                }
+            });
+        });
+        });
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181214202817823.png" alt=""><br>这个例子是让一排矩形都向右移动100px<br>默认地，所有 HTML 元素都有一个静态位置，且无法移动<br>如需对位置进行操作，要记得首先把元素的 CSS position 属性设置为 relative、fixed 或 absolute！</p>
 <p>当使用 animate() 时，必须使用 Camel 标记法书写所有的属性名，比如，必须使用 paddingLeft 而不是 padding-left，使用 marginRight 而不是 margin-right，等等</p>
 <p><strong>jQuery 提供针对动画的队列功能</strong></p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;JQuery Animation&lt;/title&gt;</span><br><span class="line">		&lt;style type="text/css"&gt;</span><br><span class="line">			div {</span><br><span class="line">				width:100px;</span><br><span class="line">				height:100px;</span><br><span class="line">				background:#98bf21;</span><br><span class="line">			  position:absolute;</span><br><span class="line">			}</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;button&gt;click&lt;/button&gt;</span><br><span class="line">		&lt;div&gt;&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		$("document").ready(function() {</span><br><span class="line">			$("button").click(function() {</span><br><span class="line">				var div = $("div");</span><br><span class="line">				div.animate({</span><br><span class="line">					height: '300px',</span><br><span class="line">					opacity: '0.4'</span><br><span class="line">				}, "slow");</span><br><span class="line">				div.animate({</span><br><span class="line">					width: '300px',</span><br><span class="line">					opacity: '0.8'</span><br><span class="line">				}, "slow");</span><br><span class="line">				div.animate({</span><br><span class="line">					height: '100px',</span><br><span class="line">					opacity: '0.4'</span><br><span class="line">				}, "slow");</span><br><span class="line">				div.animate({</span><br><span class="line">					width: '100px',</span><br><span class="line">					opacity: '0.8'</span><br><span class="line">				}, "slow");</span><br><span class="line">			});</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	&lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery Animation&lt;/title&gt;
+        &lt;style type="text/css"&gt;
+            div {
+                width:100px;
+                height:100px;
+                background:#98bf21;
+              position:absolute;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button&gt;click&lt;/button&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
 
-<p><img src="https://img-blog.csdnimg.cn/20181214204357504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+    &lt;script type="text/javascript"&gt;
+        $("document").ready(function() {
+            $("button").click(function() {
+                var div = $("div");
+                div.animate({
+                    height: '300px',
+                    opacity: '0.4'
+                }, "slow");
+                div.animate({
+                    width: '300px',
+                    opacity: '0.8'
+                }, "slow");
+                div.animate({
+                    height: '100px',
+                    opacity: '0.4'
+                }, "slow");
+                div.animate({
+                    width: '100px',
+                    opacity: '0.8'
+                }, "slow");
+            });
+        });
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181214204357504.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
 <p><strong>如果在彼此之后编写多个 animate() 调用，jQuery 会创建包含这些方法调用的“内部”队列，然后逐一运行这些 animate 调用</strong></p>
 <p>产生一个向下向右向上向左又变回原样的动画</p>
 <script>
@@ -633,7 +813,7 @@ $(selector).show(speed,ca">
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        文章作者:
+                        author:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -643,7 +823,7 @@ $(selector).show(speed,ca">
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        文章链接:
+                        link:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -653,13 +833,13 @@ $(selector).show(speed,ca">
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        版权声明:
+                        reprint:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
+                    use
+                    <a href="cc_by_url" rel="external nofollow noreferrer" target="_blank">cc_by_name</a>
+                    licensed
                     <a href="http://Haris-ha.github.io" target="_blank">哈立势</a>
                     !
                 </span>
@@ -669,7 +849,7 @@ $(selector).show(speed,ca">
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        let toastHTML = '<span>pleaseFollowReprintPolicy</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">checkPolicy</a>';
         M.toast({html: toastHTML})
       });
 
@@ -684,7 +864,7 @@ $(selector).show(speed,ca">
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                         </div>
                     
                 </div>
@@ -747,7 +927,7 @@ $(selector).show(speed,ca">
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;prev</div>
             <div class="card">
                 <a href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89ajax%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/">
                     <div class="card-image">
@@ -785,7 +965,7 @@ AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E5%9B%9B%EF%BC%89DOM%E6%93%8D%E4%BD%9C/">
@@ -849,15 +1029,11 @@ html()
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;toc</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -994,7 +1170,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                     var today = new Date();
                     var startYear = "2019";
                     var startMonth = "10";
-                    var startDate = "27";
+                    var startDate = "24";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1067,8 +1243,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;search</span>
+            <input type="search" id="searchInput" name="s" placeholder="searchTip"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

@@ -6,7 +6,8 @@
     <meta charset="utf-8">
     <meta name="keywords" content="《HTML5揭秘》读书笔记整理（下）, blog">
     <meta name="description" content="《HTML5探秘》第6章 地理位置地理位置API调用地理位置API从全局navigator对象的geolocation属性开始
-123function get_location(){	navigator.geolocation.getCur">
+function get_location(){
+    navigator.geolocation.getCu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -178,7 +179,7 @@
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="search" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -529,7 +530,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                           </div>
                     
                 </div>
@@ -540,7 +541,7 @@
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>publishDate:&nbsp;&nbsp;
                     2019-10-28
                 </div>
                 
@@ -550,7 +551,7 @@
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="far fa-eye fa-fw"></i>readCount:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -560,11 +561,15 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="《HTML5探秘》"><a href="#《HTML5探秘》" class="headerlink" title="《HTML5探秘》"></a>《HTML5探秘》</h1><h2 id="第6章-地理位置"><a href="#第6章-地理位置" class="headerlink" title="第6章 地理位置"></a>第6章 地理位置</h2><h3 id="地理位置API"><a href="#地理位置API" class="headerlink" title="地理位置API"></a>地理位置API</h3><p>调用地理位置API从全局navigator对象的geolocation属性开始</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function get_location(){</span><br><span class="line">	navigator.geolocation.getCurrentPosition(show_map);</span><br><span class="line">	}</span><br></pre></td></tr></tbody></table></figure>
-<p>使用前进行检测，使用navigator对geolocation检测<br>调用==getCurrentPosition()==方法会触发浏览器弹出信息条，该方法需要一个回调函数作为参数<br>真正获取位置信息的是show_map()函数</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function show_map(position){</span><br><span class="line">	var latitude = position.coords.latitude;</span><br><span class="line">	var longtitude = position.coords.longitude;</span><br><span class="line">	//让我们显示地图或做一些趣事！</span><br><span class="line">	}</span><br></pre></td></tr></tbody></table></figure>
-<p>调用此函数需要传入coords和timestamp这两个属性的对象作为参数，其中timestamp是指计算位置信息的日期和时间</p>
-<p>==coords==对象有像latitude和longitude这样的属性，它们表示用户地理位置：</p>
+<pre><code>function get_location(){
+    navigator.geolocation.getCurrentPosition(show_map);
+    }</code></pre><p>使用前进行检测，使用navigator对geolocation检测<br>调用<strong>getCurrentPosition()</strong>方法会触发浏览器弹出信息条，该方法需要一个回调函数作为参数<br>真正获取位置信息的是show_map()函数</p>
+<pre><code>function show_map(position){
+    var latitude = position.coords.latitude;
+    var longtitude = position.coords.longitude;
+    //让我们显示地图或做一些趣事！
+    }</code></pre><p>调用此函数需要传入coords和timestamp这两个属性的对象作为参数，其中timestamp是指计算位置信息的日期和时间</p>
+<p><strong>coords</strong>对象有像latitude和longitude这样的属性，它们表示用户地理位置：</p>
 <p><strong>position对象的属性</strong></p>
 <table>
 <thead>
@@ -606,9 +611,9 @@
 <td>类似Date()对象</td>
 </tr>
 </tbody></table>
-<p>==注意==：只有前三个属性是确保不为空的，其余属性因用户和后台定位服务器而异，其中heading和speed这两个属性如果有的话是基于用户前一次位置信息计算所得的。</p>
+<p><strong>注意</strong>：只有前三个属性是确保不为空的，其余属性因用户和后台定位服务器而异，其中heading和speed这两个属性如果有的话是基于用户前一次位置信息计算所得的。</p>
 <h3 id="容错处理"><a href="#容错处理" class="headerlink" title="容错处理"></a>容错处理</h3><p>getCurrentPosition()第二个参数———容错处理的回调函数</p>
-<p>==PositionError==对象的属性<br>|属性| 备注 |<br>|–|–|<br>|code  | 可枚举 |<br>|message| 与终端用户无关 |</p>
+<p><strong>PositionError</strong>对象的属性<br>|属性| 备注 |<br>|–|–|<br>|code  | 可枚举 |<br>|message| 与终端用户无关 |</p>
 <p>code属性有以下属性值：</p>
 <ul>
 <li>PERMISSION_DENIED(1)：用户点击了信息条上的“不共享”按钮或者直接拒绝被获取位置</li>
@@ -617,7 +622,7 @@
 <li>UNKNOWN_ERROR(0)：发生未知错误</li>
 </ul>
 <p>低精度：基站（范围）、高精度（GPS）<br>PositionOptions对象是getCurrentPosition()方法的第三个可选参数</p>
-<p>==PositionOptions==对象的属性<br>|属性|默认值/备注  |<br>|–|–|<br>| enableHighAccuracy |false/设置true可能会使获取位置的速度变慢  |<br>| timeout|false/没有默认值/单位：毫秒 |<br>| maximumAge |0/单位：毫秒 |</p>
+<p><strong>PositionOptions</strong>对象的属性<br>|属性|默认值/备注  |<br>|–|–|<br>| enableHighAccuracy |false/设置true可能会使获取位置的速度变慢  |<br>| timeout|false/没有默认值/单位：毫秒 |<br>| maximumAge |0/单位：毫秒 |</p>
 <p>timeout属性是web应用获取位置信息的最长等待时间，只有当用户允许计算位置信息时，计时器才会开始计时</p>
 <p>maximumAge属性，允许设备将缓存的位置信息快速返回给web应用，相当于是你设置了上一次位置信息的最长有效时刻是多久，如果设备知道其在maximumAge时间内的设置，则不会更新，把上一次位置返回，如果要持续不断更新用户位置信息，则使用watchPosition()，该方法与getCurrentPosition()方法结构相同，三个参数：</p>
 <ol>
@@ -627,22 +632,24 @@
 </ol>
 <p>不同之处在于不用用户主动获取位置信息，位置改变，回调函数就会被调用，watchPosition()方法会返回一个数字，建议保存</p>
 <h2 id="第7章-web应用本地存储"><a href="#第7章-web应用本地存储" class="headerlink" title="第7章 web应用本地存储"></a>第7章 web应用本地存储</h2><p>web应用本地存储的过去、现在和未来，以前所谓的本地存储出现很多问题：接口不同，存储限制不同，用户体验不同，要么针对本地存储对特定浏览器，要么依赖第三发插件</p>
-<p>==HTML5 local Storage==提供统一标准的API、跨浏览器原生实现并且完全不需要第三方插件</p>
+<p><strong>HTML5 local Storage</strong>提供统一标准的API、跨浏览器原生实现并且完全不需要第三方插件</p>
 <p><strong>什么是HTML5存储</strong>：web页面在客户端浏览器中以键值对形式在本地存储数据</p>
 <p>利用JS通过全局window对象上的localStorage对象可操作HTML5存储</p>
 <h3 id="使用HTML5存储"><a href="#使用HTML5存储" class="headerlink" title="使用HTML5存储"></a>使用HTML5存储</h3><p>HTML5存储基于键值对的形式（存储和检索都通过指定键名）<br>键名是字符串类型，值是任何js类型，最终数据以字符类型存储<br>local Storage可以看为关联数组</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var foo = localStorage.getItem("bar");</span><br><span class="line">localStorage["bar"] = foo;</span><br></pre></td></tr></tbody></table></figure>
-<p>删除指定键名数组：removeItem()</p>
+<pre><code>var foo = localStorage.getItem("bar");
+localStorage["bar"] = foo;</code></pre><p>删除指定键名数组：removeItem()</p>
 <p>length属性用来获取存储区所有数据个数，通过索引值遍历所有键名</p>
 <h3 id="跟踪HTML5存储区的变动"><a href="#跟踪HTML5存储区的变动" class="headerlink" title="跟踪HTML5存储区的变动"></a>跟踪HTML5存储区的变动</h3><p>通过捕获storage事件来进行，任何时候setItem()、removeItem()或者clear()方法被调用，并且真的改动了数据，都会在window对象上触发storage事件</p>
 <p><strong>浏览器的局限性</strong><br>浏览器对于local storage的局限性：存储大量整型或浮点型数据时，会把每个数字存储为单个字符，而不是数，分配的空间可能超过存储空间配额</p>
 <h2 id="第8章-离线web应用"><a href="#第8章-离线web应用" class="headerlink" title="第8章 离线web应用"></a>第8章 离线web应用</h2><p>离线web应用其实只是一个URL列表文件，列表中的URL分别可以指向HTML、CSS、JS、图片或其他资源，该列表文件被称为“清单文件”。</p>
 <h3 id="缓存清单"><a href="#缓存清单" class="headerlink" title="缓存清单"></a>缓存清单</h3><p>离线web应用的核心是缓存清单文件，包含了所有离线web应用可能会访问的资源，只需要将<code>&lt;html&gt;</code>元素上的manifest属性指向该清单文件</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html mainfest = "/cache.manifest"&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>web应用由多个页面组成，则需要给每个页面将manifest属性指向该缓存清单文件</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html mainfest = "/cache.manifest"&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p>web应用由多个页面组成，则需要给每个页面将manifest属性指向该缓存清单文件</p>
 <p>每个缓存清单文件都以如下这一行代码开始：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br></pre></td></tr></tbody></table></figure>
-<p>其余内容分为三个部分</p>
+<pre><code>CACHE MANIFEST</code></pre><p>其余内容分为三个部分</p>
 <ul>
 <li>显示段</li>
 <li>默认段</li>
@@ -650,18 +657,28 @@
 </ul>
 <p>每段都有段头声明</p>
 <p>例：一个合法的清单文件中列出三个资源：一个css，一个js，一张JPEG图</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line">/clock.css</span><br><span class="line">/clock.js</span><br><span class="line">/clock-face.jpg</span><br></pre></td></tr></tbody></table></figure>
-<p>该缓存清单中没有任何头部声明，因此所有列出的资源默认为”显示“段</p>
+<pre><code>CACHE MANIFEST
+/clock.css
+/clock.js
+/clock-face.jpg</code></pre><p>该缓存清单中没有任何头部声明，因此所有列出的资源默认为”显示“段</p>
 <h3 id="“显示”段"><a href="#“显示”段" class="headerlink" title="“显示”段"></a>“显示”段</h3><p>属于“显示“段的资源会在在线的资源下被下载下来，然后缓存到本地，在离线状态下被使用</p>
 <p>对于上述的缓存清单文件，浏览器会将clock.css、clock.js和clock-face.jpg文件从web服务器根目录下下载缓存到本地，之后离线时刷新会发现资源离线可用</p>
-<p>**单页面的HTML无需将自身列入到缓存清单文件中，因为该页面本身就是web应用的一部分，多页面则需要将所有HTML页面列入到清单中</p>
+<p><strong>单页面的HTML无需将自身列入到缓存清单文件中，因为该页面本身就是web应用的一部分，多页面则需要将所有HTML页面列入到清单中</strong></p>
 <h3 id="“网络”段"><a href="#“网络”段" class="headerlink" title="“网络”段"></a>“网络”段</h3><p>被NETWORK声明的为“线下白名单段”，该段内容的资源将永远不会被缓存<br>例：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line">NETWORK;</span><br><span class="line">/tracking.cgi</span><br><span class="line">CACHE;</span><br><span class="line">/clcok.css</span><br><span class="line">/clock.js</span><br><span class="line">/clock-face.jpg</span><br></pre></td></tr></tbody></table></figure>
-<p>==“网络”段不被缓存，离线状态请求报错==</p>
+<pre><code>CACHE MANIFEST
+NETWORK;
+/tracking.cgi
+CACHE;
+/clcok.css
+/clock.js
+/clock-face.jpg</code></pre><p><strong>“网络”段不被缓存，离线状态请求报错</strong></p>
 <h3 id="“默认”部分"><a href="#“默认”部分" class="headerlink" title="“默认”部分"></a>“默认”部分</h3><p>“默认”段中，可以为那些由于一些原因无法被缓存或缓存失败的资源指定替代资源<br>例：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line">FALLBACK；</span><br><span class="line">/ /offline.html</span><br><span class="line">NETWORK;</span><br><span class="line">*</span><br></pre></td></tr></tbody></table></figure>
-<p>==/空格/offline.html==<br>好比维基百科只缓存访问过的页面，实现“懒加载”<br>空格前“/”表示一种URL匹配模式，它匹配了站点上所有页面（不仅仅是首页）<br>当离线状态下去访问站点页面时，浏览器会去应用缓存中查找该页面，如果找到了（因为之前在在线状态下访问的时候浏览器已经将其下载下来，并添加到了应用缓存中）那么直接显示出来，如果未找到，那就显示一个错误页面，即第二部分制定的更改错误页面（“/offline.html/”）</p>
-<p>==网络段中，“*”被称为线上白名单通配符，表示所有不在应用缓存中的资源仍然可以在在线状态下被下载下来</p>
+<pre><code>CACHE MANIFEST
+FALLBACK；
+/ /offline.html
+NETWORK;
+*</code></pre><p><strong>/空格/offline.html</strong><br>好比维基百科只缓存访问过的页面，实现“懒加载”<br>空格前“/”表示一种URL匹配模式，它匹配了站点上所有页面（不仅仅是首页）<br>当离线状态下去访问站点页面时，浏览器会去应用缓存中查找该页面，如果找到了（因为之前在在线状态下访问的时候浏览器已经将其下载下来，并添加到了应用缓存中）那么直接显示出来，如果未找到，那就显示一个错误页面，即第二部分制定的更改错误页面（“/offline.html/”）</p>
+<p>*<em>网络段中，“\</em>”被称为线上白名单通配符，表示所有不在应用缓存中的资源仍然可以在在线状态下被下载下来</p>
 <h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><p>当浏览器访问一个指向缓存清单文件的页面时，window.applicationCache对象上的一系列事会被浏览器触发</p>
 <ol>
 <li>浏览器访问的<code>&lt;html&gt;</code>元素设置manifest属性，checking事件就会被触发，不管之前访问过该页面还是访问过指向同一个缓存亲动感文件的其他页面，都会触发checking事件</li>
@@ -681,10 +698,17 @@
 <li>如果服务器计算出清单文件发生了改动，那么会返回一个HTTP200（完成）状态码，同时会将文件内容信息以及新的Cache-Control和最后一次修改时间HTTP响应头信息</li>
 </ol>
 <h2 id="第9章-疯狂的表单"><a href="#第9章-疯狂的表单" class="headerlink" title="第9章 疯狂的表单"></a>第9章 疯狂的表单</h2><p>让所有浏览器实现自动聚焦：<br>在想要自动聚焦的元素对应的html元素添加autofocus属性</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;form name = "f"&gt;</span><br><span class="line">	&lt;input id = "q" autofocus&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		if(!("autofocus" in document.createElement("input"))){</span><br><span class="line">			document.getElementById("q").focus();</span><br><span class="line">			}</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	&lt;input type = "submit" value = "Go"&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="第10章-“分布式”、“可扩展性”以及其他华丽辞藻"><a href="#第10章-“分布式”、“可扩展性”以及其他华丽辞藻" class="headerlink" title="第10章 “分布式”、“可扩展性”以及其他华丽辞藻"></a>第10章 “分布式”、“可扩展性”以及其他华丽辞藻</h2><h3 id="微数据"><a href="#微数据" class="headerlink" title="微数据"></a>微数据</h3><p>微数据围绕自定义词汇表做文章，使用来自自定义词汇表的、带作用域的名值对来给DOM做标记</p>
+<pre><code>&lt;form name = "f"&gt;
+    &lt;input id = "q" autofocus&gt;
+    &lt;script&gt;
+        if(!("autofocus" in document.createElement("input"))){
+            document.getElementById("q").focus();
+            }
+    &lt;/script&gt;
+    &lt;input type = "submit" value = "Go"&gt;
+&lt;/form&gt;</code></pre><h2 id="第10章-“分布式”、“可扩展性”以及其他华丽辞藻"><a href="#第10章-“分布式”、“可扩展性”以及其他华丽辞藻" class="headerlink" title="第10章 “分布式”、“可扩展性”以及其他华丽辞藻"></a>第10章 “分布式”、“可扩展性”以及其他华丽辞藻</h2><h3 id="微数据"><a href="#微数据" class="headerlink" title="微数据"></a>微数据</h3><p>微数据围绕自定义词汇表做文章，使用来自自定义词汇表的、带作用域的名值对来给DOM做标记</p>
 <p>微数据重用了DOM本身的层次级结构，提供一种方式来表达“所有该元素的属性都来自这个词汇表”<br>这允许在同一个页面上使用多个微数据词汇表，甚至可以词汇表嵌套</p>
-<p>==微数据的本质是给那些已经在页面上可见的数据再施加额外定义==</p>
+<p><strong>微数据的本质是给那些已经在页面上可见的数据再施加额外定义</strong></p>
 <h3 id="微数据的数据模型"><a href="#微数据的数据模型" class="headerlink" title="微数据的数据模型"></a>微数据的数据模型</h3><p>定义自己的微数据词汇表：</p>
 <ol>
 <li>需要一个命名空间，其实就是一个网址（挑一个自己拥有的域名）：<br>例：如果拥有data-vocabulary.org这个域名，我就使用<a href="http://data-vocabulary.org/Person这个URL地址来作为微词汇表命名空间，这就是创建一个全局唯一标识符的简单方法，就是挑一个你拥有的域名" target="_blank" rel="noopener">http://data-vocabulary.org/Person这个URL地址来作为微词汇表命名空间，这就是创建一个全局唯一标识符的简单方法，就是挑一个你拥有的域名</a></li>
@@ -693,16 +717,21 @@
 <p><strong>如果某个标签元素它适用此表中的元素规则，则只要在标签内添加：<code>&lt;标签 itemprop = "微定义(含义名)"&gt;内容&lt;/标签&gt;</code></strong></p>
 <p>通常在整个你想添加微数据到一些HTML元素属性时，首先要声明你用哪个微词表，使用itemtype属性来完成，后定义声明这个词汇表的作用域使用itemscope属性</p>
 <p>例：我们要让<code>&lt;section&gt;&lt;/section&gt;</code>内的数据有更好的语义化，那么</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;section itemscope itemtype = "htttp;//data-vocabulary.org/Person"&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>photo属性是一个URL，即</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&lt;img itemprop = "photo" src = "......" alt = [me smiling]"&gt;&lt;/p&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>URL属性自然也是一个URL</p>
+<pre><code>&lt;section itemscope itemtype = "htttp;//data-vocabulary.org/Person"&gt;</code></pre><p>photo属性是一个URL，即</p>
+<pre><code>&lt;p&gt;&lt;img itemprop = "photo" src = "......" alt = [me smiling]"&gt;&lt;/p&gt;</code></pre><p>URL属性自然也是一个URL</p>
 <p>要知道address属性本身是一个微数据项目，这意味着要添加itemtype属性和itemscope属性<br>address词汇表属性会遇到前面title/affiliation属性同样的问题，我们要将一整行地址文本标注为数个单独的数据属性</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;dd itemprop = "address" itemscope itemtype = "http://data-vocabulary.org/Address"&gt;</span><br><span class="line">&lt;span itemprop = "street-address"&gt;100 Main Street&lt;/span&gt;&lt;br&gt;</span><br><span class="line">&lt;span itemprop = "locality"&gt;Anytowm&lt;/span&gt;&lt;br&gt;</span><br><span class="line">&lt;span itemprop = "region"&gt;PA&lt;/span&gt;&lt;br&gt;</span><br><span class="line">&lt;span itemprop = "postal-code"&gt;19999&lt;/span&gt;&lt;br&gt;</span><br><span class="line">&lt;span itemprop = "country-name"&gt;USA&lt;/span&gt;&lt;br&gt;</span><br><span class="line">&lt;/dd&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>用自然语言表达就是，“这个人有一个邮政地址，地址街道部分是‘100 Main Street’。地区部分是‘Anytown’。州是‘PA’。邮政编码是‘19999’。国家名称是‘USA’。</p>
-<p>HTML5提供一种标注不可见数据的方法 ==（meta元素）==</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;span itemprop = "geo" itemscope itemtype = "http://data-vocabulary.org/Geo"&gt;</span><br><span class="line">&lt;meta itemprop = "latitude" content = "37.1"/&gt;</span><br><span class="line">&lt;meta itemprop = "longitude" content = "-22.078"/&gt;</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></tbody></table></figure>
-<script>
+<pre><code>&lt;dd itemprop = "address" itemscope itemtype = "http://data-vocabulary.org/Address"&gt;
+&lt;span itemprop = "street-address"&gt;100 Main Street&lt;/span&gt;&lt;br&gt;
+&lt;span itemprop = "locality"&gt;Anytowm&lt;/span&gt;&lt;br&gt;
+&lt;span itemprop = "region"&gt;PA&lt;/span&gt;&lt;br&gt;
+&lt;span itemprop = "postal-code"&gt;19999&lt;/span&gt;&lt;br&gt;
+&lt;span itemprop = "country-name"&gt;USA&lt;/span&gt;&lt;br&gt;
+&lt;/dd&gt;</code></pre><p>用自然语言表达就是，“这个人有一个邮政地址，地址街道部分是‘100 Main Street’。地区部分是‘Anytown’。州是‘PA’。邮政编码是‘19999’。国家名称是‘USA’。</p>
+<p>HTML5提供一种标注不可见数据的方法 <strong>（meta元素）</strong></p>
+<pre><code>&lt;span itemprop = "geo" itemscope itemtype = "http://data-vocabulary.org/Geo"&gt;
+&lt;meta itemprop = "latitude" content = "37.1"/&gt;
+&lt;meta itemprop = "longitude" content = "-22.078"/&gt;
+&lt;/span&gt;</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -731,7 +760,7 @@
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        文章作者:
+                        author:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -741,7 +770,7 @@
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        文章链接:
+                        link:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -751,13 +780,13 @@
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        版权声明:
+                        reprint:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
+                    use
+                    <a href="cc_by_url" rel="external nofollow noreferrer" target="_blank">cc_by_name</a>
+                    licensed
                     <a href="http://Haris-ha.github.io" target="_blank">哈立势</a>
                     !
                 </span>
@@ -767,7 +796,7 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        let toastHTML = '<span>pleaseFollowReprintPolicy</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">checkPolicy</a>';
         M.toast({html: toastHTML})
       });
 
@@ -782,7 +811,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                         </div>
                     
                 </div>
@@ -845,7 +874,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;prev</div>
             <div class="card">
                 <a href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89%E8%B5%B7%E6%AD%A5/">
                     <div class="card-image">
@@ -884,7 +913,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/10/28/%E3%80%8AHTML5%E6%8F%AD%E7%A7%98%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89/">
@@ -946,15 +975,11 @@
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;toc</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1091,7 +1116,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                     var today = new Date();
                     var startYear = "2019";
                     var startMonth = "10";
-                    var startDate = "27";
+                    var startDate = "24";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1164,8 +1189,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;search</span>
+            <input type="search" id="searchInput" name="s" placeholder="searchTip"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

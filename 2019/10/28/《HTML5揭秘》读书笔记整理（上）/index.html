@@ -178,7 +178,7 @@
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="search" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -529,7 +529,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                           </div>
                     
                 </div>
@@ -540,7 +540,7 @@
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>publishDate:&nbsp;&nbsp;
                     2019-10-28
                 </div>
                 
@@ -550,7 +550,7 @@
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="far fa-eye fa-fw"></i>readCount:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -560,7 +560,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="《HTML5揭秘》"><a href="#《HTML5揭秘》" class="headerlink" title="《HTML5揭秘》"></a>《HTML5揭秘》</h1><h2 id="第1章-从开始到现在"><a href="#第1章-从开始到现在" class="headerlink" title="第1章 从开始到现在"></a>第1章 从开始到现在</h2><p>每当web浏览器请求一个页面时，服务器会在发送实际页面之前先发送一些头信息（header），头信息通常不可见。</p>
-<p>最重要的头信息是 <strong>Content-Type</strong>，比如：<br>Content-Type：text/html</p>
+<p>最重要的头信息是 <strong>Content-Type</strong>，比如：<br><strong>Content-Type：text/html</strong></p>
 <p>“<strong>text/html</strong>”就是这个页面的“内容类型”，或者称为“<strong>MIME类型</strong>”，这个头信息将唯一确定某个资源本质是什么，因而决定其如何被呈现。</p>
 <p>JPEG图片的MIME类型：<strong>image/jpeg</strong>（本质是什么/如何被呈现）<br>PNG图片的MIME类型：<strong>image/png</strong>（本质是什么/如何被呈现）</p>
 <p>综述：凡是可以用一个URL地址定位的东西，比如HTML，图片，脚本，视频，PDF等等都具有特定的MIME类型。</p>
@@ -568,36 +568,62 @@
 <p>浏览器渲染web页面会构造DOM，用一个对象集来表示页面上的HTML元素。<br>所有的DOM对象共享一些公共属性，但有些对象会拥有特定属性，从这些特性DOM中寻找特性属性即检测哪些HTML5特性被支持。</p>
 <h3 id="四种检测HTML5特性方法"><a href="#四种检测HTML5特性方法" class="headerlink" title="四种检测HTML5特性方法"></a>四种检测HTML5特性方法</h3><p><strong>四种基本技术检测是否支持某种HTML5特性，从简到复杂为：</strong></p>
 <ol>
-<li>==检测全局对象（诸如window或者navigator）是否拥有特定属性==，以检测地理位置为例。</li>
-<li>==创建一个元素，检测该元素的DOM对象是否拥有特定属性==，以检测画布特性为例。</li>
-<li>==创建一个元素，检测该元素的DOM对象是否拥有特定方法，同时调用这个方法并检查它返回值==，以检测支持视频格式为例。</li>
-<li>==创建一个元素，给这个元素的DOM对象设定特定的属性值，然后检查浏览器是否保留了该属性==，以检测支持的<input>类型为例。</li>
+<li><strong>检测全局对象（诸如window或者navigator）是否拥有特定属性</strong>，以检测地理位置为例。</li>
+<li><strong>创建一个元素，检测该元素的DOM对象是否拥有特定属性</strong>，以检测画布特性为例。</li>
+<li><strong>创建一个元素，检测该元素的DOM对象是否拥有特定方法，同时调用这个方法并检查它返回值</strong>，以检测支持视频格式为例。</li>
+<li><strong>创建一个元素，给这个元素的DOM对象设定特定的属性值，然后检查浏览器是否保留了该属性</strong>，以检测支持的<code>&lt;input&gt;</code>类型为例。</li>
 </ol>
 <p><strong>Modernizr</strong>：一个HTML5特性检测库。<br>Modernizr是自动运行的，运行时会创建一个对应的布尔类型的属性，例如：如果你支持画布，则Modernizr.canvas的属性值是true，反之为flase。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(Modernizr.canvas){</span><br><span class="line">//开始画吧！</span><br><span class="line">}else{</span><br><span class="line">//浏览器不支持canvas</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="一些HTML5特性的检测"><a href="#一些HTML5特性的检测" class="headerlink" title="一些HTML5特性的检测"></a>一些HTML5特性的检测</h3><h5 id="画布（Canvas）"><a href="#画布（Canvas）" class="headerlink" title="画布（Canvas）"></a>画布（Canvas）</h5><p>方法2：如果浏览器支持canvas API，那么创建<canvas>元素对应的DOM对象会拥有getContext()这个方法。</canvas></p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function supports_canvas(){</span><br><span class="line">	return !!document.createElement('canvas').getContext;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>使用双重否定来强制让这个检测方法返回一个布尔值。</p>
+<pre><code>if(Modernizr.canvas){
+//开始画吧！
+}else{
+//浏览器不支持canvas
+}</code></pre><h3 id="一些HTML5特性的检测"><a href="#一些HTML5特性的检测" class="headerlink" title="一些HTML5特性的检测"></a>一些HTML5特性的检测</h3><h5 id="画布（Canvas）"><a href="#画布（Canvas）" class="headerlink" title="画布（Canvas）"></a>画布（Canvas）</h5><p>方法2：如果浏览器支持canvas API，那么创建<canvas>元素对应的DOM对象会拥有getContext()这个方法。</canvas></p>
+<pre><code>function supports_canvas(){
+    return !!document.createElement('canvas').getContext;
+}</code></pre><p>使用双重否定来强制让这个检测方法返回一个布尔值。</p>
 <h5 id="视频（Video）"><a href="#视频（Video）" class="headerlink" title="视频（Video）"></a>视频（Video）</h5><p>方法2：如果浏览器支持video，被创建的<video>元素对应的DOM对象会有一个名为canPlayType()的方法。</video></p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function supports_video(){</span><br><span class="line">	return !!document.createElement('video').canPlayType;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>同样可以调用Modernizr库来检测（Modernizr.video）。</p>
-<h5 id="视频格式（Formats）"><a href="#视频格式（Formats）" class="headerlink" title="视频格式（Formats）"></a>视频格式（Formats）</h5><p>编写视频的语言被称为：==编码算法（codec）==——将视频编码成比特流的算法。编码算法的分歧已经缩到两种：①Safari和iphone遵循的专利编码算法<br>②Chromium和Mozilla Firefox开源的编码算法<br>方法3：如果浏览器支持某种视频格式，被创建的<video>元素对应的DOM对象会有一个canPlayType()的方法，利用该方法可知道是否支持某种视频格式。</video></p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function supports_h264_baseline_video(){</span><br><span class="line">	if(!supports_video){return false;}</span><br><span class="line">	var v = document.createElement('video');</span><br><span class="line">	return v.canPlayType('video/mp4;codecs="avc1.42Eo1E,mp4a.40.2);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="本地存储（Local-Storage）"><a href="#本地存储（Local-Storage）" class="headerlink" title="本地存储（Local Storage）"></a>本地存储（Local Storage）</h5><p>cookie大小受限，每次请求新页面，cookie信息都会被发送回服务器，而HTML5本地存储，在用户计算机上，网站可以在页面加载完毕后通过Javascript获取。<br>方法1：如果浏览器支持本地存储，全局对象会有一个localStorage属性，反之，window对象的该属性值为undefined。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function supports_local_storage(){</span><br><span class="line">	return ('localStorage' in window)&amp;&amp;window['localStorage'] !== null;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="web-Workers"><a href="#web-Workers" class="headerlink" title="web Workers"></a>web Workers</h5><p>提供了一种标准的方式让浏览器能在后台运行JavaScript，通过web Worker可以产生“==多线程==”，这些“后台线程”可以在页面响应用户的滚屏、点击或输入时同时做一些诸如复杂数学运算、发送网络请求等事情。<br>方法1：全局对象window会有一个Worker属性，反之，该属性为undefined。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function supports_web_workers(){</span><br><span class="line">	return !!window.Worker;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="离线web应用（Offline-Web-Applications）"><a href="#离线web应用（Offline-Web-Applications）" class="headerlink" title="离线web应用（Offline Web Applications）"></a>离线web应用（Offline Web Applications）</h5><p>一旦浏览器下载了第一次访问的具有离线访问功能的web站点时的必须文件后，下次在没有网络的情况下，浏览器会使用下载的离线文件来访问该页面。<br>方法1：如果浏览器支持离线web应用，全局对象window回拥有一个名为applicationCache的属性，反之，该属性为undefined。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function supports_offline(){</span><br><span class="line">	return !!window.applicationCache;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="地理位置（Geolocation）"><a href="#地理位置（Geolocation）" class="headerlink" title="地理位置（Geolocation）"></a>地理位置（Geolocation）</h5><p>==定位的方法==：<br>①IP地址<br>②利用基站获取手机无线网络的接入位置<br>③通过能利用卫星定位系统获得经纬度信息的GPS设备。<br>方法1：如果浏览器支持地理位置API，全局对象navigator会有一个geolocation属性，反之，该属性为undefined。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function supports_geolocation(){</span><br><span class="line">	return !!navigator.geolocation;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="输入框类型（Input-Types）"><a href="#输入框类型（Input-Types）" class="headerlink" title="输入框类型（Input Types）"></a>输入框类型（Input Types）</h5><p>HTML5中定义了很多新输入框(input)类型：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   &lt;input type = "search"&gt;搜索框&lt;/br&gt;&lt;/br&gt;</span><br><span class="line">&lt;input type = "number"&gt;数字类型输入框&lt;/br&gt;&lt;/br&gt;</span><br><span class="line">&lt;input type = "range"&gt;范围选择滑块&lt;/br&gt;&lt;/br&gt;</span><br><span class="line">&lt;input type = "color"&gt;颜色选择器&lt;/br&gt;&lt;/br&gt;</span><br><span class="line">&lt;input type = "tel"&gt;电话号码输入框&lt;/br&gt;&lt;/br&gt;</span><br><span class="line">&lt;input type = "url"&gt;网址输入框&lt;/br&gt;&lt;/br&gt;</span><br><span class="line">&lt;input type = "email"&gt;地址输入框&lt;/br&gt;&lt;/br&gt;</span><br><span class="line">   &lt;input type = "date"&gt;日期选择器&lt;/br&gt;&lt;/br&gt;</span><br><span class="line">   &lt;input type = "month"&gt;月份输入框&lt;/br&gt;&lt;/br&gt;</span><br><span class="line">   &lt;input type = "week"&gt;星期输入框&lt;/br&gt;&lt;/br&gt;</span><br><span class="line">   &lt;input type = "time"&gt;时间戳输入框&lt;/br&gt;&lt;/br&gt;</span><br><span class="line">   &lt;input type = "datetime"&gt;精确日期/时间戳输入框&lt;/br&gt;&lt;/br&gt;</span><br><span class="line">   &lt;input type = "datetime-local"&gt;当地日期和输入框&lt;/br&gt;&lt;/br&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20181112203821893.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>方法4：创建一个虚拟的<code>&lt;input&gt;</code>元素，然后将input类型设置为要检测的类型，如果浏览器支持特定的输入框类型，那么设置的type属性会被保留，反之，浏览器会忽略设置的值，type属性依然为默认的text。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var i = document.createElement("input");</span><br><span class="line">i.setAttribute("type","color");</span><br><span class="line">return i.type !== "text";</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="占位文本（Placeholder-Text）"><a href="#占位文本（Placeholder-Text）" class="headerlink" title="占位文本（Placeholder Text）"></a>占位文本（Placeholder Text）</h5><p>当输入框为空或失去焦点的时候显示出来，一旦用户点击输入框（或者使用Tab键使其获得焦点），占位文本就会消失。<br>方法2：如果浏览器支持占位文本，创建的<code>&lt;input&gt;</code>元素对应的DOM对象会有一个placeholder属性，反之，该DOM对象没有该属性。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function supports_input_placeholder(){</span><br><span class="line">var i = document.createElement('input');</span><br><span class="line">return 'placeholder' in i;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="第3章-从这一切的含义"><a href="#第3章-从这一切的含义" class="headerlink" title="第3章 从这一切的含义"></a>第3章 从这一切的含义</h2><p>==文档类型（doctype）==</p>
+<pre><code>function supports_video(){
+    return !!document.createElement('video').canPlayType;
+}</code></pre><p>同样可以调用Modernizr库来检测（Modernizr.video）。</p>
+<h5 id="视频格式（Formats）"><a href="#视频格式（Formats）" class="headerlink" title="视频格式（Formats）"></a>视频格式（Formats）</h5><p>编写视频的语言被称为：<strong>编码算法（codec）</strong>——将视频编码成比特流的算法。编码算法的分歧已经缩到两种：①Safari和iphone遵循的专利编码算法<br>②Chromium和Mozilla Firefox开源的编码算法<br>方法3：如果浏览器支持某种视频格式，被创建的<video>元素对应的DOM对象会有一个canPlayType()的方法，利用该方法可知道是否支持某种视频格式。</video></p>
+<pre><code>function supports_h264_baseline_video(){
+    if(!supports_video){return false;}
+    var v = document.createElement('video');
+    return v.canPlayType('video/mp4;codecs="avc1.42Eo1E,mp4a.40.2);
+}</code></pre><h5 id="本地存储（Local-Storage）"><a href="#本地存储（Local-Storage）" class="headerlink" title="本地存储（Local Storage）"></a>本地存储（Local Storage）</h5><p>cookie大小受限，每次请求新页面，cookie信息都会被发送回服务器，而HTML5本地存储，在用户计算机上，网站可以在页面加载完毕后通过Javascript获取。<br>方法1：如果浏览器支持本地存储，全局对象会有一个localStorage属性，反之，window对象的该属性值为undefined。</p>
+<pre><code>function supports_local_storage(){
+    return ('localStorage' in window)&amp;&amp;window['localStorage'] !** null;
+}</code></pre><h5 id="web-Workers"><a href="#web-Workers" class="headerlink" title="web Workers"></a>web Workers</h5><p>提供了一种标准的方式让浏览器能在后台运行JavaScript，通过web Worker可以产生“<strong>多线程</strong>”，这些“后台线程”可以在页面响应用户的滚屏、点击或输入时同时做一些诸如复杂数学运算、发送网络请求等事情。<br>方法1：全局对象window会有一个Worker属性，反之，该属性为undefined。</p>
+<pre><code>function supports_web_workers(){
+    return !!window.Worker;
+}</code></pre><h5 id="离线web应用（Offline-Web-Applications）"><a href="#离线web应用（Offline-Web-Applications）" class="headerlink" title="离线web应用（Offline Web Applications）"></a>离线web应用（Offline Web Applications）</h5><p>一旦浏览器下载了第一次访问的具有离线访问功能的web站点时的必须文件后，下次在没有网络的情况下，浏览器会使用下载的离线文件来访问该页面。<br>方法1：如果浏览器支持离线web应用，全局对象window回拥有一个名为applicationCache的属性，反之，该属性为undefined。</p>
+<pre><code>function supports_offline(){
+    return !!window.applicationCache;
+}</code></pre><h5 id="地理位置（Geolocation）"><a href="#地理位置（Geolocation）" class="headerlink" title="地理位置（Geolocation）"></a>地理位置（Geolocation）</h5><p><strong>定位的方法</strong>：<br>①IP地址<br>②利用基站获取手机无线网络的接入位置<br>③通过能利用卫星定位系统获得经纬度信息的GPS设备。<br>方法1：如果浏览器支持地理位置API，全局对象navigator会有一个geolocation属性，反之，该属性为undefined。</p>
+<pre><code>function supports_geolocation(){
+    return !!navigator.geolocation;
+}</code></pre><h5 id="输入框类型（Input-Types）"><a href="#输入框类型（Input-Types）" class="headerlink" title="输入框类型（Input Types）"></a>输入框类型（Input Types）</h5><p>HTML5中定义了很多新输入框(input)类型：</p>
+<pre><code>&lt;input type = "search"&gt;搜索框&lt;/br&gt;&lt;/br&gt;
+&lt;input type = "number"&gt;数字类型输入框&lt;/br&gt;&lt;/br&gt;
+&lt;input type = "range"&gt;范围选择滑块&lt;/br&gt;&lt;/br&gt;
+&lt;input type = "color"&gt;颜色选择器&lt;/br&gt;&lt;/br&gt;
+&lt;input type = "tel"&gt;电话号码输入框&lt;/br&gt;&lt;/br&gt;
+&lt;input type = "url"&gt;网址输入框&lt;/br&gt;&lt;/br&gt;
+&lt;input type = "email"&gt;地址输入框&lt;/br&gt;&lt;/br&gt;
+&lt;input type = "date"&gt;日期选择器&lt;/br&gt;&lt;/br&gt;
+&lt;input type = "month"&gt;月份输入框&lt;/br&gt;&lt;/br&gt;
+&lt;input type = "week"&gt;星期输入框&lt;/br&gt;&lt;/br&gt;
+&lt;input type = "time"&gt;时间戳输入框&lt;/br&gt;&lt;/br&gt;
+&lt;input type = "datetime"&gt;精确日期/时间戳输入框&lt;/br&gt;&lt;/br&gt;
+&lt;input type = "datetime-local"&gt;当地日期和输入框&lt;/br&gt;&lt;/br&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181112203821893.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng**,size_16,color_FFFFFF,t_70" alt=""><br>方法4：创建一个虚拟的<code>&lt;input&gt;</code>元素，然后将input类型设置为要检测的类型，如果浏览器支持特定的输入框类型，那么设置的type属性会被保留，反之，浏览器会忽略设置的值，type属性依然为默认的text。</p>
+<pre><code>var i = document.createElement("input");
+i.setAttribute("type","color");
+return i.type !** "text";</code></pre><h5 id="占位文本（Placeholder-Text）"><a href="#占位文本（Placeholder-Text）" class="headerlink" title="占位文本（Placeholder Text）"></a>占位文本（Placeholder Text）</h5><p>当输入框为空或失去焦点的时候显示出来，一旦用户点击输入框（或者使用Tab键使其获得焦点），占位文本就会消失。<br>方法2：如果浏览器支持占位文本，创建的<code>&lt;input&gt;</code>元素对应的DOM对象会有一个placeholder属性，反之，该DOM对象没有该属性。</p>
+<pre><code>function supports_input_placeholder(){
+var i = document.createElement('input');
+return 'placeholder' in i;
+}</code></pre><h2 id="第3章-从这一切的含义"><a href="#第3章-从这一切的含义" class="headerlink" title="第3章 从这一切的含义"></a>第3章 从这一切的含义</h2><p><strong>文档类型（doctype）</strong></p>
 <blockquote>
 <p><del>!DOCTYPE html<br>PUBLIC “_//W3C//DTD XHTML 1.0 Strict//EN”<br>“<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml-strict.dtd" target="_blank" rel="noopener">http://www.w3.org/TR/xhtml1/DTD/xhtml-strict.dtd</a></del></p>
 </blockquote>
@@ -606,12 +632,23 @@
 <p>!DOCTYPE html</p>
 </blockquote>
 <p>一个页面的根元素始终是<code>&lt;html&gt;</code>元素<br>根元素的第一个元素通常是<code>&lt;head&gt;</code>元素，包含元数据——关于网页本身的信息，而不是网页主体。</p>
-<h3 id="朋友和（链接）关系"><a href="#朋友和（链接）关系" class="headerlink" title="朋友和（链接）关系"></a>朋友和（链接）关系</h3><p>链接关系（link relationship）提供一种解释为什么链接到那个页面。<br>==两种类别的链接可以由link元素创建，外部资源链接引入那些用于加强当前文档的资源，超链接则指向其他文档。==<br><strong>①rel = “stylesheet”</strong><br>②rel = “alternate”（该type属性值是Rss或者Atom等媒介类型，由此开启“聚合内容自动发现机制”）<br>③rel = “archives” 表示所引用文档描述了一组收藏，包括记录，文档或者有价值的材料<br>④rel = “author” 表示链接到该页面作者的相关信息<br>⑤rel = “external” 表示该链接指向一个和当前文档不同的，并不属于站点一部分的文档（访客留言中所含有的链接加上这个属性）<br>⑥rel = “start”，rel = “prev”，rel = “next” 表示一篇文章或博客的不同位置章节<br><strong>⑦rel = “icon”</strong> ，通常和shortcut一起使用，它们将页面与一个小图标相关联，通常这个小图标会显示在地址栏的网址旁边，或者浏览器的标签卡上，或者两处都显示。</p>
-<h3 id="浏览器如何处理未知元素"><a href="#浏览器如何处理未知元素" class="headerlink" title="浏览器如何处理未知元素"></a>浏览器如何处理未知元素</h3><p>==如果IE不识别一个元素，它就会在DOM中插入一个没有子节点的空节点，所有原本定义在其内的子元素，将全部转为它的兄弟元素，为此在使用IE不认识的标签之前，先用Js创建一个虚假的该元素，它并没有真正插入到DOM中，就可以为其设定样式了。==<br>实现如下：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--[if It IE 9]&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	var e = ("abbr,article,aside,audio,canvas,details,figure,footer,header,hgroup,"+</span><br><span class="line">	   "mark,menu,meter,nav,output,progress,section,time,video").split(',');</span><br><span class="line">	for (var i = 0;i&lt;e.length;i++){</span><br><span class="line">		document.createElement(e[i]);</span><br><span class="line">	}</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;![endif]--&gt;</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="HTML5语义元素"><a href="#HTML5语义元素" class="headerlink" title="HTML5语义元素"></a>HTML5语义元素</h3><h5 id="页头（Headers）"><a href="#页头（Headers）" class="headerlink" title="页头（Headers）"></a>页头（Headers）</h5><p>问题引发？HTML4并没有提供方法来标注副标题，它们无法避免地会被加入到文档大纲里。<br>解决方法：使用==hgroup==将两相关俩标题打包</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;header&gt;</span><br><span class="line">	&lt;hgroup&gt;</span><br><span class="line">		&lt;h1&gt;My weblog&lt;/h1&gt;</span><br><span class="line">		&lt;h2&gt;A lot of balabala...&lt;/h2&gt;</span><br><span class="line">	&lt;/hgroup&gt;</span><br><span class="line">&lt;/header&gt;</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="文章（Articles）"><a href="#文章（Articles）" class="headerlink" title="文章（Articles）"></a>文章（Articles）</h5><p>每个<code>&lt;article&gt;</code>中都可包含<code>&lt;h1&gt;</code>元素，这并不构成问题，所有东西都位于一个<code>&lt;article&gt;</code>容器内，该<code>&lt;article&gt;</code>元素定义了一个自包含的页面大纲节点，<code>&lt;h1&gt;</code>元素给这个节点提供了标题，页面上已有的章节元素也会保持其原有嵌套层级。</p>
+<h3 id="朋友和（链接）关系"><a href="#朋友和（链接）关系" class="headerlink" title="朋友和（链接）关系"></a>朋友和（链接）关系</h3><p>链接关系（link relationship）提供一种解释为什么链接到那个页面。<br><strong>两种类别的链接可以由link元素创建，外部资源链接引入那些用于加强当前文档的资源，超链接则指向其他文档。</strong><br><strong>①rel = “stylesheet”</strong><br>②rel = “alternate”（该type属性值是Rss或者Atom等媒介类型，由此开启“聚合内容自动发现机制”）<br>③rel = “archives” 表示所引用文档描述了一组收藏，包括记录，文档或者有价值的材料<br>④rel = “author” 表示链接到该页面作者的相关信息<br>⑤rel = “external” 表示该链接指向一个和当前文档不同的，并不属于站点一部分的文档（访客留言中所含有的链接加上这个属性）<br>⑥rel = “start”，rel = “prev”，rel = “next” 表示一篇文章或博客的不同位置章节<br><strong>⑦rel = “icon”</strong> ，通常和shortcut一起使用，它们将页面与一个小图标相关联，通常这个小图标会显示在地址栏的网址旁边，或者浏览器的标签卡上，或者两处都显示。</p>
+<h3 id="浏览器如何处理未知元素"><a href="#浏览器如何处理未知元素" class="headerlink" title="浏览器如何处理未知元素"></a>浏览器如何处理未知元素</h3><p><strong>如果IE不识别一个元素，它就会在DOM中插入一个没有子节点的空节点，所有原本定义在其内的子元素，将全部转为它的兄弟元素，为此在使用IE不认识的标签之前，先用Js创建一个虚假的该元素，它并没有真正插入到DOM中，就可以为其设定样式了。</strong><br>实现如下：</p>
+<pre><code>&lt;!--[if It IE 9]&gt;
+&lt;script&gt;
+    var e = ("abbr,article,aside,audio,canvas,details,figure,footer,header,hgroup,"+
+       "mark,menu,meter,nav,output,progress,section,time,video").split(',');
+    for (var i = 0;i&lt;e.length;i++){
+        document.createElement(e[i]);
+    }
+&lt;/script&gt;
+&lt;![endif]--&gt;</code></pre><h3 id="HTML5语义元素"><a href="#HTML5语义元素" class="headerlink" title="HTML5语义元素"></a>HTML5语义元素</h3><h5 id="页头（Headers）"><a href="#页头（Headers）" class="headerlink" title="页头（Headers）"></a>页头（Headers）</h5><p>问题引发？HTML4并没有提供方法来标注副标题，它们无法避免地会被加入到文档大纲里。<br>解决方法：使用<strong>hgroup</strong>将两相关俩标题打包</p>
+<pre><code>&lt;header&gt;
+    &lt;hgroup&gt;
+        &lt;h1&gt;My weblog&lt;/h1&gt;
+        &lt;h2&gt;A lot of balabala...&lt;/h2&gt;
+    &lt;/hgroup&gt;
+&lt;/header&gt;</code></pre><h5 id="文章（Articles）"><a href="#文章（Articles）" class="headerlink" title="文章（Articles）"></a>文章（Articles）</h5><p>每个<code>&lt;article&gt;</code>中都可包含<code>&lt;h1&gt;</code>元素，这并不构成问题，所有东西都位于一个<code>&lt;article&gt;</code>容器内，该<code>&lt;article&gt;</code>元素定义了一个自包含的页面大纲节点，<code>&lt;h1&gt;</code>元素给这个节点提供了标题，页面上已有的章节元素也会保持其原有嵌套层级。</p>
 <h5 id="日期（Dates-and-Times）"><a href="#日期（Dates-and-Times）" class="headerlink" title="日期（Dates and Times）"></a>日期（Dates and Times）</h5><p>HTML5中<code>&lt;time&gt;</code>元素由三部分组成：</p>
 <ul>
 <li><p>一个机器可识别的时间戳</p>
@@ -622,42 +659,85 @@
 <p>如果还想包含时间，在日期后面加上T，然后跟24消逝以及时区偏移量</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;time datetime = "2018-11-13T10:48:10-04:00" pubdate&gt;November 13，2018 10:48am</span><br><span class="line">&lt;/time&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>==pubdate==是一个布尔属性，需要写上即可，意义是如果该<code>&lt;time&gt;</code>位于一个<code>&lt;article&gt;</code>里，它表示该时间戳是文章发表的时间，如果不在<code>&lt;article&gt;</code>里，表示为整个文档发布时间。</p>
+<pre><code>&lt;time datetime = "2018-11-13T10:48:10-04:00" pubdate&gt;November 13，2018 10:48am
+&lt;/time&gt;</code></pre><p><strong>pubdate</strong>是一个布尔属性，需要写上即可，意义是如果该<code>&lt;time&gt;</code>位于一个<code>&lt;article&gt;</code>里，它表示该时间戳是文章发表的时间，如果不在<code>&lt;article&gt;</code>里，表示为整个文档发布时间。</p>
 <h5 id="导航（Navigation）"><a href="#导航（Navigation）" class="headerlink" title="导航（Navigation）"></a>导航（Navigation）</h5><p>导航语义性考虑情况：<br>①残障人士<br>②盲人（阅读器）</p>
 <h2 id="第4章-Canvas绘图"><a href="#第4章-Canvas绘图" class="headerlink" title="第4章 Canvas绘图"></a>第4章 Canvas绘图</h2><p>  HTML5中定义<code>&lt;canvas&gt;</code>元素为：“它是依赖分辨率的位图画布，可以在canvas上绘制任意图形，甚至加载图片”。</p>
 <p>  canvas是一块布，它什么都没有，需要用javascript来绘制图形。</p>
 <p>创建一个canvas，并给它一个id</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;canvas id = "a" width = "300" height = "225"&gt;&lt;/canvas&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>创建canvas后就有了==绘图上下文==（包含了所有绘制方法和属性的定义），我们调用它的getContext()方法，并传递一个“2d”参数给它。</p>
+<pre><code>&lt;canvas id = "a" width = "300" height = "225"&gt;&lt;/canvas&gt;</code></pre><p>创建canvas后就有了<strong>绘图上下文</strong>（包含了所有绘制方法和属性的定义），我们调用它的getContext()方法，并传递一个“2d”参数给它。</p>
 <p>画个矩形吧：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function draw_b(){</span><br><span class="line">	var b_canvas = document.getElementById("a");</span><br><span class="line">	var context = b_canvas.getContext("2d");</span><br><span class="line">	context.fillRect(50,25,150,100);</span><br><span class="line">	context.strokeRect(50,150,150,100);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20181113112017837.png" alt="在这里插入图片描述"><br>fillstyle可以设置css颜色、一个图案或种颜色渐变，fillstyle默认是纯黑色。<br>fillRect（x，y，width，height）（实心填充）<br>strokeRect（x，y，width，height） （描边绘制）<br>clearRect（x，y，width，height）（清除指定矩形区像素）</p>
-<h3 id="canvas小案例：网格坐标轴"><a href="#canvas小案例：网格坐标轴" class="headerlink" title="canvas小案例：网格坐标轴"></a>canvas小案例：网格坐标轴</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">window.onload = function startCanvas(){</span><br><span class="line">	var d_canvas = document.getElementById("d");</span><br><span class="line">	var context = d_canvas.getContext("2d");</span><br><span class="line">	for(var x=0.5;x&lt;500;x+=10){</span><br><span class="line">		context.moveTo(x,0);</span><br><span class="line">		context.lineTo(x,375);</span><br><span class="line">	}</span><br><span class="line">	for(var y=0.5;y&lt;375;y+=10){</span><br><span class="line">		context.moveTo(0,y);</span><br><span class="line">		context.lineTo(500,y);</span><br><span class="line">	}</span><br><span class="line">	context.strokeStyle = "#eee";</span><br><span class="line">	context.stroke();</span><br><span class="line"></span><br><span class="line">    context.beginPath();</span><br><span class="line">    context.moveTo(0,40);</span><br><span class="line">    context.lineTo(240,40);</span><br><span class="line">    context.moveTo(260,40);</span><br><span class="line">    context.lineTo(500,40);</span><br><span class="line">    context.moveTo(495,35);</span><br><span class="line">    context.lineTo(500,40);</span><br><span class="line">    context.lineTo(495,45);</span><br><span class="line">    context.moveTo(60,0);</span><br><span class="line">    context.lineTo(60,153);</span><br><span class="line">    context.moveTo(60,173);</span><br><span class="line">    context.lineTo(60,375);</span><br><span class="line">    context.moveTo(65,370);</span><br><span class="line">    context.lineTo(60,375);</span><br><span class="line">    context.lineTo(55,370);</span><br><span class="line">    context.strokeStyle = "#000";</span><br><span class="line">    context.stroke();</span><br><span class="line">    context.font = "bold 12px sans-serif";</span><br><span class="line">    context.fillText("x",248,43);</span><br><span class="line">    context.fillText("y",58,165);</span><br><span class="line">    context.textBaseline = "top";</span><br><span class="line">    context.fillText("(0,0)",8,5);</span><br><span class="line">    context.textAlign = "right";</span><br><span class="line">    context.textBaseline = "bottom";</span><br><span class="line">    context.fillText("(500,375)",492,370);</span><br><span class="line">    context.fillRect(0,0,3,3);</span><br><span class="line">    context.fillRect(497,372,3,3)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20181113112629678.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code>function draw_b(){
+    var b_canvas = document.getElementById("a");
+    var context = b_canvas.getContext("2d");
+    context.fillRect(50,25,150,100);
+    context.strokeRect(50,150,150,100);
+}</code></pre><p><img src="https://img-blog.csdnimg.cn/20181113112017837.png" alt=""><br>fillstyle可以设置css颜色、一个图案或种颜色渐变，fillstyle默认是纯黑色。<br>fillRect（x，y，width，height）（实心填充）<br>strokeRect（x，y，width，height） （描边绘制）<br>clearRect（x，y，width，height）（清除指定矩形区像素）</p>
+<h3 id="canvas小案例：网格坐标轴"><a href="#canvas小案例：网格坐标轴" class="headerlink" title="canvas小案例：网格坐标轴"></a>canvas小案例：网格坐标轴</h3><pre><code>window.onload = function startCanvas(){
+    var d_canvas = document.getElementById("d");
+    var context = d_canvas.getContext("2d");
+    for(var x=0.5;x&lt;500;x+=10){
+        context.moveTo(x,0);
+        context.lineTo(x,375);
+    }
+    for(var y=0.5;y&lt;375;y+=10){
+        context.moveTo(0,y);
+        context.lineTo(500,y);
+    }
+    context.strokeStyle = "#eee";
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(0,40);
+    context.lineTo(240,40);
+    context.moveTo(260,40);
+    context.lineTo(500,40);
+    context.moveTo(495,35);
+    context.lineTo(500,40);
+    context.lineTo(495,45);
+    context.moveTo(60,0);
+    context.lineTo(60,153);
+    context.moveTo(60,173);
+    context.lineTo(60,375);
+    context.moveTo(65,370);
+    context.lineTo(60,375);
+    context.lineTo(55,370);
+    context.strokeStyle = "#000";
+    context.stroke();
+    context.font = "bold 12px sans-serif";
+    context.fillText("x",248,43);
+    context.fillText("y",58,165);
+    context.textBaseline = "top";
+    context.fillText("(0,0)",8,5);
+    context.textAlign = "right";
+    context.textBaseline = "bottom";
+    context.fillText("(500,375)",492,370);
+    context.fillRect(0,0,3,3);
+    context.fillRect(497,372,3,3)
+}</code></pre><p><img src="https://img-blog.csdnimg.cn/20181113112629678.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng**,size_16,color_FFFFFF,t_70" alt=""></p>
 <p><strong>备注：</strong></p>
 <ul>
 <li>moveTo（x，y）把铅笔移到指定点并作为线条开始点</li>
 <li>lineTo（x，y）绘制线条到指定的结束点</li>
 </ul>
 <p>这些都是“铅笔”方法，其实并没有真正花到canvas上，还需要一个“画笔”方法，把图案绘制到canvas上去：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">context.strokestyle = "#eee";</span><br><span class="line">context.stroke();</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="文本（Text）"><a href="#文本（Text）" class="headerlink" title="文本（Text）"></a>文本（Text）</h3><p>canvas文本：没有浮动，没有边距，没有留白，也没有自动换行。<br>绘制上下文有一些字体属性：</p>
+<pre><code>context.strokestyle = "#eee";
+context.stroke();</code></pre><h3 id="文本（Text）"><a href="#文本（Text）" class="headerlink" title="文本（Text）"></a>文本（Text）</h3><p>canvas文本：没有浮动，没有边距，没有留白，也没有自动换行。<br>绘制上下文有一些字体属性：</p>
 <ul>
-<li>==font==包括字体样式、字体变种（font variant）、字体大小、字体粗细、行高和名称</li>
-<li>==textAlign==控制文字对齐方式，它类似于css中的text-align。可能的取值有start、end、left、right和center</li>
-<li>==textBaseline==控制文本相对于起点的位置。可能有top、hanging、middle、alphabetic和bottom</li>
+<li><strong>font</strong>包括字体样式、字体变种（font variant）、字体大小、字体粗细、行高和名称</li>
+<li><strong>textAlign</strong>控制文字对齐方式，它类似于css中的text-align。可能的取值有start、end、left、right和center</li>
+<li><strong>textBaseline</strong>控制文本相对于起点的位置。可能有top、hanging、middle、alphabetic和bottom</li>
 </ul>
-<p>==对于简单的英文字母：放心使用top，middle和bottom作为文本基线==</p>
+<p><strong>对于简单的英文字母：放心使用top，middle和bottom作为文本基线</strong></p>
 <h3 id="颜色渐变（Gradients）"><a href="#颜色渐变（Gradients）" class="headerlink" title="颜色渐变（Gradients）"></a>颜色渐变（Gradients）</h3><ul>
-<li>==createLinearGradient(x0,y0,x1,y1)== 沿着（x0，y0）至（x1，y1）绘制渐变</li>
-<li>==createRadialGradient(x0,y0,r0,x1,y1,r1)== 沿着两个圆之间的锥面绘制渐变。前三个参数代表开始的圆，圆心为（x0，y0），半径为r0。最后三个参数表示结束的圆，圆心为（x1，y1），半径为r1.</li>
+<li><strong>createLinearGradient(x0,y0,x1,y1)</strong> 沿着（x0，y0）至（x1，y1）绘制渐变</li>
+<li><strong>createRadialGradient(x0,y0,r0,x1,y1,r1)</strong> 沿着两个圆之间的锥面绘制渐变。前三个参数代表开始的圆，圆心为（x0，y0），半径为r0。最后三个参数表示结束的圆，圆心为（x1，y1），半径为r1.</li>
 </ul>
 <h3 id="图片（Images）"><a href="#图片（Images）" class="headerlink" title="图片（Images）"></a>图片（Images）</h3><p>canvas绘图上下文定义了几种绘制图片的方法：</p>
 <ul>
-<li>==drawImage(image,dx,dy)== dx,dy代表图片左上角</li>
-<li>==drawImage(image,dx,dy,dw,dh)== 将其缩放为宽dw，高dh位置</li>
-<li>==drawImage(image,sx,sy,sw,sh,dx,dy,dw,dh)== 通过参数（sx，sy，sw，sh）指定裁剪后缩放再放到dx，dy<br><img src="https://img-blog.csdnimg.cn/20181113131306582.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li><strong>drawImage(image,dx,dy)</strong> dx,dy代表图片左上角</li>
+<li><strong>drawImage(image,dx,dy,dw,dh)</strong> 将其缩放为宽dw，高dh位置</li>
+<li><strong>drawImage(image,sx,sy,sw,sh,dx,dy,dw,dh)</strong> 通过参数（sx，sy，sw，sh）指定裁剪后缩放再放到dx，dy<br><img src="https://img-blog.csdnimg.cn/20181113131306582.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng**,size_16,color_FFFFFF,t_70" alt=""></li>
 </ul>
 <h2 id="第5章-视频"><a href="#第5章-视频" class="headerlink" title="第5章 视频"></a>第5章 视频</h2><p>视频文件通常包含多个轨道：一个视频轨（无音频），加上一个或多个音频轨（无视频），轨道互联，音轨包含一些标记，辅助音频同步。</p>
 <p><strong>流行视频容器格式</strong><br> MPEG-4、Flash、ogg、webM，音视频交错。</p>
@@ -667,9 +747,9 @@
 <li>对视频流解码，并在屏幕上显示一幅幅图像</li>
 <li>对音频流解码，同时给扬声器传输声音信号</li>
 </ol>
-<p>==H.264为MPEG-4高级视频编码==</p>
+<p><strong>H.264为MPEG-4高级视频编码</strong></p>
 <h3 id="音频编解码器"><a href="#音频编解码器" class="headerlink" title="音频编解码器"></a>音频编解码器</h3><p>实际上也是一个算法，同视频一样，包括有损和无损两种。<br>音频流解码：对音频流解码并转换为电子波形，扬声器将电子波形转换为声音，大部分通用音频播放器解码器可以处理两个声道。<br>MP3歌曲可以最多包含两个声道，它们可以解码为不同的比特率：64kps、128kps以及192kps等中间一种</p>
-<p>高级音频编码==AAC==由苹果制造，目的是在相同比特率下提供比MP3更好的音质，它可以按任意比特率编码</p>
+<p>高级音频编码<strong>AAC</strong>由苹果制造，目的是在相同比特率下提供比MP3更好的音质，它可以按任意比特率编码</p>
 <h3 id="视频兼容"><a href="#视频兼容" class="headerlink" title="视频兼容"></a>视频兼容</h3><p>为了获得最大兼容性，处理视频流程大概是：</p>
 <ul>
 <li>制作一个ogg容器中使用Theora视频和Vorbis音频版本</li>
@@ -706,7 +786,7 @@
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        文章作者:
+                        author:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -716,7 +796,7 @@
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        文章链接:
+                        link:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -726,13 +806,13 @@
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        版权声明:
+                        reprint:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
+                    use
+                    <a href="cc_by_url" rel="external nofollow noreferrer" target="_blank">cc_by_name</a>
+                    licensed
                     <a href="http://Haris-ha.github.io" target="_blank">哈立势</a>
                     !
                 </span>
@@ -742,7 +822,7 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        let toastHTML = '<span>pleaseFollowReprintPolicy</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">checkPolicy</a>';
         M.toast({html: toastHTML})
       });
 
@@ -757,7 +837,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                         </div>
                     
                 </div>
@@ -820,7 +900,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;prev</div>
             <div class="card">
                 <a href="/2019/10/28/%E3%80%8AHTML5%E6%8F%AD%E7%A7%98%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%8B%EF%BC%89/">
                     <div class="card-image">
@@ -835,7 +915,8 @@
                     <div class="summary block-with-text">
                         
                             《HTML5探秘》第6章 地理位置地理位置API调用地理位置API从全局navigator对象的geolocation属性开始
-123function get_location(){	navigator.geolocation.getCur
+function get_location(){
+    navigator.geolocation.getCu
                         
                     </div>
                     <div class="publish-info">
@@ -857,7 +938,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/10/28/%E6%8E%8C%E6%8F%A1%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E5%89%8D%E9%A6%96%E5%85%88%E7%90%86%E8%A7%A3%E9%80%92%E5%BD%92%E8%A1%8C%E4%B8%BA/">
@@ -919,15 +1000,11 @@
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;toc</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -1064,7 +1141,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                     var today = new Date();
                     var startYear = "2019";
                     var startMonth = "10";
-                    var startDate = "27";
+                    var startDate = "24";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1137,8 +1214,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;search</span>
+            <input type="search" id="searchInput" name="s" placeholder="searchTip"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

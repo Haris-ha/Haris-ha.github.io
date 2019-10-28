@@ -180,7 +180,7 @@
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="search" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -531,7 +531,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                           </div>
                     
                 </div>
@@ -542,7 +542,7 @@
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>publishDate:&nbsp;&nbsp;
                     2019-10-28
                 </div>
                 
@@ -552,7 +552,7 @@
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="far fa-eye fa-fw"></i>readCount:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -565,21 +565,37 @@
 <p>近几日在用bootstrap开发项目，因为框架里js效果是基于jQuery来实现的，就决定从头整理一下jQuery</p>
 </blockquote>
 <h1 id="什么是jQuery"><a href="#什么是jQuery" class="headerlink" title="什么是jQuery"></a>什么是jQuery</h1><p>jQuery是一个快速、简洁的JavaScript框架,jQuery设计宗旨是：Write Less,Do More（写更少的代码,做更多的事情）</p>
-<h1 id="jQuery优势"><a href="#jQuery优势" class="headerlink" title="jQuery优势"></a>jQuery优势</h1><p>1.轻量级，话不多说看大小<br><img src="https://img-blog.csdnimg.cn/20181213150310663.png" alt="在这里插入图片描述"><br>2.兼容主流浏览器<br>jQuery 团体知道JS在不同浏览器中存在着大量的兼容性问题，目前jQuery兼容于所有主流浏览器, 包括Internet Explorer 6<br>3.操作比较方便<br>jQuery提供了强大的HTML元素选择功能。Sizzle引擎功能强大，能够支持CSS1到CSS3的所有选择器、Xpath选择器以及Jquery自定义选择器<br>4.优雅的语法规则<br>jQuery中最具特色的莫过于它的链式操作方式，即对发生在同一jQuery对象上的一组动作可直接连写而无需重复获取对象，这一点使得jQuery代码无比优雅<br>例：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(this).addClass("highlight").children("a").show().end()</span><br></pre></td></tr></tbody></table></figure>
-<p>5.完善的ajax<br>jQuery将所有的ajax操作封装到$.ajax()中，使得用户在处理ajax操作的时候能够专心处理业务逻辑而无需关注复杂的浏览器兼容性以及XMLHttpRequest对象创建和使用的问题</p>
+<h1 id="jQuery优势"><a href="#jQuery优势" class="headerlink" title="jQuery优势"></a>jQuery优势</h1><p>1.轻量级，话不多说看大小<br><img src="https://img-blog.csdnimg.cn/20181213150310663.png" alt=""><br>2.兼容主流浏览器<br>jQuery 团体知道JS在不同浏览器中存在着大量的兼容性问题，目前jQuery兼容于所有主流浏览器, 包括Internet Explorer 6<br>3.操作比较方便<br>jQuery提供了强大的HTML元素选择功能。Sizzle引擎功能强大，能够支持CSS1到CSS3的所有选择器、Xpath选择器以及Jquery自定义选择器<br>4.优雅的语法规则<br>jQuery中最具特色的莫过于它的链式操作方式，即对发生在同一jQuery对象上的一组动作可直接连写而无需重复获取对象，这一点使得jQuery代码无比优雅<br>例：</p>
+<pre><code>$(this).addClass("highlight").children("a").show().end()</code></pre><p>5.完善的ajax<br>jQuery将所有的ajax操作封装到$.ajax()中，使得用户在处理ajax操作的时候能够专心处理业务逻辑而无需关注复杂的浏览器兼容性以及XMLHttpRequest对象创建和使用的问题</p>
 <pre><code>$.ajax()可以完成 load( url, [data], [callback] ) 、$.get( url, [data], [callback] ) 、$.post( url, [data], [callback], [type] )以及$.getScript( url, [callback] ) 所做的事情</code></pre><h1 id="网页中添加jQuery"><a href="#网页中添加jQuery" class="headerlink" title="网页中添加jQuery"></a>网页中添加jQuery</h1><p>两种方法：</p>
 <ul>
 <li>从 jquery.com 下载 jQuery 库</li>
-<li>从 CDN 中载入 jQuery, 如从 Google 中加载 jQuery<br><img src="https://img-blog.csdnimg.cn/20181213152028269.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>从 CDN 中载入 jQuery, 如从 Google 中加载 jQuery<br><img src="https://img-blog.csdnimg.cn/20181213152028269.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></li>
 </ul>
 <p>也可以使用百度CDN：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="入门-hello-world"><a href="#入门-hello-world" class="headerlink" title="入门 hello world"></a>入门 hello world</h1><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery Intro&lt;/title&gt;</span><br><span class="line">        &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;button&gt;Click Me&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $(document).ready(function(){</span><br><span class="line">        $('button').on('click', function() { //event handler</span><br><span class="line">            alert('hello world');</span><br><span class="line">        });</span><br><span class="line">    });</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>运行点击按钮“Click Me”弹出一个提示框“hello world”</p>
+<pre><code>&lt;head&gt;
+&lt;script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"&gt;
+&lt;/script&gt;
+&lt;/head&gt;</code></pre><h1 id="入门-hello-world"><a href="#入门-hello-world" class="headerlink" title="入门 hello world"></a>入门 hello world</h1><pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery Intro&lt;/title&gt;
+        &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;button&gt;Click Me&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script type="text/javascript"&gt;
+    $(document).ready(function(){
+        $('button').on('click', function() { //event handler
+            alert('hello world');
+        });
+    });
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p>运行点击按钮“Click Me”弹出一个提示框“hello world”</p>
 <p><code>$(document).ready(function())</code>和我们熟悉的<code>window.onload</code>作用类似，它是为了防止文档在完全加载（就绪）之前运行 jQuery 代码，但两者有区别<br><code>window.onload</code>是页面中所有元素(包含元素关联的所有文件)都加载完毕后才执行<br>通过jQuery的<code>$(function())</code>，在DOM完全就绪时就可以被调用，此时页面上的所有元素对于jQuery而言都是可以访问的，但是这并不意味这这些元素的关联文件都已经加载完毕</p>
 <p>举例：一个大型图库网站，加载页面的时候为所有图片添加了某些样式。当我们使用<code>window.onload</code>的时候，需要等到页面上所有的图片都加载出来之后才执行给图片添加样式的行为。而<code>$(function())</code>只需要DOM就绪就可以执行了，不需要等待所有图片加载完毕，显而易见，<code>$(function())</code>相比于<code>window.onload</code>效果更好，它能提高web页面的加载速度</p>
-<h1 id="对于-的理解"><a href="#对于-的理解" class="headerlink" title="对于$的理解"></a>对于<code>$</code>的理解</h1><p>jQuery 语法是通过选取 HTML 元素，并对选取的元素执行某些操作</p>
+<h1 id="对于-的理解"><a href="#对于-的理解" class="headerlink" title="对于$的理解"></a>对于$的理解</h1><p>jQuery 语法是通过选取 HTML 元素，并对选取的元素执行某些操作</p>
 <p>基础语法： <code>$(selector).action()</code></p>
 <ul>
 <li>美元符号定义 jQuery</li>
@@ -588,8 +604,9 @@
 </ul>
 <p>$相当于定义这一系列操作都在jQuery上操作</p>
 <p>举例：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(this).hide() - 隐藏当前元素</span><br><span class="line">$("p").hide() - 隐藏所有 &lt;p&gt; 元素</span><br><span class="line">$("p.test").hide() - 隐藏所有 class="test" 的 &lt;p&gt; 元素</span><br></pre></td></tr></tbody></table></figure>
-<script>
+<pre><code>$(this).hide() - 隐藏当前元素
+$("p").hide() - 隐藏所有 &lt;p&gt; 元素
+$("p.test").hide() - 隐藏所有 class="test" 的 &lt;p&gt; 元素</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -618,7 +635,7 @@
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        文章作者:
+                        author:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -628,7 +645,7 @@
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        文章链接:
+                        link:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -638,13 +655,13 @@
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        版权声明:
+                        reprint:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
+                    use
+                    <a href="cc_by_url" rel="external nofollow noreferrer" target="_blank">cc_by_name</a>
+                    licensed
                     <a href="http://Haris-ha.github.io" target="_blank">哈立势</a>
                     !
                 </span>
@@ -654,7 +671,7 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        let toastHTML = '<span>pleaseFollowReprintPolicy</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">checkPolicy</a>';
         M.toast({html: toastHTML})
       });
 
@@ -669,7 +686,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                         </div>
                     
                 </div>
@@ -732,7 +749,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;prev</div>
             <div class="card">
                 <a href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%BA%8C%EF%BC%89%E9%80%89%E6%8B%A9%E5%99%A8/">
                     <div class="card-image">
@@ -772,7 +789,7 @@ $("p") — 选
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/10/28/%E3%80%8AHTML5%E6%8F%AD%E7%A7%98%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%8B%EF%BC%89/">
@@ -788,7 +805,8 @@ $("p") — 选
                     <div class="summary block-with-text">
                         
                             《HTML5探秘》第6章 地理位置地理位置API调用地理位置API从全局navigator对象的geolocation属性开始
-123function get_location(){	navigator.geolocation.getCur
+function get_location(){
+    navigator.geolocation.getCu
                         
                     </div>
                     <div class="publish-info">
@@ -834,15 +852,11 @@ $("p") — 选
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;toc</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -979,7 +993,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                     var today = new Date();
                     var startYear = "2019";
                     var startMonth = "10";
-                    var startDate = "27";
+                    var startDate = "24";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1052,8 +1066,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;search</span>
+            <input type="search" id="searchInput" name="s" placeholder="searchTip"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

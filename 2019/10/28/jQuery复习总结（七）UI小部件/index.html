@@ -183,7 +183,7 @@ jQuery UI实例
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="search" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -534,7 +534,7 @@ jQuery UI实例
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                           </div>
                     
                 </div>
@@ -545,7 +545,7 @@ jQuery UI实例
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>publishDate:&nbsp;&nbsp;
                     2019-10-28
                 </div>
                 
@@ -555,7 +555,7 @@ jQuery UI实例
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="far fa-eye fa-fw"></i>readCount:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -567,46 +567,393 @@ jQuery UI实例
                 <blockquote>
 <p>jQuery UI 是一个建立在 jQuery JavaScript 库上的小部件和交互库</p>
 </blockquote>
-<h1 id="jQuery-UI"><a href="#jQuery-UI" class="headerlink" title="jQuery UI"></a>jQuery UI</h1><h2 id="jQuery-UI-特性"><a href="#jQuery-UI-特性" class="headerlink" title="jQuery UI 特性"></a>jQuery UI 特性</h2><p><img src="https://img-blog.csdnimg.cn/20181217144313826.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="jQuery-UI-下载"><a href="#jQuery-UI-下载" class="headerlink" title="jQuery UI 下载"></a>jQuery UI 下载</h2><p><a href="http://jqueryui.com/download/" target="_blank" rel="noopener">下载生成器</a><br><img src="https://img-blog.csdnimg.cn/20181217145935677.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="jQuery-UI实例"><a href="#jQuery-UI实例" class="headerlink" title="jQuery UI实例"></a>jQuery UI实例</h2><p><img src="https://img-blog.csdnimg.cn/20181217150254855.png" alt="在这里插入图片描述"></p>
+<h1 id="jQuery-UI"><a href="#jQuery-UI" class="headerlink" title="jQuery UI"></a>jQuery UI</h1><h2 id="jQuery-UI-特性"><a href="#jQuery-UI-特性" class="headerlink" title="jQuery UI 特性"></a>jQuery UI 特性</h2><p><img src="https://img-blog.csdnimg.cn/20181217144313826.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
+<h2 id="jQuery-UI-下载"><a href="#jQuery-UI-下载" class="headerlink" title="jQuery UI 下载"></a>jQuery UI 下载</h2><p><a href="http://jqueryui.com/download/" target="_blank" rel="noopener">下载生成器</a><br><img src="https://img-blog.csdnimg.cn/20181217145935677.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
+<h2 id="jQuery-UI实例"><a href="#jQuery-UI实例" class="headerlink" title="jQuery UI实例"></a>jQuery UI实例</h2><p><img src="https://img-blog.csdnimg.cn/20181217150254855.png" alt=""></p>
 <h4 id="拖动（Draggable）"><a href="#拖动（Draggable）" class="headerlink" title="拖动（Draggable）"></a>拖动（Draggable）</h4><p>在任意的 DOM 元素上启用 draggable 功能。通过鼠标点击并在视区中拖动来移动 draggable 对象</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery UI&lt;/title&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line">			.block {</span><br><span class="line">			    width: 100px;</span><br><span class="line">			    height: 100px;</span><br><span class="line">			    background-color: yellow;</span><br><span class="line">			    border: 1px solid yellow;</span><br><span class="line">			}</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class="block"&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class="drop"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src="js.js/jquery-ui.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">        $(document).ready(function(){</span><br><span class="line">             $('.block').draggable();</span><br><span class="line">             $('.block').draggable({helper: 'clone', opacity: 0.5});</span><br><span class="line">        });</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/20181217151231679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>将想要拖动的元素，用选择器在后面加上draggable()即可<br>注意：这样拖动是拖动它的本体元素，拖到哪放到哪，如果拖出浏览器视口，就找不到了<br>为此我们可以给它加<code>helper:clone</code>这样拖动的是它的复制品，并且可以给它添加透明度的属性，改变透明度</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery UI&lt;/title&gt;
+        &lt;style&gt;
+            .block {
+                width: 100px;
+                height: 100px;
+                background-color: yellow;
+                border: 1px solid yellow;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="block"&gt;&lt;/div&gt;
+        &lt;div class="drop"&gt;&lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="js.js/jquery-ui.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        $(document).ready(function(){
+             $('.block').draggable();
+             $('.block').draggable({helper: 'clone', opacity: 0.5});
+        });
+    &lt;/script&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181217151231679.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""><br>将想要拖动的元素，用选择器在后面加上draggable()即可<br>注意：这样拖动是拖动它的本体元素，拖到哪放到哪，如果拖出浏览器视口，就找不到了<br>为此我们可以给它加<code>helper:clone</code>这样拖动的是它的复制品，并且可以给它添加透明度的属性，改变透明度</p>
 <p>约束运动： <code>$( "#draggable" ).draggable({ axis: "y" });</code>沿着y轴拖拽<br>约束边界：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id="containment-wrapper"&gt;</span><br><span class="line"> &lt;div id="draggable3" class="draggable ui-widget-content"&gt;</span><br><span class="line">    &lt;p&gt;我被约束在盒子里&lt;/p&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line">//#containment-wrapper { width: 95%; height:150px; border:2px solid #ccc; padding: 10px; } 定义外层盒子的大小样式形成约束</span><br></pre></td></tr></tbody></table></figure>
-<p>延迟开始：通过 delay 选项设置延迟开始拖拽的毫秒数<br>通过 distance 选项设置光标被按下且拖拽指定像素后才允许拖拽</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$( "#draggable" ).draggable({ distance: 20 });</span><br><span class="line">$( "#draggable2" ).draggable({ delay: 1000 });</span><br></pre></td></tr></tbody></table></figure>
-<p>还有很多功能查看文档</p>
+<pre><code>&lt;div id="containment-wrapper"&gt;
+ &lt;div id="draggable3" class="draggable ui-widget-content"&gt;
+    &lt;p&gt;我被约束在盒子里&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+//#containment-wrapper { width: 95%; height:150px; border:2px solid #ccc; padding: 10px; } 定义外层盒子的大小样式形成约束</code></pre><p>延迟开始：通过 delay 选项设置延迟开始拖拽的毫秒数<br>通过 distance 选项设置光标被按下且拖拽指定像素后才允许拖拽</p>
+<pre><code>$( "#draggable" ).draggable({ distance: 20 });
+$( "#draggable2" ).draggable({ delay: 1000 });</code></pre><p>还有很多功能查看文档</p>
 <h4 id="放置（Droppable）"><a href="#放置（Droppable）" class="headerlink" title="放置（Droppable）"></a>放置（Droppable）</h4><p>在任意的 DOM 元素上启用 droppable 功能，并为可拖拽小部件创建目标</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery UI&lt;/title&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line">			.block {</span><br><span class="line">			    width: 100px;</span><br><span class="line">			    height: 100px;</span><br><span class="line">			    background-color: yellow;</span><br><span class="line">			    border: 1px solid yellow;</span><br><span class="line">			}</span><br><span class="line">			.drop {</span><br><span class="line">			    width: 100px;</span><br><span class="line">			    height: 100px;</span><br><span class="line">			    border: 1px dashed black;</span><br><span class="line">			    opacity: 0.5;</span><br><span class="line">			}</span><br><span class="line">			.droppable-active {</span><br><span class="line">    			     border: 1px solid red;</span><br><span class="line">			}</span><br><span class="line">			.droppable-hover {</span><br><span class="line">   		             background-color: red;</span><br><span class="line">			}</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;div class="block"&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class="drop"&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src="js.js/jquery-ui.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">        $(document).ready(function(){</span><br><span class="line">			 $('.block').draggable();</span><br><span class="line">             $('.drop').droppable({</span><br><span class="line">                  accept: '.block',</span><br><span class="line">                  activeClass: 'droppable-active',</span><br><span class="line">                  hoverClass: 'droppable-hover',</span><br><span class="line">                  drop: function(ev, ui) {</span><br><span class="line">                      $(this).append('&lt;br&gt;Dropped!');</span><br><span class="line">                  }</span><br><span class="line">              });</span><br><span class="line">        });</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20181217155036614.png" alt="在这里插入图片描述"><br>更多查文档</p>
-<h4 id="排序（Sortable）"><a href="#排序（Sortable）" class="headerlink" title="排序（Sortable）"></a>排序（Sortable）</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery UI&lt;/title&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line">	     li {</span><br><span class="line">	        background-color: #eee;</span><br><span class="line">	        margin: 10px;</span><br><span class="line">	        list-style-type: none;</span><br><span class="line">	        }</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;ul class="sort"&gt;</span><br><span class="line">        	&lt;li&gt;1&lt;/li&gt;</span><br><span class="line">        	&lt;li&gt;2&lt;/li&gt;</span><br><span class="line">        	&lt;li&gt;3&lt;/li&gt;</span><br><span class="line">        	&lt;li&gt;4&lt;/li&gt;</span><br><span class="line">        	&lt;li&gt;5&lt;/li&gt;</span><br><span class="line">        	&lt;li&gt;6&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src="js.js/jquery-ui.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">        $(document).ready(function(){</span><br><span class="line">			$('.sort').sortable({ axis: "y" });</span><br><span class="line">        });</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/20181217155629708.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>每一个li元素都是可拖动的，并且可以放在列表里的任何位置，但是它们的拖动被限制在只能纵向变化拖动</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery UI&lt;/title&gt;
+        &lt;style&gt;
+            .block {
+                width: 100px;
+                height: 100px;
+                background-color: yellow;
+                border: 1px solid yellow;
+            }
+            .drop {
+                width: 100px;
+                height: 100px;
+                border: 1px dashed black;
+                opacity: 0.5;
+            }
+            .droppable-active {
+                     border: 1px solid red;
+            }
+            .droppable-hover {
+                        background-color: red;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="block"&gt;&lt;/div&gt;
+        &lt;div class="drop"&gt;&lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="js.js/jquery-ui.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        $(document).ready(function(){
+             $('.block').draggable();
+             $('.drop').droppable({
+                  accept: '.block',
+                  activeClass: 'droppable-active',
+                  hoverClass: 'droppable-hover',
+                  drop: function(ev, ui) {
+                      $(this).append('&lt;br&gt;Dropped!');
+                  }
+              });
+        });
+    &lt;/script&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181217155036614.png" alt=""><br>更多查文档</p>
+<h4 id="排序（Sortable）"><a href="#排序（Sortable）" class="headerlink" title="排序（Sortable）"></a>排序（Sortable）</h4><pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery UI&lt;/title&gt;
+        &lt;style&gt;
+         li {
+            background-color: #eee;
+            margin: 10px;
+            list-style-type: none;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;ul class="sort"&gt;
+            &lt;li&gt;1&lt;/li&gt;
+            &lt;li&gt;2&lt;/li&gt;
+            &lt;li&gt;3&lt;/li&gt;
+            &lt;li&gt;4&lt;/li&gt;
+            &lt;li&gt;5&lt;/li&gt;
+            &lt;li&gt;6&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/body&gt;
+    &lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="js.js/jquery-ui.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        $(document).ready(function(){
+            $('.sort').sortable({ axis: "y" });
+        });
+    &lt;/script&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181217155629708.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""><br>每一个li元素都是可拖动的，并且可以放在列表里的任何位置，但是它们的拖动被限制在只能纵向变化拖动</p>
 <h4 id="选择（Selectable）"><a href="#选择（Selectable）" class="headerlink" title="选择（Selectable）"></a>选择（Selectable）</h4><p>使用鼠标选择单个元素或一组元素</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery UI&lt;/title&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line">	     li {</span><br><span class="line">	        background-color: #eee;</span><br><span class="line">	        margin: 10px;</span><br><span class="line">	        list-style-type: none;</span><br><span class="line">	        }</span><br><span class="line">			.sort .ui-selecting {</span><br><span class="line">			    background-color: red;</span><br><span class="line">			}</span><br><span class="line">			.sort .ui-selected {</span><br><span class="line">				background-color: yellow;</span><br><span class="line">			}</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;ul class="sort"&gt;</span><br><span class="line">        	&lt;li&gt;1&lt;/li&gt;</span><br><span class="line">        	&lt;li&gt;2&lt;/li&gt;</span><br><span class="line">        	&lt;li&gt;3&lt;/li&gt;</span><br><span class="line">        	&lt;li&gt;4&lt;/li&gt;</span><br><span class="line">        	&lt;li&gt;5&lt;/li&gt;</span><br><span class="line">        	&lt;li&gt;6&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src="js.js/jquery-ui.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">        $(document).ready(function(){</span><br><span class="line">			//$('.sort').sortable({ axis: "y" });</span><br><span class="line">			$('.sort').selectable();</span><br><span class="line">        });</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/20181217161011961.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>为列表添加被点击时产生的样式，支持单选和按住ctrl多选</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery UI&lt;/title&gt;
+        &lt;style&gt;
+         li {
+            background-color: #eee;
+            margin: 10px;
+            list-style-type: none;
+            }
+            .sort .ui-selecting {
+                background-color: red;
+            }
+            .sort .ui-selected {
+                background-color: yellow;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;ul class="sort"&gt;
+            &lt;li&gt;1&lt;/li&gt;
+            &lt;li&gt;2&lt;/li&gt;
+            &lt;li&gt;3&lt;/li&gt;
+            &lt;li&gt;4&lt;/li&gt;
+            &lt;li&gt;5&lt;/li&gt;
+            &lt;li&gt;6&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/body&gt;
+    &lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="js.js/jquery-ui.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        $(document).ready(function(){
+            //$('.sort').sortable({ axis: "y" });
+            $('.sort').selectable();
+        });
+    &lt;/script&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181217161011961.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""><br>为列表添加被点击时产生的样式，支持单选和按住ctrl多选</p>
 <h4 id="改变大小（Resizable）"><a href="#改变大小（Resizable）" class="headerlink" title="改变大小（Resizable）"></a>改变大小（Resizable）</h4><p>使用鼠标改变元素的尺寸<br>在选择器后加上Resizable()即可，更多看文档，不赘述</p>
 <h4 id="折叠菜单（Accordion）"><a href="#折叠菜单（Accordion）" class="headerlink" title="折叠菜单（Accordion）"></a>折叠菜单（Accordion）</h4><p>在一个有限的空间内显示用于呈现信息的可折叠的内容面板</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;JQuery UI&lt;/title&gt;</span><br><span class="line">	  &lt;link rel="stylesheet" href="js.js/jquery-ui.css"&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id="accordion"&gt;</span><br><span class="line">			&lt;div&gt;Section 1&lt;/div&gt;</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;p&gt;</span><br><span class="line">					Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer</span><br><span class="line">					ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit</span><br><span class="line">					amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut</span><br><span class="line">					odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.</span><br><span class="line">				&lt;/p&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;h3&gt;Section 2&lt;/h3&gt;</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;p&gt;</span><br><span class="line">					Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet</span><br><span class="line">					purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor</span><br><span class="line">					velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In</span><br><span class="line">					suscipit faucibus urna.</span><br><span class="line">				&lt;/p&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;h3&gt;Section 3&lt;/h3&gt;</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;p&gt;</span><br><span class="line">					Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.</span><br><span class="line">					Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero</span><br><span class="line">					ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis</span><br><span class="line">					lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.</span><br><span class="line">				&lt;/p&gt;</span><br><span class="line">				&lt;ul&gt;</span><br><span class="line">					&lt;li&gt;List item one&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;List item two&lt;/li&gt;</span><br><span class="line">					&lt;li&gt;List item three&lt;/li&gt;</span><br><span class="line">				&lt;/ul&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;h3&gt;Section 4&lt;/h3&gt;</span><br><span class="line">			&lt;div&gt;</span><br><span class="line">				&lt;p&gt;</span><br><span class="line">					Cras dictum. Pellentesque habitant morbi tristique senectus et netus</span><br><span class="line">					et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in</span><br><span class="line">					faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia</span><br><span class="line">					mauris vel est.</span><br><span class="line">				&lt;/p&gt;</span><br><span class="line">				&lt;p&gt;</span><br><span class="line">					Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.</span><br><span class="line">					Class aptent taciti sociosqu ad litora torquent per conubia nostra, per</span><br><span class="line">					inceptos himenaeos.</span><br><span class="line">				&lt;/p&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script src="js.js/jquery-ui.min.js"&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		$(document).ready(function() {</span><br><span class="line">			$("#accordion").accordion({</span><br><span class="line">				collapsible: true</span><br><span class="line">			});</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/20181217170633603.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>==注意==：<br>一定要引入<code>jquery-ui.css</code> 否则毫无样式 也没有这样的边框<br>更多看文档</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery UI&lt;/title&gt;
+      &lt;link rel="stylesheet" href="js.js/jquery-ui.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="accordion"&gt;
+            &lt;div&gt;Section 1&lt;/div&gt;
+            &lt;div&gt;
+                &lt;p&gt;
+                    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+                    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+                    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+                    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+                &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;h3&gt;Section 2&lt;/h3&gt;
+            &lt;div&gt;
+                &lt;p&gt;
+                    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+                    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+                    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+                    suscipit faucibus urna.
+                &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;h3&gt;Section 3&lt;/h3&gt;
+            &lt;div&gt;
+                &lt;p&gt;
+                    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+                    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+                    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+                    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+                &lt;/p&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;List item one&lt;/li&gt;
+                    &lt;li&gt;List item two&lt;/li&gt;
+                    &lt;li&gt;List item three&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;h3&gt;Section 4&lt;/h3&gt;
+            &lt;div&gt;
+                &lt;p&gt;
+                    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+                    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+                    mauris vel est.
+                &lt;/p&gt;
+                &lt;p&gt;
+                    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+                    inceptos himenaeos.
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="js.js/jquery-ui.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        $(document).ready(function() {
+            $("#accordion").accordion({
+                collapsible: true
+            });
+        });
+    &lt;/script&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181217170633603.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""><br>==注意==：<br>一定要引入<code>jquery-ui.css</code> 否则毫无样式 也没有这样的边框<br>更多看文档</p>
 <h4 id="对话框（Dialog-）"><a href="#对话框（Dialog-）" class="headerlink" title="对话框（Dialog ）"></a>对话框（Dialog ）</h4><p>在一个交互覆盖层中打开内容</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;JQuery UI&lt;/title&gt;</span><br><span class="line">	  &lt;link rel="stylesheet" href="js.js/jquery-ui.css"&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id="dialog" title="Haris dialog"&gt;</span><br><span class="line">			&lt;p&gt;This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script src="js.js/jquery-ui.min.js"&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		$(document).ready(function() {</span><br><span class="line">			$( "#dialog" ).dialog({</span><br><span class="line">			     buttons: [{</span><br><span class="line">			         text: "Ok",</span><br><span class="line">			         click: function() {</span><br><span class="line">			             $( this ).dialog( "close" );</span><br><span class="line">			         }</span><br><span class="line">			     }]</span><br><span class="line">			 });</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/20181217171220303.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>点击关闭和ok都会关闭对话框 更多功能看文档</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery UI&lt;/title&gt;
+      &lt;link rel="stylesheet" href="js.js/jquery-ui.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div id="dialog" title="Haris dialog"&gt;
+            &lt;p&gt;This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="js.js/jquery-ui.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        $(document).ready(function() {
+            $( "#dialog" ).dialog({
+                 buttons: [{
+                     text: "Ok",
+                     click: function() {
+                         $( this ).dialog( "close" );
+                     }
+                 }]
+             });
+        });
+    &lt;/script&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181217171220303.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""><br>点击关闭和ok都会关闭对话框 更多功能看文档</p>
 <h4 id="滑动条（Slider）"><a href="#滑动条（Slider）" class="headerlink" title="滑动条（Slider）"></a>滑动条（Slider）</h4><p>拖动手柄来选择一个数值</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;JQuery UI&lt;/title&gt;</span><br><span class="line">		&lt;link rel="stylesheet" href="js.js/jquery-ui.css"&gt;</span><br><span class="line">		&lt;style&gt;</span><br><span class="line">			#red, #green, #blue {</span><br><span class="line">    float: left;</span><br><span class="line">    clear: left;</span><br><span class="line">    width: 300px;</span><br><span class="line">    margin: 15px;</span><br><span class="line">  }</span><br><span class="line">  #swatch {</span><br><span class="line">    width: 120px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    margin-top: 18px;</span><br><span class="line">    margin-left: 350px;</span><br><span class="line">    background-image: none;</span><br><span class="line">  }</span><br><span class="line">  #red .ui-slider-range { background: #ef2929; }</span><br><span class="line">  #red .ui-slider-handle { border-color: #ef2929; }</span><br><span class="line">  #green .ui-slider-range { background: #8ae234; }</span><br><span class="line">  #green .ui-slider-handle { border-color: #8ae234; }</span><br><span class="line">  #blue .ui-slider-range { background: #729fcf; }</span><br><span class="line">  #blue .ui-slider-handle { border-color: #729fcf; }</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body class="ui-widget-content" style="border:0;"&gt;</span><br><span class="line"></span><br><span class="line">		&lt;p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;"&gt;</span><br><span class="line">			&lt;span class="ui-icon ui-icon-pencil" style="float:left; margin:-2px 5px 0 0;"&gt;&lt;/span&gt;</span><br><span class="line">			简单的颜色选择器</span><br><span class="line">		&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">		&lt;div id="red"&gt;&lt;/div&gt;</span><br><span class="line">		&lt;div id="green"&gt;&lt;/div&gt;</span><br><span class="line">		&lt;div id="blue"&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">		&lt;div id="swatch" class="ui-widget-content ui-corner-all"&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">	&lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script src="js.js/jquery-ui.min.js"&gt;&lt;/script&gt;</span><br><span class="line">	&lt;script type="text/javascript"&gt;</span><br><span class="line">		function hexFromRGB(r, g, b) {</span><br><span class="line">			var hex = [</span><br><span class="line">				r.toString(16),</span><br><span class="line">				g.toString(16),</span><br><span class="line">				b.toString(16)</span><br><span class="line">			];</span><br><span class="line">			$.each(hex, function(nr, val) {</span><br><span class="line">				if (val.length === 1) {</span><br><span class="line">					hex[nr] = "0" + val;</span><br><span class="line">				}</span><br><span class="line">			});</span><br><span class="line">			return hex.join("").toUpperCase();</span><br><span class="line">		}</span><br><span class="line"></span><br><span class="line">		function refreshSwatch() {</span><br><span class="line">			var red = $("#red").slider("value"),</span><br><span class="line">				green = $("#green").slider("value"),</span><br><span class="line">				blue = $("#blue").slider("value"),</span><br><span class="line">				hex = hexFromRGB(red, green, blue);</span><br><span class="line">			$("#swatch").css("background-color", "#" + hex);</span><br><span class="line">		}</span><br><span class="line">		$(function() {</span><br><span class="line">			$("#red, #green, #blue").slider({</span><br><span class="line">				orientation: "horizontal",</span><br><span class="line">				range: "min",</span><br><span class="line">				max: 255,</span><br><span class="line">				value: 127,</span><br><span class="line">				slide: refreshSwatch,</span><br><span class="line">				change: refreshSwatch</span><br><span class="line">			});</span><br><span class="line">			$("#red").slider("value", 255);</span><br><span class="line">			$("#green").slider("value", 140);</span><br><span class="line">			$("#blue").slider("value", 60);</span><br><span class="line">		});</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery UI&lt;/title&gt;
+        &lt;link rel="stylesheet" href="js.js/jquery-ui.css"&gt;
+        &lt;style&gt;
+            #red, #green, #blue {
+    float: left;
+    clear: left;
+    width: 300px;
+    margin: 15px;
+  }
+  #swatch {
+    width: 120px;
+    height: 100px;
+    margin-top: 18px;
+    margin-left: 350px;
+    background-image: none;
+  }
+  #red .ui-slider-range { background: #ef2929; }
+  #red .ui-slider-handle { border-color: #ef2929; }
+  #green .ui-slider-range { background: #8ae234; }
+  #green .ui-slider-handle { border-color: #8ae234; }
+  #blue .ui-slider-range { background: #729fcf; }
+  #blue .ui-slider-handle { border-color: #729fcf; }
+  &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body class="ui-widget-content" style="border:0;"&gt;
 
-<p><img src="https://img-blog.csdnimg.cn/20181217172007278.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h4 id="表格排序（Tablesorter-）"><a href="#表格排序（Tablesorter-）" class="headerlink" title="表格排序（Tablesorter ）"></a>表格排序（Tablesorter ）</h4><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery Animation&lt;/title&gt;</span><br><span class="line">        &lt;link rel="stylesheet" href="style.css"&gt;</span><br><span class="line">        &lt;link rel="stylesheet" href="/css/jquery-ui.css"&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;table id="myTable" class="tablesorter"&gt;</span><br><span class="line">            &lt;thead&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;th&gt;Last Name&lt;/th&gt;</span><br><span class="line">                    &lt;th&gt;First Name&lt;/th&gt;</span><br><span class="line">                    &lt;th&gt;Email&lt;/th&gt;</span><br><span class="line">                    &lt;th&gt;Due&lt;/th&gt;</span><br><span class="line">                    &lt;th&gt;Web Site&lt;/th&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">            &lt;/thead&gt;</span><br><span class="line">            &lt;tbody&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;Smith&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;John&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;jsmith@gmail.com&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;$50.00&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;http://www.jsmith.com&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;Bach&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;Frank&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;fbach@yahoo.com&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;$50.00&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;http://www.frank.com&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;Doe&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;Jason&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;jdoe@hotmail.com&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;$100.00&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;http://www.jdoe.com&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">                &lt;tr&gt;</span><br><span class="line">                    &lt;td&gt;Conway&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;Tim&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;tconway@earthlink.net&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;$50.00&lt;/td&gt;</span><br><span class="line">                    &lt;td&gt;http://www.timconway.com&lt;/td&gt;</span><br><span class="line">                &lt;/tr&gt;</span><br><span class="line">            &lt;/tbody&gt;</span><br><span class="line">        &lt;/table&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src="/js/jquery.tablesorter.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $(document).ready(function(){</span><br><span class="line">        $("#myTable").tablesorter();</span><br><span class="line">    });</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+        &lt;p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;"&gt;
+            &lt;span class="ui-icon ui-icon-pencil" style="float:left; margin:-2px 5px 0 0;"&gt;&lt;/span&gt;
+            简单的颜色选择器
+        &lt;/p&gt;
 
-<p>按emaile排序：<br><img src="https://img-blog.csdnimg.cn/20181217172538446.png" alt="在这里插入图片描述"><br>按名字排序：<br><img src="https://img-blog.csdnimg.cn/20181217172512857.png" alt="在这里插入图片描述"><br>==注意==：<br>这里需要<code>jquery.tablesorter.js</code>记得下载<br>它内置了排序规则帮助你排序</p>
-<h2 id="jquey-UI有很多很多插件厉害的效果动画，这里只是冰山一角，是一些基础，深入了解或者详细了解以上实例的更多功能请查文档"><a href="#jquey-UI有很多很多插件厉害的效果动画，这里只是冰山一角，是一些基础，深入了解或者详细了解以上实例的更多功能请查文档" class="headerlink" title="jquey UI有很多很多插件厉害的效果动画，这里只是冰山一角，是一些基础，深入了解或者详细了解以上实例的更多功能请查文档"></a>jquey UI有很多很多插件厉害的效果动画，这里只是冰山一角，是一些基础，深入了解或者详细了解以上实例的更多功能请查文档</h2><h2 id="官方网站文档英文"><a href="#官方网站文档英文" class="headerlink" title="官方网站文档英文"></a><a href="https://api.jqueryui.com/category/widgets/" target="_blank" rel="noopener">官方网站文档英文</a></h2><p><img src="https://img-blog.csdnimg.cn/20181217173108598.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="菜鸟教程中文"><a href="#菜鸟教程中文" class="headerlink" title="菜鸟教程中文"></a><a href="http://www.runoob.com/jqueryui/jqueryui-tutorial.html" target="_blank" rel="noopener">菜鸟教程中文</a></h2><p><img src="https://img-blog.csdnimg.cn/20181217173156111.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+        &lt;div id="red"&gt;&lt;/div&gt;
+        &lt;div id="green"&gt;&lt;/div&gt;
+        &lt;div id="blue"&gt;&lt;/div&gt;
+
+        &lt;div id="swatch" class="ui-widget-content ui-corner-all"&gt;&lt;/div&gt;
+
+
+    &lt;/body&gt;
+    &lt;script src="js.js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="js.js/jquery-ui.min.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript"&gt;
+        function hexFromRGB(r, g, b) {
+            var hex = [
+                r.toString(16),
+                g.toString(16),
+                b.toString(16)
+            ];
+            $.each(hex, function(nr, val) {
+                if (val.length === 1) {
+                    hex[nr] = "0" + val;
+                }
+            });
+            return hex.join("").toUpperCase();
+        }
+
+        function refreshSwatch() {
+            var red = $("#red").slider("value"),
+                green = $("#green").slider("value"),
+                blue = $("#blue").slider("value"),
+                hex = hexFromRGB(red, green, blue);
+            $("#swatch").css("background-color", "#" + hex);
+        }
+        $(function() {
+            $("#red, #green, #blue").slider({
+                orientation: "horizontal",
+                range: "min",
+                max: 255,
+                value: 127,
+                slide: refreshSwatch,
+                change: refreshSwatch
+            });
+            $("#red").slider("value", 255);
+            $("#green").slider("value", 140);
+            $("#blue").slider("value", 60);
+        });
+    &lt;/script&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181217172007278.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
+<h4 id="表格排序（Tablesorter-）"><a href="#表格排序（Tablesorter-）" class="headerlink" title="表格排序（Tablesorter ）"></a>表格排序（Tablesorter ）</h4><pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery Animation&lt;/title&gt;
+        &lt;link rel="stylesheet" href="style.css"&gt;
+        &lt;link rel="stylesheet" href="/css/jquery-ui.css"&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;table id="myTable" class="tablesorter"&gt;
+            &lt;thead&gt;
+                &lt;tr&gt;
+                    &lt;th&gt;Last Name&lt;/th&gt;
+                    &lt;th&gt;First Name&lt;/th&gt;
+                    &lt;th&gt;Email&lt;/th&gt;
+                    &lt;th&gt;Due&lt;/th&gt;
+                    &lt;th&gt;Web Site&lt;/th&gt;
+                &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Smith&lt;/td&gt;
+                    &lt;td&gt;John&lt;/td&gt;
+                    &lt;td&gt;jsmith@gmail.com&lt;/td&gt;
+                    &lt;td&gt;$50.00&lt;/td&gt;
+                    &lt;td&gt;http://www.jsmith.com&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Bach&lt;/td&gt;
+                    &lt;td&gt;Frank&lt;/td&gt;
+                    &lt;td&gt;fbach@yahoo.com&lt;/td&gt;
+                    &lt;td&gt;$50.00&lt;/td&gt;
+                    &lt;td&gt;http://www.frank.com&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Doe&lt;/td&gt;
+                    &lt;td&gt;Jason&lt;/td&gt;
+                    &lt;td&gt;jdoe@hotmail.com&lt;/td&gt;
+                    &lt;td&gt;$100.00&lt;/td&gt;
+                    &lt;td&gt;http://www.jdoe.com&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;Conway&lt;/td&gt;
+                    &lt;td&gt;Tim&lt;/td&gt;
+                    &lt;td&gt;tconway@earthlink.net&lt;/td&gt;
+                    &lt;td&gt;$50.00&lt;/td&gt;
+                    &lt;td&gt;http://www.timconway.com&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+
+    &lt;/body&gt;
+    &lt;script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="/js/jquery.tablesorter.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+    $(document).ready(function(){
+        $("#myTable").tablesorter();
+    });
+
+    &lt;/script&gt;
+&lt;/html&gt;</code></pre><p>按emaile排序：<br><img src="https://img-blog.csdnimg.cn/20181217172538446.png" alt=""><br>按名字排序：<br><img src="https://img-blog.csdnimg.cn/20181217172512857.png" alt=""><br>==注意==：<br>这里需要<code>jquery.tablesorter.js</code>记得下载<br>它内置了排序规则帮助你排序</p>
+<h2 id="jquey-UI有很多很多插件厉害的效果动画，这里只是冰山一角，是一些基础，深入了解或者详细了解以上实例的更多功能请查文档"><a href="#jquey-UI有很多很多插件厉害的效果动画，这里只是冰山一角，是一些基础，深入了解或者详细了解以上实例的更多功能请查文档" class="headerlink" title="jquey UI有很多很多插件厉害的效果动画，这里只是冰山一角，是一些基础，深入了解或者详细了解以上实例的更多功能请查文档"></a>jquey UI有很多很多插件厉害的效果动画，这里只是冰山一角，是一些基础，深入了解或者详细了解以上实例的更多功能请查文档</h2><h2 id="官方网站文档英文"><a href="#官方网站文档英文" class="headerlink" title="官方网站文档英文"></a><a href="https://api.jqueryui.com/category/widgets/" target="_blank" rel="noopener">官方网站文档英文</a></h2><p><img src="https://img-blog.csdnimg.cn/20181217173108598.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
+<h2 id="菜鸟教程中文"><a href="#菜鸟教程中文" class="headerlink" title="菜鸟教程中文"></a><a href="http://www.runoob.com/jqueryui/jqueryui-tutorial.html" target="_blank" rel="noopener">菜鸟教程中文</a></h2><p><img src="https://img-blog.csdnimg.cn/20181217173156111.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -636,7 +983,7 @@ jQuery UI实例
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        文章作者:
+                        author:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -646,7 +993,7 @@ jQuery UI实例
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        文章链接:
+                        link:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -656,13 +1003,13 @@ jQuery UI实例
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        版权声明:
+                        reprint:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
+                    use
+                    <a href="cc_by_url" rel="external nofollow noreferrer" target="_blank">cc_by_name</a>
+                    licensed
                     <a href="http://Haris-ha.github.io" target="_blank">哈立势</a>
                     !
                 </span>
@@ -672,7 +1019,7 @@ jQuery UI实例
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        let toastHTML = '<span>pleaseFollowReprintPolicy</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">checkPolicy</a>';
         M.toast({html: toastHTML})
       });
 
@@ -687,7 +1034,7 @@ jQuery UI实例
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                         </div>
                     
                 </div>
@@ -750,7 +1097,7 @@ jQuery UI实例
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;prev</div>
             <div class="card">
                 <a href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AB%EF%BC%89%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83%20%E8%AE%A9%E4%BB%A3%E7%A0%81%E4%BB%8E%E4%BA%8C%E6%AF%94%E5%8F%98%E4%B8%BA%E6%96%87%E8%89%BA++++/">
                     <div class="card-image">
@@ -787,7 +1134,7 @@ $(".container input#item").att
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E5%85%AD%EF%BC%89ajax%E5%BC%82%E6%AD%A5%E8%AF%B7%E6%B1%82/">
@@ -850,15 +1197,11 @@ AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;toc</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -995,7 +1338,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                     var today = new Date();
                     var startYear = "2019";
                     var startMonth = "10";
-                    var startDate = "27";
+                    var startDate = "24";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1068,8 +1411,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;search</span>
+            <input type="search" id="searchInput" name="s" placeholder="searchTip"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

@@ -179,7 +179,7 @@
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="search" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -530,7 +530,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                           </div>
                     
                 </div>
@@ -541,7 +541,7 @@
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>publishDate:&nbsp;&nbsp;
                     2019-10-28
                 </div>
                 
@@ -551,7 +551,7 @@
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="far fa-eye fa-fw"></i>readCount:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -563,13 +563,13 @@
                 <h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><p>代码是Javascript语言写的（几乎是伪代码）</p>
 <h2 id="算法介绍"><a href="#算法介绍" class="headerlink" title="算法介绍"></a>算法介绍</h2><p><strong>选择排序</strong>（Selection Sort），是一种简单直观的排序算法</p>
 <p>通过每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到全部待排序的数据元素排完。</p>
-<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>==记忆方法==<br><strong>相当于反向的冒泡排序，从0到n-1这些数里找到一个最小的放在0位置，再从1到n-1这些数里找到一个最小的放在1位置，再从2到n-1这些数中找到一个最小的放在2位置，以此类推。</strong></p>
-<p>==官方解释==<br>对比数列中前一个元素跟后一个元素的大小，如果后面的元素比前面的元素小则用一个变量k来记住他的位置，接着第二次比较，前面“后一个元素”现变成了“前一个元素”，继续跟他的“后一个元素”进行比较如果后面的元素比他要小则用变量k记住它在数组中的位置(下标)，等到循环结束的时候，我们应该找到了最小的那个数的下标了，然后进行判断，如果这个元素的下标不是第一个元素的下标，就让第一个元素跟他交换一下值，这样就找到整个数组中最小的数了。然后找到数组中第二小的数，让他跟数组中第二个元素交换一下值，以此类推。</p>
-<p>==可能有点抽象，详细的举个例子来说明==</p>
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p><strong>记忆方法</strong><br><strong>相当于反向的冒泡排序，从0到n-1这些数里找到一个最小的放在0位置，再从1到n-1这些数里找到一个最小的放在1位置，再从2到n-1这些数中找到一个最小的放在2位置，以此类推。</strong></p>
+<p><strong>官方解释</strong><br>对比数列中前一个元素跟后一个元素的大小，如果后面的元素比前面的元素小则用一个变量k来记住他的位置，接着第二次比较，前面“后一个元素”现变成了“前一个元素”，继续跟他的“后一个元素”进行比较如果后面的元素比他要小则用变量k记住它在数组中的位置(下标)，等到循环结束的时候，我们应该找到了最小的那个数的下标了，然后进行判断，如果这个元素的下标不是第一个元素的下标，就让第一个元素跟他交换一下值，这样就找到整个数组中最小的数了。然后找到数组中第二小的数，让他跟数组中第二个元素交换一下值，以此类推。</p>
+<p><strong>可能有点抽象，详细的举个例子来说明</strong></p>
 <h2 id="算法简单记忆说明"><a href="#算法简单记忆说明" class="headerlink" title="算法简单记忆说明"></a>算法简单记忆说明</h2><p>2，7，3，6，5，1<br><em>0，1，2，3，4，5</em> （位置）<br>刚开始假设第一个数字是最小的，即n=0的数字，我们用一个最小标记minIndex来标记它，即minIndex=0<br>随后我们开始将1-5位置的5个数开始与带有minIndex标记的数作比较，如果数字小于标记的数字，那么将标记移到这个小的数字上直到5个数全部比较完，将标记的数字和头数字进行交换，头数字每一轮向后移一个，以此类推</p>
-<p><strong>第一遍：（0~n-1）</strong><br>2，7，3，6，5，1<br><em>==0==，1，2，3，4，5</em><br>7&gt;2标记不移动<br>3&gt;2标记不移动<br>6&gt;2标记不移动<br>5&gt;2标记不移动<br>1&lt;2minIndex标记从0位置移到5位置<br>2，7，3，6，5，1<br><em>0，1，2，3，4，==5==</em><br>随后将0位置的数与minIndex上的数交换，这样得到最小的值放在首位值<br>1，7，3，6，5，2<br><em>==0==，1，2，3，4，5</em></p>
-<p><strong>第二遍：（1~n-1）</strong><br>1，7，3，6，5，2<br><em>==0==，1，2，3，4，5</em><br>首位置最小值确定下来，我们将minIndex标记向后移一位，随后再从minIndex标记的元素后的所有元素和它作比较，重复上面的步骤<br>1，7，3，6，5，2<br><em>0，==1==，2，3，4，5</em><br>3&lt;7minIndex标记移到2位置上<br>1，7，3，6，5，2<br><em>0，1，==2==，3，4，5</em><br>6&gt;3标记不移动<br>5&gt;3标记不移动<br>2&lt;3minIndex标记移到5位置上<br>1，7，3，6，5，2<br><em>0，1，2，3，4，==5==</em><br>随后将1位置上的数与minIndex标记的数交换，找到这一轮比较中的最小值<br>1，2，3，6，5，7<br><em>0，==1==，2，3，4，5</em></p>
-<p><strong>第三遍：（2~n-1）</strong><br>1，2，3，6，5，7<br><em>0，1，==2==，3，4，5</em></p>
+<p><strong>第一遍：（0~n-1）</strong><br>2，7，3，6，5，1<br><strong>*0</strong>，1，2，3，4，5*<br>7&gt;2标记不移动<br>3&gt;2标记不移动<br>6&gt;2标记不移动<br>5&gt;2标记不移动<br>1&lt;2minIndex标记从0位置移到5位置<br>2，7，3，6，5，1<br><em>0，1，2，3，4，<strong>5*</strong><br>随后将0位置的数与minIndex上的数交换，这样得到最小的值放在首位值<br>1，7，3，6，5，2<br><strong>*0</strong>，1，2，3，4，5</em></p>
+<p><strong>第二遍：（1~n-1）</strong><br>1，7，3，6，5，2<br><strong>*0</strong>，1，2，3，4，5*<br>首位置最小值确定下来，我们将minIndex标记向后移一位，随后再从minIndex标记的元素后的所有元素和它作比较，重复上面的步骤<br>1，7，3，6，5，2<br><em>0，<strong>1</strong>，2，3，4，5</em><br>3&lt;7minIndex标记移到2位置上<br>1，7，3，6，5，2<br><em>0，1，<strong>2</strong>，3，4，5</em><br>6&gt;3标记不移动<br>5&gt;3标记不移动<br>2&lt;3minIndex标记移到5位置上<br>1，7，3，6，5，2<br><em>0，1，2，3，4，<strong>5*</strong><br>随后将1位置上的数与minIndex标记的数交换，找到这一轮比较中的最小值<br>1，2，3，6，5，7<br><em>0，*</em>1**，2，3，4，5</em></p>
+<p><strong>第三遍：（2~n-1）</strong><br>1，2，3，6，5，7<br><em>0，1，<strong>2</strong>，3，4，5</em></p>
 <p>以此类推</p>
 <p>最终排好序：1，2，3，5，6，7</p>
 <h2 id="算法复杂度和稳定性"><a href="#算法复杂度和稳定性" class="headerlink" title="算法复杂度和稳定性"></a>算法复杂度和稳定性</h2><p><strong>选择排序的时间复杂度是O(N^2^）</strong></p>
@@ -577,8 +577,26 @@
 <p><strong>选择排序是不稳定排序算法</strong></p>
 <p>算法稳定性的定义： 假设在数列中存在a[i]=a[j]，若在排序之前，a[i]在a[j]前面；并且排序之后，a[i]仍然在a[j]前面。则这个排序算法是稳定的。</p>
 <p>如何理解？举个例子：<br>3，6，(3)，1，8<br>第一遍：1，6，(3)，3，8<br>我们看到2个3的顺序已经改变了</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var Selectionarr = [2,7,3,6,5,1];</span><br><span class="line">function SelectionSort(arr){</span><br><span class="line">	if(arr == null || arr.length&lt;2){return;}</span><br><span class="line">	for(var i=0;i&lt;arr.length-1;i++){</span><br><span class="line">	    minIndex = i;</span><br><span class="line">		for(var j=i+1;j&lt;arr.length;j++){</span><br><span class="line">		minIndex = arr[j]&lt;arr[minIndex]?j:minIndex;</span><br><span class="line">		swap(arr,i,minIndex);}</span><br><span class="line">	}</span><br><span class="line">	return arr;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">function swap(arr,i,j){</span><br><span class="line">	arr[i] = arr[i]^arr[j];</span><br><span class="line">	arr[j] = arr[i]^arr[j];</span><br><span class="line">	arr[i] = arr[i]^arr[j];</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">SelectionSort(Selectionarr);</span><br><span class="line">console.log(Selectionarr);</span><br></pre></td></tr></tbody></table></figure>
-<p>输出结果：1，2，3，5，6，7</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre><code>var Selectionarr = [2,7,3,6,5,1];
+function SelectionSort(arr){
+    if(arr ** null || arr.length&lt;2){return;}
+    for(var i=0;i&lt;arr.length-1;i++){
+        minIndex = i;
+        for(var j=i+1;j&lt;arr.length;j++){
+        minIndex = arr[j]&lt;arr[minIndex]?j:minIndex;
+        swap(arr,i,minIndex);}
+    }
+    return arr;
+}
+
+function swap(arr,i,j){
+    arr[i] = arr[i]^arr[j];
+    arr[j] = arr[i]^arr[j];
+    arr[i] = arr[i]^arr[j];
+}
+
+SelectionSort(Selectionarr);
+console.log(Selectionarr);</code></pre><p>输出结果：1，2，3，5，6，7</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -608,7 +626,7 @@
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        文章作者:
+                        author:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -618,7 +636,7 @@
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        文章链接:
+                        link:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -628,13 +646,13 @@
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        版权声明:
+                        reprint:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
+                    use
+                    <a href="cc_by_url" rel="external nofollow noreferrer" target="_blank">cc_by_name</a>
+                    licensed
                     <a href="http://Haris-ha.github.io" target="_blank">哈立势</a>
                     !
                 </span>
@@ -644,7 +662,7 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        let toastHTML = '<span>pleaseFollowReprintPolicy</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">checkPolicy</a>';
         M.toast({html: toastHTML})
       });
 
@@ -659,7 +677,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                         </div>
                     
                 </div>
@@ -722,7 +740,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;prev</div>
             <div class="card">
                 <a href="/2019/10/28/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/">
                     <div class="card-image">
@@ -760,7 +778,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/10/28/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/">
@@ -823,15 +841,11 @@
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;toc</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -968,7 +982,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                     var today = new Date();
                     var startYear = "2019";
                     var startMonth = "10";
-                    var startDate = "27";
+                    var startDate = "24";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1041,8 +1055,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;search</span>
+            <input type="search" id="searchInput" name="s" placeholder="searchTip"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

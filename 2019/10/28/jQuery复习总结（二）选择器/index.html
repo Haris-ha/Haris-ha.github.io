@@ -181,7 +181,7 @@ $(&#34;p&#34;) — 选">
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="search" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -532,7 +532,7 @@ $(&#34;p&#34;) — 选">
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                           </div>
                     
                 </div>
@@ -543,7 +543,7 @@ $(&#34;p&#34;) — 选">
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>publishDate:&nbsp;&nbsp;
                     2019-10-28
                 </div>
                 
@@ -553,7 +553,7 @@ $(&#34;p&#34;) — 选">
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="far fa-eye fa-fw"></i>readCount:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -568,47 +568,315 @@ document.getElementsByTagName("tagName")
 jQuery简化后
 $("p") — 选择&lt;p&gt;标签元素
 $("div") — 选择&lt;div&gt;标签元素</code></pre><p>$(‘#myid’) ——id选择器</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JavaScript原生方法实现在DOM中选择指定id值的元素</span><br><span class="line">document.getElementById("id")</span><br><span class="line">jQuery简化后</span><br><span class="line">$("#test") — 选择id为“test”的标签元素</span><br><span class="line">$("#demo") — 选择id为“demo”的标签元素</span><br></pre></td></tr></tbody></table></figure>
-
-<p>$(‘.myclass’) ——类选择器</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">JavaScript没有提供内置的类选择方法</span><br><span class="line">jQuery简化后</span><br><span class="line">$(".test") — 选择class为“test”的标签元素</span><br><span class="line">$(".index") — 选择class为“index”的标签元素</span><br></pre></td></tr></tbody></table></figure>
-
-<p>$(‘*’) ——通配选择器</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$("*") — 选择所有的元素 //设置的css会作用在所有的元素之上 包括body</span><br></pre></td></tr></tbody></table></figure>
-
-<p>$(‘code, #myid, .myclass’) ——分组选择器</p>
+<pre><code>JavaScript原生方法实现在DOM中选择指定id值的元素
+document.getElementById("id")
+jQuery简化后
+$("#test") — 选择id为“test”的标签元素
+$("#demo") — 选择id为“demo”的标签元素</code></pre><p>$(‘.myclass’) ——类选择器</p>
+<pre><code>JavaScript没有提供内置的类选择方法
+jQuery简化后
+$(".test") — 选择class为“test”的标签元素
+$(".index") — 选择class为“index”的标签元素</code></pre><p>$(‘*’) ——通配选择器</p>
+<pre><code>$("*") — 选择所有的元素 //设置的css会作用在所有的元素之上 包括body</code></pre><p>$(‘code, #myid, .myclass’) ——分组选择器</p>
 <pre><code>css样式或是事件将发生在所有`&lt;code&gt;`标签元素上，id为myid还有class为myclass的元素上</code></pre><h2 id="Hierarchy"><a href="#Hierarchy" class="headerlink" title="Hierarchy"></a>Hierarchy</h2><p><strong>$(‘div code’)</strong><br>选择匹配<code>&lt;div&gt;</code>后代里所有<code>&lt;code&gt;</code>元素</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery selector&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;code&gt;something test1&lt;/code&gt;</span><br><span class="line">			&lt;p&gt;test&lt;/p&gt;</span><br><span class="line">			&lt;code&gt;something test2&lt;/code&gt;&lt;/br&gt;</span><br><span class="line">			&lt;code&gt;something test3&lt;/code&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;button&gt;Click Me&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $(document).ready(function(){</span><br><span class="line">        $('button').on('click', function() {</span><br><span class="line">            $('div code').css('backgroundColor','yellow');</span><br><span class="line">        });</span><br><span class="line">    });</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20181213162044229.png" alt="在这里插入图片描述"></p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery selector&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;
+            &lt;code&gt;something test1&lt;/code&gt;
+            &lt;p&gt;test&lt;/p&gt;
+            &lt;code&gt;something test2&lt;/code&gt;&lt;/br&gt;
+            &lt;code&gt;something test3&lt;/code&gt;
+        &lt;/div&gt;
+        &lt;button&gt;Click Me&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+    $(document).ready(function(){
+        $('button').on('click', function() {
+            $('div code').css('backgroundColor','yellow');
+        });
+    });
+
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181213162044229.png" alt=""></p>
 <p><strong>$(‘parent&gt;child’)</strong><br>前一个元素为父元素，后一个为子元素，匹配前一个元素的所有后一个子元素，且为直接子元素</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery selector&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;ul&gt;</span><br><span class="line">				&lt;li&gt;1&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;2&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;3&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;4&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;5&lt;/li&gt;</span><br><span class="line">				&lt;div&gt;</span><br><span class="line">					&lt;li&gt;这个不会被选到&lt;/li&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">			&lt;/ul&gt;</span><br><span class="line">			&lt;li&gt;这个不会被选到&lt;/li&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;button&gt;Click Me&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $(document).ready(function(){</span><br><span class="line">        $('button').on('click', function() {</span><br><span class="line">            $('ul&gt;li').css('backgroundColor','yellow');</span><br><span class="line">        });</span><br><span class="line">    });</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20181213162740986.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><strong>注意</strong> 区别在于子元素必须是父元素的直接子元素，例子中，第一个<code>&lt;li&gt;</code>不是<code>&lt;ul&gt;</code>的直接子元素，所以未被选中</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery selector&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;
+            &lt;ul&gt;
+                &lt;li&gt;1&lt;/li&gt;
+                &lt;li&gt;2&lt;/li&gt;
+                &lt;li&gt;3&lt;/li&gt;
+                &lt;li&gt;4&lt;/li&gt;
+                &lt;li&gt;5&lt;/li&gt;
+                &lt;div&gt;
+                    &lt;li&gt;这个不会被选到&lt;/li&gt;
+                &lt;/div&gt;
+            &lt;/ul&gt;
+            &lt;li&gt;这个不会被选到&lt;/li&gt;
+        &lt;/div&gt;
+        &lt;button&gt;Click Me&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+    $(document).ready(function(){
+        $('button').on('click', function() {
+            $('ul&gt;li').css('backgroundColor','yellow');
+        });
+    });
+
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181213162740986.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""><br><strong>注意</strong> 区别在于子元素必须是父元素的直接子元素，例子中，第一个<code>&lt;li&gt;</code>不是<code>&lt;ul&gt;</code>的直接子元素，所以未被选中</p>
 <p>$(‘prev + next ‘)<br>选择prev的紧跟的第一个元素</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery selector&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;p class="test"&gt;test&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;test2&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;test3&lt;/p&gt;</span><br><span class="line">			&lt;h3&gt;test5&lt;/h3&gt;</span><br><span class="line">			&lt;p&gt;test4&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;button&gt;Click Me&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $(document).ready(function(){</span><br><span class="line">        $('button').on('click', function() {</span><br><span class="line">            $('.test+p').css('backgroundColor','yellow');</span><br><span class="line">        });</span><br><span class="line">    });</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20181213163649855.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery selector&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;
+            &lt;p class="test"&gt;test&lt;/p&gt;
+            &lt;p&gt;test2&lt;/p&gt;
+            &lt;p&gt;test3&lt;/p&gt;
+            &lt;h3&gt;test5&lt;/h3&gt;
+            &lt;p&gt;test4&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;button&gt;Click Me&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+    $(document).ready(function(){
+        $('button').on('click', function() {
+            $('.test+p').css('backgroundColor','yellow');
+        });
+    });
+
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181213163649855.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
 <p>只选择到了test2这个<code>&lt;p&gt;</code>标签<br>$(‘prev ~ siblings’)<br>选择prev的所有兄弟siblings元素</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery selector&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;p class="test"&gt;test&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;test2&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;test3&lt;/p&gt;</span><br><span class="line">			&lt;h3&gt;test5&lt;/h3&gt;</span><br><span class="line">			&lt;p&gt;test4&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;button&gt;Click Me&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $(document).ready(function(){</span><br><span class="line">        $('button').on('click', function() {</span><br><span class="line">            $('.test~p').css('backgroundColor','yellow');</span><br><span class="line">        });</span><br><span class="line">    });</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20181213163926199.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="Basic-Filters"><a href="#Basic-Filters" class="headerlink" title="Basic Filters"></a>Basic Filters</h2><p><img src="https://img-blog.csdnimg.cn/20181213164245850.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>举例：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery selector&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;ul&gt;</span><br><span class="line">				&lt;li&gt;0&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;1&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;2&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;3&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;4&lt;/li&gt;</span><br><span class="line">				&lt;li&gt;5&lt;/li&gt;</span><br><span class="line">			&lt;/ul&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;button&gt;Click Me&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $(document).ready(function(){</span><br><span class="line">        $('button').on('click', function() {</span><br><span class="line">            $('ul li:first').css('backgroundColor','yellow');</span><br><span class="line">			$('ul li:last').css('backgroundColor','red');</span><br><span class="line">			$('ul li:eq(3)').css('backgroundColor','blue');</span><br><span class="line">			$('ul li:odd').css('fontSize','20px');</span><br><span class="line">			$('ul li:even').css('fontSize','40px');</span><br><span class="line">        });</span><br><span class="line">    });</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20181213164909558.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="Content-Filters"><a href="#Content-Filters" class="headerlink" title="Content Filters"></a>Content Filters</h2><p><img src="https://img-blog.csdnimg.cn/20181213165035124.png" alt="在这里插入图片描述"><br>举例：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery selector&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">		&lt;div class="test"&gt;</span><br><span class="line">			&lt;div&gt;This is Haris test example&lt;/div&gt;</span><br><span class="line">			&lt;div&gt;Haris test example&lt;/div&gt;</span><br><span class="line">			&lt;div style="width:30px,height:10px,solid,bodersize:1px"&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;p hidden="hidden"&gt;这个看不见&lt;/p&gt;</span><br><span class="line">			&lt;table&gt;</span><br><span class="line">				&lt;tr&gt;</span><br><span class="line">					&lt;td&gt;1&lt;/td&gt;</span><br><span class="line">					&lt;td hidden="hidden"&gt;2&lt;/td&gt;</span><br><span class="line">					&lt;td&gt;3&lt;/td&gt;</span><br><span class="line">					&lt;td hidden="hidden"&gt;4&lt;/td&gt;</span><br><span class="line">					&lt;td&gt;5&lt;/td&gt;</span><br><span class="line">				&lt;/tr&gt;</span><br><span class="line">			&lt;/table&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;button&gt;Click Me&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $(document).ready(function(){</span><br><span class="line">        $('button').on('click', function() {</span><br><span class="line">            $('.test div:contains("This")').css('backgroundColor','yellow');</span><br><span class="line">			$('.test div:empty').css('backgroundColor','red');</span><br><span class="line">			$('tr td:hidden').css('backgroundColor','black').show(2000);</span><br><span class="line">			$('tr td:visible').css('backgroundColor','green');</span><br><span class="line">        });</span><br><span class="line">    });</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20181213170429572.png" alt="在这里插入图片描述"></p>
-<h2 id="Attribute-Filters"><a href="#Attribute-Filters" class="headerlink" title="Attribute Filters"></a>Attribute Filters</h2><p><img src="https://img-blog.csdnimg.cn/20181213170606863.png" alt="在这里插入图片描述"><br>举例：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery selector&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body &gt;</span><br><span class="line">		&lt;div class="test"&gt;</span><br><span class="line">			&lt;div id="test" title="test"&gt;this is a div with id attribute&lt;/div&gt;</span><br><span class="line">			&lt;div class="test1" title="test"&gt;this is a div with class attribute1&lt;/div&gt;</span><br><span class="line">			&lt;div class="test2" title="test2"&gt;this is a div with class attribute2&lt;/div&gt;</span><br><span class="line">			&lt;div class="test3" title="test"&gt;this is a div with class attribute3&lt;/div&gt;</span><br><span class="line">			&lt;a href="#"&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;button&gt;Click Me&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $(document).ready(function(){</span><br><span class="line">        $('button').on('click', function() {</span><br><span class="line">            $('[id]').css('backgroundColor','yellow');</span><br><span class="line">			$('[class="test1"]').css('backgroundColor','red');</span><br><span class="line">			$('[title!="test"]').css('backgroundColor','blue');</span><br><span class="line">			$('[class$="t3"]').css('backgroundColor','green');</span><br><span class="line">        });</span><br><span class="line">    });</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
-<p>title不为test的所有元素全部被变为蓝色 只有title不为test的三个div没有变成蓝色<br><img src="https://img-blog.csdnimg.cn/20181213191929692.png" alt="在这里插入图片描述"></p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery selector&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;
+            &lt;p class="test"&gt;test&lt;/p&gt;
+            &lt;p&gt;test2&lt;/p&gt;
+            &lt;p&gt;test3&lt;/p&gt;
+            &lt;h3&gt;test5&lt;/h3&gt;
+            &lt;p&gt;test4&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;button&gt;Click Me&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+    $(document).ready(function(){
+        $('button').on('click', function() {
+            $('.test~p').css('backgroundColor','yellow');
+        });
+    });
+
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181213163926199.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
+<h2 id="Basic-Filters"><a href="#Basic-Filters" class="headerlink" title="Basic Filters"></a>Basic Filters</h2><p><img src="https://img-blog.csdnimg.cn/20181213164245850.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""><br>举例：</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery selector&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;
+            &lt;ul&gt;
+                &lt;li&gt;0&lt;/li&gt;
+                &lt;li&gt;1&lt;/li&gt;
+                &lt;li&gt;2&lt;/li&gt;
+                &lt;li&gt;3&lt;/li&gt;
+                &lt;li&gt;4&lt;/li&gt;
+                &lt;li&gt;5&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;button&gt;Click Me&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+    $(document).ready(function(){
+        $('button').on('click', function() {
+            $('ul li:first').css('backgroundColor','yellow');
+            $('ul li:last').css('backgroundColor','red');
+            $('ul li:eq(3)').css('backgroundColor','blue');
+            $('ul li:odd').css('fontSize','20px');
+            $('ul li:even').css('fontSize','40px');
+        });
+    });
+
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181213164909558.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
+<h2 id="Content-Filters"><a href="#Content-Filters" class="headerlink" title="Content Filters"></a>Content Filters</h2><p><img src="https://img-blog.csdnimg.cn/20181213165035124.png" alt=""><br>举例：</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery selector&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div class="test"&gt;
+            &lt;div&gt;This is Haris test example&lt;/div&gt;
+            &lt;div&gt;Haris test example&lt;/div&gt;
+            &lt;div style="width:30px,height:10px,solid,bodersize:1px"&gt;
+            &lt;/div&gt;
+            &lt;p hidden="hidden"&gt;这个看不见&lt;/p&gt;
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;1&lt;/td&gt;
+                    &lt;td hidden="hidden"&gt;2&lt;/td&gt;
+                    &lt;td&gt;3&lt;/td&gt;
+                    &lt;td hidden="hidden"&gt;4&lt;/td&gt;
+                    &lt;td&gt;5&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+        &lt;button&gt;Click Me&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+    $(document).ready(function(){
+        $('button').on('click', function() {
+            $('.test div:contains("This")').css('backgroundColor','yellow');
+            $('.test div:empty').css('backgroundColor','red');
+            $('tr td:hidden').css('backgroundColor','black').show(2000);
+            $('tr td:visible').css('backgroundColor','green');
+        });
+    });
+
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181213170429572.png" alt=""></p>
+<h2 id="Attribute-Filters"><a href="#Attribute-Filters" class="headerlink" title="Attribute Filters"></a>Attribute Filters</h2><p><img src="https://img-blog.csdnimg.cn/20181213170606863.png" alt=""><br>举例：</p>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery selector&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body &gt;
+        &lt;div class="test"&gt;
+            &lt;div id="test" title="test"&gt;this is a div with id attribute&lt;/div&gt;
+            &lt;div class="test1" title="test"&gt;this is a div with class attribute1&lt;/div&gt;
+            &lt;div class="test2" title="test2"&gt;this is a div with class attribute2&lt;/div&gt;
+            &lt;div class="test3" title="test"&gt;this is a div with class attribute3&lt;/div&gt;
+            &lt;a href="#"&gt;
+        &lt;/div&gt;
+        &lt;button&gt;Click Me&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+    $(document).ready(function(){
+        $('button').on('click', function() {
+            $('[id]').css('backgroundColor','yellow');
+            $('[class="test1"]').css('backgroundColor','red');
+            $('[title!="test"]').css('backgroundColor','blue');
+            $('[class$="t3"]').css('backgroundColor','green');
+        });
+    });
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p>title不为test的所有元素全部被变为蓝色 只有title不为test的三个div没有变成蓝色<br><img src="https://img-blog.csdnimg.cn/20181213191929692.png" alt=""></p>
 <h2 id="Child-Filters"><a href="#Child-Filters" class="headerlink" title="Child Filters"></a>Child Filters</h2><p>$(‘li:first-child’)<br>第一个子元素<br>$(‘li:last-child’)<br>最后一个子元素<br>$(‘li:nth-child(even)’)<br>偶数个子元素<br>$(‘li:nth-child(odd)’)<br>奇数个子元素<br>$(‘li:nth-child(2)’)<br>第二个子元素<br>$(‘li:nth-child(2n)’)<br>偶数个子元素<br>$(‘code:only-child’)<br>匹配唯一子元素</p>
 <p>举例：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery selector&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body &gt;</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">			&lt;li&gt;&lt;sapn&gt;0&lt;/span&gt;&lt;span&gt;000&lt;/span&gt;&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;1&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;2&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;3&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;4&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;5&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;6&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">		&lt;ul&gt;</span><br><span class="line">			&lt;li&gt;7&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">		&lt;button&gt;Click Me&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $(document).ready(function(){</span><br><span class="line">        $('button').on('click', function() {</span><br><span class="line">            $('li:first-child').css('backgroundColor','yellow');</span><br><span class="line">			$('li:last-child').css('backgroundColor','red');</span><br><span class="line">			$('li:nth-child(3)').css('backgroundColor','yellow');</span><br><span class="line">			$('li:nth-child(even)').css('fontSize','15px');</span><br><span class="line">			$('li:nth-child(odd)').css('fontSize','30px');</span><br><span class="line">			$('li:only-child').css('backgroundColor','blue');</span><br><span class="line">        });</span><br><span class="line">    });</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery selector&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body &gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;sapn&gt;0&lt;/span&gt;&lt;span&gt;000&lt;/span&gt;&lt;/li&gt;
+            &lt;li&gt;1&lt;/li&gt;
+            &lt;li&gt;2&lt;/li&gt;
+            &lt;li&gt;3&lt;/li&gt;
+            &lt;li&gt;4&lt;/li&gt;
+            &lt;li&gt;5&lt;/li&gt;
+            &lt;li&gt;6&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;ul&gt;
+            &lt;li&gt;7&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;button&gt;Click Me&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
 
-<p><img src="https://img-blog.csdnimg.cn/20181213193417102.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="Forms"><a href="#Forms" class="headerlink" title="Forms"></a>Forms</h2><p><img src="https://img-blog.csdnimg.cn/20181213193518615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>同元素选择器一样，<code>&lt;input&gt;</code>表单控件的type选择</p>
-<h2 id="Form-Filters"><a href="#Form-Filters" class="headerlink" title="Form Filters"></a>Form Filters</h2><p><img src="https://img-blog.csdnimg.cn/20181213193738221.png" alt="在这里插入图片描述"><br>在<code>&lt;input&gt;</code>type选择的基础上出现了选择表单控件的状态不同时的选择器</p>
+    &lt;script type="text/javascript"&gt;
+    $(document).ready(function(){
+        $('button').on('click', function() {
+            $('li:first-child').css('backgroundColor','yellow');
+            $('li:last-child').css('backgroundColor','red');
+            $('li:nth-child(3)').css('backgroundColor','yellow');
+            $('li:nth-child(even)').css('fontSize','15px');
+            $('li:nth-child(odd)').css('fontSize','30px');
+            $('li:only-child').css('backgroundColor','blue');
+        });
+    });
+
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181213193417102.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
+<h2 id="Forms"><a href="#Forms" class="headerlink" title="Forms"></a>Forms</h2><p><img src="https://img-blog.csdnimg.cn/20181213193518615.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""><br>同元素选择器一样，<code>&lt;input&gt;</code>表单控件的type选择</p>
+<h2 id="Form-Filters"><a href="#Form-Filters" class="headerlink" title="Form Filters"></a>Form Filters</h2><p><img src="https://img-blog.csdnimg.cn/20181213193738221.png" alt=""><br>在<code>&lt;input&gt;</code>type选择的基础上出现了选择表单控件的状态不同时的选择器</p>
 <p>举例：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;JQuery selector&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">		&lt;form id="form1"&gt;</span><br><span class="line">		&lt;input type="text" name="" value="文本域"&gt;&lt;br/&gt;</span><br><span class="line">		&lt;input type="password" name="" value="密码域"&gt;&lt;br/&gt;</span><br><span class="line">		&lt;input type="checkbox" name="" value="复选框"&gt;复选框&lt;br/&gt;</span><br><span class="line">		&lt;input type="radio" name="" value="单选按钮"&gt;单选按钮&lt;br/&gt;</span><br><span class="line">		&lt;input type="image" src="" value="图像域"&gt;&lt;br/&gt;</span><br><span class="line">		&lt;input type="file" src="" value="文件域"&gt;&lt;br/&gt;</span><br><span class="line">		&lt;input type="hidden" name="" value="隐藏域"&gt;&lt;br/&gt;</span><br><span class="line">		&lt;input type="button" value="普通按钮" onclick=""&gt;&lt;br/&gt;</span><br><span class="line">		&lt;input type="submit" value="提交按钮" onclick=""&gt;&lt;br/&gt;</span><br><span class="line">		&lt;input type="reset"  value="重置按钮" onclick=""&gt;&lt;br/&gt;</span><br><span class="line">	    &lt;/form&gt;</span><br><span class="line">	&lt;br/&gt;</span><br><span class="line">	&lt;br/&gt;</span><br><span class="line">	&lt;br/&gt;</span><br><span class="line">	&lt;br/&gt;</span><br><span class="line">	&lt;button id="action"&gt;变化&lt;/button&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type="text/javascript"&gt;</span><br><span class="line">    $(document).ready(function(){</span><br><span class="line">		$('#action').on('click',function(){</span><br><span class="line">			$("#form1 :text").val("修改后的文本域");</span><br><span class="line">			$("#form1 :password").val("修改后的密码域");</span><br><span class="line">			$("#form1 :checkbox").val("修改后的复选框");</span><br><span class="line">			$("#form1 :radio").val("修改后的单选框");</span><br><span class="line">			$("#form1 :image").hide(3000);</span><br><span class="line">			$("#form1 :file").hide(5000);</span><br><span class="line">			$("#form1 :hidden").show(5000)</span><br><span class="line">			$("#form1 :button").css('backgroundColor','yellow');</span><br><span class="line">			$("#form1 :submit").css('backgroundColor','red');</span><br><span class="line">			$("#form1 :reset").css('backgroundColor','blue');</span><br><span class="line">		});</span><br><span class="line">    })</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></tbody></table></figure>
+<pre><code>&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JQuery selector&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;form id="form1"&gt;
+        &lt;input type="text" name="" value="文本域"&gt;&lt;br/&gt;
+        &lt;input type="password" name="" value="密码域"&gt;&lt;br/&gt;
+        &lt;input type="checkbox" name="" value="复选框"&gt;复选框&lt;br/&gt;
+        &lt;input type="radio" name="" value="单选按钮"&gt;单选按钮&lt;br/&gt;
+        &lt;input type="image" src="" value="图像域"&gt;&lt;br/&gt;
+        &lt;input type="file" src="" value="文件域"&gt;&lt;br/&gt;
+        &lt;input type="hidden" name="" value="隐藏域"&gt;&lt;br/&gt;
+        &lt;input type="button" value="普通按钮" onclick=""&gt;&lt;br/&gt;
+        &lt;input type="submit" value="提交按钮" onclick=""&gt;&lt;br/&gt;
+        &lt;input type="reset"  value="重置按钮" onclick=""&gt;&lt;br/&gt;
+        &lt;/form&gt;
+    &lt;br/&gt;
+    &lt;br/&gt;
+    &lt;br/&gt;
+    &lt;br/&gt;
+    &lt;button id="action"&gt;变化&lt;/button&gt;
+    &lt;/body&gt;
+    &lt;script src="../../js/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
 
-<p><img src="https://img-blog.csdnimg.cn/20181213200639419.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+    &lt;script type="text/javascript"&gt;
+    $(document).ready(function(){
+        $('#action').on('click',function(){
+            $("#form1 :text").val("修改后的文本域");
+            $("#form1 :password").val("修改后的密码域");
+            $("#form1 :checkbox").val("修改后的复选框");
+            $("#form1 :radio").val("修改后的单选框");
+            $("#form1 :image").hide(3000);
+            $("#form1 :file").hide(5000);
+            $("#form1 :hidden").show(5000)
+            $("#form1 :button").css('backgroundColor','yellow');
+            $("#form1 :submit").css('backgroundColor','red');
+            $("#form1 :reset").css('backgroundColor','blue');
+        });
+    })
+    &lt;/script&gt;
+    &lt;!-- &lt;script src="/js/jquery-latest.js"&gt;&lt;/script&gt; --&gt;
+&lt;/html&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20181213200639419.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -638,7 +906,7 @@ $("div") — 选择&lt;div&gt;标签元素</code></pre><p>$(‘#myid’) ——i
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        文章作者:
+                        author:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -648,7 +916,7 @@ $("div") — 选择&lt;div&gt;标签元素</code></pre><p>$(‘#myid’) ——i
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        文章链接:
+                        link:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -658,13 +926,13 @@ $("div") — 选择&lt;div&gt;标签元素</code></pre><p>$(‘#myid’) ——i
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        版权声明:
+                        reprint:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
+                    use
+                    <a href="cc_by_url" rel="external nofollow noreferrer" target="_blank">cc_by_name</a>
+                    licensed
                     <a href="http://Haris-ha.github.io" target="_blank">哈立势</a>
                     !
                 </span>
@@ -674,7 +942,7 @@ $("div") — 选择&lt;div&gt;标签元素</code></pre><p>$(‘#myid’) ——i
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        let toastHTML = '<span>pleaseFollowReprintPolicy</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">checkPolicy</a>';
         M.toast({html: toastHTML})
       });
 
@@ -689,7 +957,7 @@ $("div") — 选择&lt;div&gt;标签元素</code></pre><p>$(‘#myid’) ——i
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                         </div>
                     
                 </div>
@@ -752,7 +1020,7 @@ $("div") — 选择&lt;div&gt;标签元素</code></pre><p>$(‘#myid’) ——i
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;prev</div>
             <div class="card">
                 <a href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%89%EF%BC%89%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86/">
                     <div class="card-image">
@@ -790,7 +1058,7 @@ $("div") — 选择&lt;div&gt;标签元素</code></pre><p>$(‘#myid’) ——i
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%80%EF%BC%89%E8%B5%B7%E6%AD%A5/">
@@ -854,15 +1122,11 @@ $("div") — 选择&lt;div&gt;标签元素</code></pre><p>$(‘#myid’) ——i
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;toc</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -999,7 +1263,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                     var today = new Date();
                     var startYear = "2019";
                     var startMonth = "10";
-                    var startDate = "27";
+                    var startDate = "24";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1072,8 +1336,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;search</span>
+            <input type="search" id="searchInput" name="s" placeholder="searchTip"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

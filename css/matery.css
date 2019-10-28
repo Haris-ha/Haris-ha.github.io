@@ -172,7 +172,7 @@ code {
     z-index: 1;
     filter: invert(50%);
     cursor: pointer;
-} 
+}
 
 .code-expand {
     position: absolute;
@@ -448,7 +448,7 @@ header .go-back i {
     height: 40vh !important;
 }
 
-.bg-cover:after {
+/* .bg-cover:after {
     -webkit-animation: rainbow 60s infinite;
     animation: rainbow 60s infinite;
 }
@@ -462,7 +462,7 @@ header .go-back i {
     left: 0;
     top: 0;
     content: "";
-}
+} */
 
 .bg-cover .container {
     position: relative;

@@ -178,7 +178,7 @@
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="search" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -529,7 +529,7 @@
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                           </div>
                     
                 </div>
@@ -540,7 +540,7 @@
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>publishDate:&nbsp;&nbsp;
                     2019-10-28
                 </div>
                 
@@ -550,7 +550,7 @@
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="far fa-eye fa-fw"></i>readCount:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -563,12 +563,22 @@
 <h1 id="递归的联想理解"><a href="#递归的联想理解" class="headerlink" title="递归的联想理解"></a>递归的联想理解</h1><p>递归像是你在金字塔的顶端，要收集最底的宝藏，你每下一层看没有宝藏，找到了去往下一层的门，继续去下一层，层和层之间的楼梯都是一样的，看上去走的行程是一样的，实际上它们是不同的楼梯，等你走到底拿了宝藏，你还要一层一层再爬回去。</p>
 <h1 id="递归的基本思想"><a href="#递归的基本思想" class="headerlink" title="递归的基本思想"></a>递归的基本思想</h1><p><strong>“有来有回”</strong> 以及常听到的 <strong>“自己调用自己”</strong></p>
 <p>当划分为多个子问题处理时，重要的一点是子问题解决了，才可以继续解决基于子问题的问题</p>
-<h1 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h1><p>一个数组左边界是L，右边界是R，（L和R都是位置），我们想要寻找这个数组的最大值，我们现在将数组一分为二，分别找出数组左部分的最大值，和数组右部分的最大值，最后返回二者之中的最大值。<br>5，3，1，8，6，2<br><em>==L==，1，2，3，4，==R==</em></p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var maxArr = [5,3,1,8,6,2];</span><br><span class="line">function getMax(arr,L,R){</span><br><span class="line">	if(L == R){</span><br><span class="line">	return arr[L];</span><br><span class="line">	}</span><br><span class="line">	var mid = (L+R)/2;</span><br><span class="line">	var maxLeft = getMax(arr,L,mid);</span><br><span class="line">	var maxRight = getMax(arr,mid+1,R);</span><br><span class="line">	return max = Math.max(maxLeft,maxRight);</span><br><span class="line">}</span><br><span class="line">getMax(maxArr,0,maxArr.length-1);</span><br><span class="line">console.log(max);</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20181114135423524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h1><p>一个数组左边界是L，右边界是R，（L和R都是位置），我们想要寻找这个数组的最大值，我们现在将数组一分为二，分别找出数组左部分的最大值，和数组右部分的最大值，最后返回二者之中的最大值。<br>5，3，1，8，6，2<br><strong>L</strong>，1，2，3，4，<strong>R</strong></p>
+<pre><code>var maxArr = [5,3,1,8,6,2];
+function getMax(arr,L,R){
+    if(L == R){
+    return arr[L];
+    }
+    var mid = (L+R)/2;
+    var maxLeft = getMax(arr,L,mid);
+    var maxRight = getMax(arr,mid+1,R);
+    return max = Math.max(maxLeft,maxRight);
+}
+getMax(maxArr,0,maxArr.length-1);
+console.log(max);</code></pre><p><img src="https://img-blog.csdnimg.cn/20181114135423524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p>
 <p>可以看到提示代码错误：<br><strong>“Maximum call stack size exceeded”</strong> 超过最大调用栈大小</p>
 <p>原来系统用的是栈结构来解决这个问题，不过我们先改写代码使它通过随后详细讲解。</p>
-<p>我们将<code>var mid = (L+R)/2;</code>改为<code>var mid = L + ((R - L) &gt;&gt; 1);</code><br><img src="https://img-blog.csdnimg.cn/20181114140731874.png" alt="在这里插入图片描述"><br>打印出数组最大值8</p>
+<p>我们将<code>var mid = (L+R)/2;</code>改为<code>var mid = L + ((R - L) &gt;&gt; 1);</code><br><img src="https://img-blog.csdnimg.cn/20181114140731874.png" alt=""><br>打印出数组最大值8</p>
 <p>因为L，R表示下标时，L不会溢出，R不会溢出，L+R可能溢出，mid = (L+R)/2算出的mid可能是错误的，这样是不安全的，但mid = （L+(R-L)/2）&lt;R，R不溢出，所以绝对不会有溢出问题，最后用右移运算抖机灵。</p>
 <h1 id="深入剖析递归行为"><a href="#深入剖析递归行为" class="headerlink" title="深入剖析递归行为"></a>深入剖析递归行为</h1><p>==递归就是系统帮你压栈==<br>递归函数getMax(arr,L,R)开始，系统准备一个栈，首先L和R相等吗，相等则说明数组只有一个元素则直接返回，否则继续。首先L=0，R=5，产生一个变量mid = 2，随后变量maxLeft需要子过程来产生，系统做的工作是把getMax(arr,0,5)以及代码跑到第几行，mid = 2等信息全部压入栈中，然后调用子过程，先当与这个函数被归挡，先跑子过程，继续跑getMax(arr,0,2),一直继续直到触发L == R，即执行 return arr[L]返回。然后进行弹栈操作，读取弹栈后的栈顶的信息，完全还原现场当时的信息，即发生到哪个子过程，代码跑到第几行，再继续执行之后的子过程，最终串起来子过程和父过程的通信。</p>
 <p>==<strong>任何递归行为都可以改成非递归</strong>==<br>将系统压栈改成自己压栈，就变成了非递归，即迭代</p>
@@ -613,7 +623,7 @@
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        文章作者:
+                        author:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -623,7 +633,7 @@
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        文章链接:
+                        link:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -633,13 +643,13 @@
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        版权声明:
+                        reprint:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
+                    use
+                    <a href="cc_by_url" rel="external nofollow noreferrer" target="_blank">cc_by_name</a>
+                    licensed
                     <a href="http://Haris-ha.github.io" target="_blank">哈立势</a>
                     !
                 </span>
@@ -649,7 +659,7 @@
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        let toastHTML = '<span>pleaseFollowReprintPolicy</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">checkPolicy</a>';
         M.toast({html: toastHTML})
       });
 
@@ -664,7 +674,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                         </div>
                     
                 </div>
@@ -727,7 +737,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;prev</div>
             <div class="card">
                 <a href="/2019/10/28/%E3%80%8AHTML5%E6%8F%AD%E7%A7%98%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89/">
                     <div class="card-image">
@@ -764,7 +774,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/10/28/%E8%8D%B7%E5%85%B0%E5%9B%BD%E6%97%97%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/">
@@ -826,15 +836,11 @@
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;toc</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -971,7 +977,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                     var today = new Date();
                     var startYear = "2019";
                     var startMonth = "10";
-                    var startDate = "27";
+                    var startDate = "24";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1044,8 +1050,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;search</span>
+            <input type="search" id="searchInput" name="s" placeholder="searchTip"
                    class="search-input">
         </div>
         <div id="searchResult"></div>

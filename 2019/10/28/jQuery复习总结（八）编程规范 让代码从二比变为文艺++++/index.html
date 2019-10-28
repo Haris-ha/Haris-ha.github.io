@@ -178,7 +178,7 @@ $(&#34;.container input#item&#34;).att">
   
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
-      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+      <i id="searchIcon" class="fas fa-search" title="search" style="zoom: 0.85;"></i>
     </a>
   </li>
 </ul>
@@ -529,7 +529,7 @@ $(&#34;.container input#item&#34;).att">
                 <div class="col s7">
                     
                           <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                           </div>
                     
                 </div>
@@ -540,7 +540,7 @@ $(&#34;.container input#item&#34;).att">
 
             <div class="post-info">
                 <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    <i class="far fa-calendar-minus fa-fw"></i>publishDate:&nbsp;&nbsp;
                     2019-10-28
                 </div>
                 
@@ -550,7 +550,7 @@ $(&#34;.container input#item&#34;).att">
 				
 				
                     <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <i class="far fa-eye fa-fw"></i>readCount:&nbsp;&nbsp;
                         <span id="busuanzi_value_page_pv"></span>
                     </div>
 				
@@ -566,26 +566,65 @@ $(".container input#item").attr("title", $(".container input#item").text());
 $(".container input#item").css("color", "red");
 
 // Makes the element fade out
-$(".container input#item").fadeOut();</code></pre><h5 id="普通"><a href="#普通" class="headerlink" title="普通"></a>普通</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Set's an element's title attribute using it's current text</span><br><span class="line">   $("#item").attr("title", $("#item").text());</span><br><span class="line"></span><br><span class="line">   // Set's an element's text color to red</span><br><span class="line">   $("#item").css("color", "red");</span><br><span class="line"></span><br><span class="line">   // Makes the element fade out</span><br><span class="line">   $("#item").fadeOut();</span><br></pre></td></tr></tbody></table></figure>
+$(".container input#item").fadeOut();</code></pre><h5 id="普通"><a href="#普通" class="headerlink" title="普通"></a>普通</h5><pre><code>// Set's an element's title attribute using it's current text
+$("#item").attr("title", $("#item").text());
 
-<h5 id="文艺"><a href="#文艺" class="headerlink" title="文艺"></a>文艺</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// Stores the live DOM element inside of a variable</span><br><span class="line">	var elem = $("#item");</span><br><span class="line"></span><br><span class="line">// Set's an element's title attribute using it's current text</span><br><span class="line">	elem.attr("title", elem.text());</span><br><span class="line"></span><br><span class="line">// Set's an element's text color to red</span><br><span class="line">	elem.css("color", "red");</span><br><span class="line"></span><br><span class="line">// Makes the element fade out</span><br><span class="line">	elem.fadeOut();</span><br></pre></td></tr></tbody></table></figure>
+// Set's an element's text color to red
+$("#item").css("color", "red");
 
-<h5 id="文艺-1"><a href="#文艺-1" class="headerlink" title="文艺++"></a>文艺++</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Stores the live DOM element inside of a variable</span><br><span class="line">   var elem = $("#item");</span><br><span class="line"></span><br><span class="line">// Chaining</span><br><span class="line">   elem.attr("title", elem.text()).css("color", "red").fadeOut();</span><br></pre></td></tr></tbody></table></figure>
+// Makes the element fade out
+$("#item").fadeOut();</code></pre><h5 id="文艺"><a href="#文艺" class="headerlink" title="文艺"></a>文艺</h5><pre><code>// Stores the live DOM element inside of a variable
+    var elem = $("#item");
 
-<blockquote>
+// Set's an element's title attribute using it's current text
+    elem.attr("title", elem.text());
+
+// Set's an element's text color to red
+    elem.css("color", "red");
+
+// Makes the element fade out
+    elem.fadeOut();</code></pre><h5 id="文艺-1"><a href="#文艺-1" class="headerlink" title="文艺++"></a>文艺++</h5><pre><code>// Stores the live DOM element inside of a variable
+var elem = $("#item");
+
+// Chaining
+elem.attr("title", elem.text()).css("color", "red").fadeOut();</code></pre><blockquote>
 <p><strong>要尽量减少dom的操作，dom操作代价是巨大的，能用简单的selector就用简单的，当我们能直接用id选择就直接用id，而不是像二比版本的使用复杂无意义的选择器，其次我们可以将jquery搜索匹配到的dom元素用变量存储起来，再次使用时即可不必再进行dom搜索匹配，最后当我们作用的元素是同一个，我们把所有的操作都chain起来，这样代码简洁易维护，要充分利用jQuery的优点</strong></p>
 </blockquote>
-<h2 id="DOM-INSERTION"><a href="#DOM-INSERTION" class="headerlink" title="DOM INSERTION"></a>DOM INSERTION</h2><h5 id="普通-1"><a href="#普通-1" class="headerlink" title="普通"></a>普通</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// Dynamically building an unordered list from an array</span><br><span class="line">    var localArr = ["Greg", "Peter", "Kyle", "Danny", "Mark"],</span><br><span class="line">    list = $("ul.people");</span><br><span class="line">    $.each(localArr, function(index, value) {</span><br><span class="line">    list.append("&lt;li id=" + index + "&gt;" + value + "&lt;/li&gt;");</span><br><span class="line">    });</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="文艺-2"><a href="#文艺-2" class="headerlink" title="文艺"></a>文艺</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Dynamically building an unordered list from an array</span><br><span class="line">    var localArr = ["Greg", "Peter", "Kyle", "Danny", "Mark"],</span><br><span class="line">        list = $("ul.people"),</span><br><span class="line">        dynamicItems = "";</span><br><span class="line">    $.each(localArr, function(index, value) {</span><br><span class="line">        dynamicItems += "&lt;li id=" + index + "&gt;" + value + "&lt;/li&gt;";</span><br><span class="line">    });</span><br><span class="line">    list.append(dynamicItems);</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
+<h2 id="DOM-INSERTION"><a href="#DOM-INSERTION" class="headerlink" title="DOM INSERTION"></a>DOM INSERTION</h2><h5 id="普通-1"><a href="#普通-1" class="headerlink" title="普通"></a>普通</h5><pre><code>// Dynamically building an unordered list from an array
+var localArr = ["Greg", "Peter", "Kyle", "Danny", "Mark"],
+list = $("ul.people");
+$.each(localArr, function(index, value) {
+list.append("&lt;li id=" + index + "&gt;" + value + "&lt;/li&gt;");
+});</code></pre><h5 id="文艺-2"><a href="#文艺-2" class="headerlink" title="文艺"></a>文艺</h5><pre><code>// Dynamically building an unordered list from an array
+var localArr = ["Greg", "Peter", "Kyle", "Danny", "Mark"],
+    list = $("ul.people"),
+    dynamicItems = "";
+$.each(localArr, function(index, value) {
+    dynamicItems += "&lt;li id=" + index + "&gt;" + value + "&lt;/li&gt;";
+});
+list.append(dynamicItems);</code></pre><blockquote>
 <p><strong>我们碰到向页面中插入元素的操作时，特别是在for循环里插入，插入的次数较多时，我们应尽量减少dom的操作，方法是文艺方法里，用一个类似buffer的东西先全部整理好li，最后再一起插入到list里，这样减少了大量的重复的dom操作</strong></p>
 </blockquote>
-<h2 id="EVENT-HANDLING"><a href="#EVENT-HANDLING" class="headerlink" title="EVENT HANDLING"></a>EVENT HANDLING</h2><h5 id="二比-1"><a href="#二比-1" class="headerlink" title="二比"></a>二比</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$("#longlist li").on("mouseenter", function() {</span><br><span class="line">        $(this).text("Click me!");</span><br><span class="line">    });</span><br><span class="line">    $("#longlist li").on("click", function() {</span><br><span class="line">        $(this).text("Why did you click me?!");</span><br><span class="line">    });</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="普通-2"><a href="#普通-2" class="headerlink" title="普通"></a>普通</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var listItems = $("#longlist li");</span><br><span class="line">   listItems.on({</span><br><span class="line">       "mouseenter": function() {</span><br><span class="line">           $(this).text("Click me!");</span><br><span class="line">       },</span><br><span class="line">       "click": function() {</span><br><span class="line">           $(this).text("Why did you click me?!");</span><br><span class="line">       }</span><br><span class="line">   });</span><br></pre></td></tr></tbody></table></figure>
-<h5 id="文艺-3"><a href="#文艺-3" class="headerlink" title="文艺"></a>文艺</h5><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var list = $("#longlist");</span><br><span class="line">    list.on("mouseenter", "li", function(){</span><br><span class="line">        $(this).text("Click me!");</span><br><span class="line">    });</span><br><span class="line">    list.on("click", "li", function() {</span><br><span class="line">        $(this).text("Why did you click me?!");</span><br><span class="line">    });</span><br></pre></td></tr></tbody></table></figure>
-
-<blockquote>
+<h2 id="EVENT-HANDLING"><a href="#EVENT-HANDLING" class="headerlink" title="EVENT HANDLING"></a>EVENT HANDLING</h2><h5 id="二比-1"><a href="#二比-1" class="headerlink" title="二比"></a>二比</h5><pre><code>$("#longlist li").on("mouseenter", function() {
+    $(this).text("Click me!");
+});
+$("#longlist li").on("click", function() {
+    $(this).text("Why did you click me?!");
+});</code></pre><h5 id="普通-2"><a href="#普通-2" class="headerlink" title="普通"></a>普通</h5><pre><code>var listItems = $("#longlist li");
+listItems.on({
+    "mouseenter": function() {
+        $(this).text("Click me!");
+    },
+    "click": function() {
+        $(this).text("Why did you click me?!");
+    }
+});</code></pre><h5 id="文艺-3"><a href="#文艺-3" class="headerlink" title="文艺"></a>文艺</h5><pre><code>var list = $("#longlist");
+list.on("mouseenter", "li", function(){
+    $(this).text("Click me!");
+});
+list.on("click", "li", function() {
+    $(this).text("Why did you click me?!");
+});</code></pre><blockquote>
 <p><strong>二比犯了同样的错误，我们最好将jQuery查询dom操作节省，再查出后我们赋值给一个变量，普通版本进行了改进，但是，除了查询赋值给变量优化了一点，剩下一模一样。假如我们现在的list里有n个li，前两种方法，它们在on下要进行总共2n个handler，代价是昂贵的，但文艺方法让handler绑定在list上，然后在内部生成一个过滤器，如果list的子元素是li，就实现后面的方法，这样总共绑定的handler只有两个，巨大的优化</strong></p>
 </blockquote>
 <script>
@@ -617,7 +656,7 @@ $(".container input#item").fadeOut();</code></pre><h5 id="普通"><a href="#普�
             <div class="reprint__author">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-user">
-                        文章作者:
+                        author:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -627,7 +666,7 @@ $(".container input#item").fadeOut();</code></pre><h5 id="普通"><a href="#普�
             <div class="reprint__type">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-link">
-                        文章链接:
+                        link:
                     </i>
                 </span>
                 <span class="reprint-info">
@@ -637,13 +676,13 @@ $(".container input#item").fadeOut();</code></pre><h5 id="普通"><a href="#普�
             <div class="reprint__notice">
                 <span class="reprint-meta" style="font-weight: bold;">
                     <i class="fas fa-copyright">
-                        版权声明:
+                        reprint:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
+                    use
+                    <a href="cc_by_url" rel="external nofollow noreferrer" target="_blank">cc_by_name</a>
+                    licensed
                     <a href="http://Haris-ha.github.io" target="_blank">哈立势</a>
                     !
                 </span>
@@ -653,7 +692,7 @@ $(".container input#item").fadeOut();</code></pre><h5 id="普通"><a href="#普�
 
     <script async defer>
       document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        let toastHTML = '<span>pleaseFollowReprintPolicy</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">checkPolicy</a>';
         M.toast({html: toastHTML})
       });
 
@@ -668,7 +707,7 @@ $(".container input#item").fadeOut();</code></pre><h5 id="普通"><a href="#普�
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            <span class="chip bg-color">notag</span>
                         </div>
                     
                 </div>
@@ -731,7 +770,7 @@ $(".container input#item").fadeOut();</code></pre><h5 id="普通"><a href="#普�
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fas fa-chevron-left"></i>&nbsp;prev</div>
             <div class="card">
                 <a href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%B9%9D%EF%BC%89jQuery%E6%9C%80%E5%A5%BD%E7%9A%84%E7%BB%83%E4%B9%A0%20%EF%BC%88to%20do%20list%E9%A1%B9%E7%9B%AE%20%20%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%EF%BC%89/">
                     <div class="card-image">
@@ -771,7 +810,7 @@ $(".container input#item").fadeOut();</code></pre><h5 id="普通"><a href="#普�
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2019/10/28/jQuery%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93%EF%BC%88%E4%B8%83%EF%BC%89UI%E5%B0%8F%E9%83%A8%E4%BB%B6/">
@@ -838,15 +877,11 @@ jQuery UI实例
 
 <!-- 代码块折行 -->
 
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
 
     </div>
     <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
         <div class="toc-widget">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;toc</div>
             <div id="toc-content"></div>
         </div>
     </div>
@@ -983,7 +1018,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                     var today = new Date();
                     var startYear = "2019";
                     var startMonth = "10";
-                    var startDate = "27";
+                    var startDate = "24";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1056,8 +1091,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;search</span>
+            <input type="search" id="searchInput" name="s" placeholder="searchTip"
                    class="search-input">
         </div>
         <div id="searchResult"></div>
