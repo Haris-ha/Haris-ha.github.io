@@ -4,10 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Markdown全语法整理, blog">
-    <meta name="description" content="主要内容
-Markdown是什么？谁创造了它？为什么要使用它？怎么使用？谁在用？尝试一下
-正文1. Markdown是什么？Markdown是一种轻量级标记语言，它以纯文本形式(易读、易写、易更改)编写文档，并最终以HTML格式发布。Mar">
+    <meta name="keywords" content="JS基本数据类型和引用数据类型的区别及深浅拷贝, blog">
+    <meta name="description" content="栈(stack)和堆（heap）stack为自动分配的内存空间，由系统自动释放；而heap是动态分配的内存，大小也不一定会释放
+数据类型JS分为两种数据类型：
+
+基本数据类型： Number、String、Boolean、Null、Unde">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +16,7 @@ Markdown是什么？谁创造了它？为什么要使用它？怎么使用？谁
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Markdown全语法整理 | Mr.Ha&#39;s blog</title>
+    <title>JS基本数据类型和引用数据类型的区别及深浅拷贝 | Mr.Ha&#39;s blog</title>
     <link rel="icon" type="image/png" href="/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -413,13 +414,13 @@ Markdown是什么？谁创造了它？为什么要使用它？怎么使用？谁
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Markdown全语法整理
+                        JS基本数据类型和引用数据类型的区别及深浅拷贝
                     </div>
                 </div>
             </div>
@@ -542,7 +543,7 @@ Markdown是什么？谁创造了它？为什么要使用它？怎么使用？谁
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-29
+                    2019-10-30
                 </div>
                 
                 
@@ -560,167 +561,125 @@ Markdown是什么？谁创造了它？为什么要使用它？怎么使用？谁
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="主要内容"><a href="#主要内容" class="headerlink" title="主要内容"></a>主要内容</h2><blockquote>
-<h4 id="Markdown是什么？"><a href="#Markdown是什么？" class="headerlink" title="Markdown是什么？"></a>Markdown<em>是什么</em>？</h4><h4 id="谁创造了它？"><a href="#谁创造了它？" class="headerlink" title="谁创造了它？"></a><em>谁</em>创造了它？</h4><h4 id="为什么要使用它？"><a href="#为什么要使用它？" class="headerlink" title="为什么要使用它？"></a><em>为什么</em>要使用它？</h4><h4 id="怎么使用？"><a href="#怎么使用？" class="headerlink" title="怎么使用？"></a><em>怎么</em>使用？</h4><h4 id="谁在用？"><a href="#谁在用？" class="headerlink" title="谁在用？"></a><em>谁</em>在用？</h4><h4 id="尝试一下"><a href="#尝试一下" class="headerlink" title="尝试一下"></a>尝试一下</h4></blockquote>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="1-Markdown是什么？"><a href="#1-Markdown是什么？" class="headerlink" title="1. Markdown是什么？"></a>1. Markdown<em>是什么</em>？</h3><p><strong>Markdown</strong>是一种轻量级<strong>标记语言</strong>，它以纯文本形式(<em>易读、易写、易更改</em>)编写文档，并最终以HTML格式发布。<br><strong>Markdown</strong>也可以理解为将以MARKDOWN语法编写的语言转换成HTML内容的工具。    </p>
-<h3 id="2-谁创造了它？"><a href="#2-谁创造了它？" class="headerlink" title="2. 谁创造了它？"></a>2. <em>谁</em>创造了它？</h3><p>它由<a href="http://www.aaronsw.com/" target="_blank" rel="noopener"><strong>Aaron Swartz</strong></a>和<strong>John Gruber</strong>共同设计，<strong>Aaron Swartz</strong>就是那位于（<em>2013年1月11日</em>）自杀,有着<strong>开挂</strong>一般人生经历的程序员。维基百科对他的<a href="http://zh.wikipedia.org/wiki/%E4%BA%9A%E4%BC%A6%C2%B7%E6%96%AF%E6%B2%83%E8%8C%A8" target="_blank" rel="noopener">介绍</a>是：<strong>软件工程师、作家、政治组织者、互联网活动家、维基百科人</strong>。    </p>
-<p>他有着足以让你跪拜的人生经历：    </p>
+                <h3 id="栈-stack-和堆（heap）"><a href="#栈-stack-和堆（heap）" class="headerlink" title="栈(stack)和堆（heap）"></a>栈(stack)和堆（heap）</h3><p>stack为自动分配的内存空间，由系统自动释放；而heap是动态分配的内存，大小也不一定会释放</p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p><strong>JS分为两种数据类型：</strong></p>
 <ul>
-<li><strong>14岁</strong>参与RSS 1.0规格标准的制订。     </li>
-<li><strong>2004</strong>年入读<strong>斯坦福</strong>，之后退学。   </li>
-<li><strong>2005</strong>年创建<a href="http://infogami.org/" target="_blank" rel="noopener">Infogami</a>，之后与<a href="http://www.reddit.com/" target="_blank" rel="noopener">Reddit</a>合并成为其合伙人。   </li>
-<li><strong>2010</strong>年创立求进会（Demand Progress），积极参与禁止网络盗版法案（SOPA）活动，最终该提案被撤回。   </li>
-<li><strong>2011</strong>年7月19日，因被控从MIT和JSTOR下载480万篇学术论文并以免费形式上传于网络被捕。     </li>
-<li><strong>2013</strong>年1月自杀身亡。    </li>
+<li><p><strong>基本数据类型：</strong> Number、String、Boolean、Null、Undefined、Symbol(ES6)，这些类型可直接操作保存在变量当中的实际值</p>
+</li>
+<li><p><strong>引用数据类型：</strong> Object（在JS中除了基本数据类型以外的都是对象，数据是对象，函数是对象，正则表达式是对象）</p>
+</li>
 </ul>
-<p><img src="https://github.com/younghz/Markdown/raw/master/resource/Aaron_Swartz.jpg" alt="Aaron Swartz"></p>
-<p>天才都有早逝的归途。</p>
-<h3 id="3-为什么要使用它？"><a href="#3-为什么要使用它？" class="headerlink" title="3. 为什么要使用它？"></a>3. <em>为什么</em>要使用它？</h3><ul>
-<li>它是易读（看起来舒服）、易写（语法简单）、易更改<strong>纯文本</strong>。处处体现着<strong>极简主义</strong>的影子。</li>
-<li>兼容HTML，可以转换为HTML格式发布。</li>
-<li>跨平台使用。</li>
-<li>越来越多的网站支持Markdown。</li>
-<li>更方便清晰地组织你的电子邮件。（Markdown-here, Airmail）</li>
-<li>摆脱Word（我不是认真的）。</li>
+<h3 id="基本数据存放在栈-stack-中"><a href="#基本数据存放在栈-stack-中" class="headerlink" title="基本数据存放在栈(stack)中"></a>基本数据存放在栈(stack)中</h3><p>  基本数据类型是指存放在栈中的简单数据段，数据大小确定，内存空间大小可以分配，它们是直接按值存放的，所以可以直接按值访问</p>
+<pre><code>var a = 10;
+var b = a;
+b = 20;
+console.log(a);    //10
+console.log(b);    //20</code></pre><p>下图演示了这种基本数据类型赋值的过程：</p>
+<p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E8%B5%8B%E5%80%BC%E8%BF%87%E7%A8%8B.png" alt=""></p>
+<h3 id="引用数据类型（存放在堆内存中的对象，每个空间大小不一样，要根据情况进行特定的配置）"><a href="#引用数据类型（存放在堆内存中的对象，每个空间大小不一样，要根据情况进行特定的配置）" class="headerlink" title="引用数据类型（存放在堆内存中的对象，每个空间大小不一样，要根据情况进行特定的配置）"></a>引用数据类型（存放在堆内存中的对象，每个空间大小不一样，要根据情况进行特定的配置）</h3><ul>
+<li><p>引用数据类型（存放在堆内存中的对象，每个空间大小不一样，要根据情况进行特定的配置）</p>
+</li>
+<li><p>引用类型数据在栈内存中保存的实际上是对象在堆内存中的引用地址。通过这个引用地址可以快速查找到保存在堆内存中的对象</p>
+</li>
 </ul>
-<h3 id="4-怎么使用？"><a href="#4-怎么使用？" class="headerlink" title="4. 怎么使用？"></a>4. <em>怎么</em>使用？</h3><p>Markdown语法主要分为如下几大部分：<br><strong>标题</strong>，<strong>段落</strong>，<strong>区块引用</strong>，<strong>代码区块</strong>，<strong>强调</strong>，<strong>列表</strong>，<strong>分割线</strong>，<strong>链接</strong>，<strong>图片</strong>，<strong>反斜杠 <code>\</code></strong>，<strong>符号’`’</strong>。</p>
-<h4 id="4-1-标题"><a href="#4-1-标题" class="headerlink" title="4.1 标题"></a>4.1 标题</h4><p>两种形式：<br>1）使用<code>=</code>和<code>-</code>标记一级和二级标题。</p>
-<blockquote>
-<p>一级标题<br><code>=========</code><br>二级标题<br><code>---------</code></p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题   "></a>一级标题   </h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2></blockquote>
-<p>2）使用<code>#</code>，可表示1-6级标题。</p>
-<blockquote>
-<p># 一级标题<br>## 二级标题<br>### 三级标题<br>#### 四级标题<br>##### 五级标题<br>###### 六级标题    </p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<h1 id="一级标题-1"><a href="#一级标题-1" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题-1"><a href="#二级标题-1" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6></blockquote>
-<h4 id="4-2-段落"><a href="#4-2-段落" class="headerlink" title="4.2 段落"></a>4.2 段落</h4><p>段落的前后要有空行，所谓的空行是指没有文字内容。若想在段内强制换行的方式是使用<strong>两个以上</strong>空格加上回车（引用中换行省略回车）。</p>
-<h4 id="4-3-区块引用"><a href="#4-3-区块引用" class="headerlink" title="4.3 区块引用"></a>4.3 区块引用</h4><p>在段落的每行或者只在第一行使用符号<code>&gt;</code>,还可使用多个嵌套引用，如：</p>
-<blockquote>
-<p>&gt; 区块引用<br>&gt;&gt; 嵌套引用  </p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<p>区块引用  </p>
-<blockquote>
-<p>嵌套引用</p>
-</blockquote>
-</blockquote>
-<h4 id="4-4-代码区块"><a href="#4-4-代码区块" class="headerlink" title="4.4 代码区块"></a>4.4 代码区块</h4><p>代码区块的建立是在每行加上4个空格或者一个制表符（如同写代码一样）。如<br>普通段落：</p>
-<pre><code>void main()    
-{    
-    printf("Hello, Markdown.");    
-}    </code></pre><p>代码区块：</p>
-<pre><code>void main()
-{
-    printf("Hello, Markdown.");
-}</code></pre><p><strong>注意</strong>:需要和普通段落之间存在空行。</p>
-<h4 id="4-5-强调"><a href="#4-5-强调" class="headerlink" title="4.5 强调"></a>4.5 强调</h4><p>在强调内容两侧分别加上<code>*</code>或者<code>_</code>，如：</p>
-<blockquote>
-<p>*斜体*，_斜体_<br>**粗体**，__粗体__</p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<p><em>斜体</em>，<em>斜体</em><br><strong>粗体</strong>，<strong>粗体</strong></p>
-</blockquote>
-<h4 id="4-6-列表"><a href="#4-6-列表" class="headerlink" title="4.6 列表"></a>4.6 列表</h4><p>使用<code>·</code>、<code>+</code>、或<code>-</code>标记无序列表，如：</p>
-<blockquote>
-<p>-（+*） 第一项<br>-（+*） 第二项<br>- （+*）第三项</p>
-</blockquote>
-<p><strong>注意</strong>：标记后面最少有一个_空格<em>或</em>制表符_。若不在引用区块中，必须和前方段落之间存在空行。</p>
-<p>效果：</p>
-<blockquote>
+<pre><code>var obj1 = new Object();
+var obj2 = obj1;
+obj2.name = "我的名字是帅哈";
+console.log(obj1.name);     //我的名字是帅哈</code></pre><p>说明这两个引用数据类型指向同一个堆内存对象。obj1赋值给obj2，实际上这个堆内对象在栈内存的引用复制了一份给obj2，实际上两个引用地址指向同一个对象，所以修改其一必会修改该对象</p>
+<p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8.png" alt=""></p>
+<pre><code>var a = [1,2,3,4,5];
+var b = a;   //  传址 ,对象中传给变量的数据是引用类型的，会存储在堆中
+var c = a[0];  //传值，把对象中的属性/数组中的数组项赋值给变量，这时变量C是基本数据类型，存储在栈内存中；改变栈中的数据不会影响堆中的数据
+alert(b);  // 1，2，3，4，5
+alert(c);  //1
+b[4] = 6;
+c = 7;
+alert(a[4]);  // 6
+alert(a[0]);  // 1</code></pre><p>当改变b中的数据时，a中数据也发生了变化；但是当我改变c的数据值时，a却没有发生改变,这就是传值与传址的区别</p>
+<p>因为a是数组，属于引用类型，所以它赋予给b的时候传的是栈中的地址（相当于新建了一个不同名“指针”），而不是堆内存中的对象。而c仅仅是从a堆内存中获取的一个数据值，并保存在栈中。所以b修改的时候，会根据地址回到a堆中修改，c则直接在栈中修改，并且不能指向a堆内存中</p>
+<p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B.png" alt=""></p>
+<h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><p>前面已经提到，在定义一个对象或数组时，变量存放的往往只是一个地址。当我们使用对象拷贝时，如果属性是对象或数组时，这时候我们传递的也只是一个地址。因此子对象在访问该属性时，会根据地址回溯到父对象指向的堆内存中，即父子对象发生了关联，两者的属性值会指向同一内存空间。</p>
+<pre><code>var a={key1:"11111"}
+function Copy(p){
+   var c ={};
+   for (var i in p){
+      c[i]=p[i]
+   }    
+   return c;
+}
+a.key2 = ["小辉","小辉"]
+var b = Copy(a);
+b.key3 = "33333"
+alert(b.key1)//11111
+alert(b.key3)//33333
+alert(a.key3);//undefined
+
+
+b.key2.push("大辉")
+alert(a.key2);//小辉，小辉，大辉</code></pre><p>若是修改的属性变为对象或数组时，那么父子对象之间就发生关联，从上可知：</p>
+<p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E6%B5%85%E6%8B%B7%E8%B4%9D.png" alt=""></p>
+<p>原因是key1的值属于基本类型，所以拷贝的时候传递的就是该数据段；但是key2的值是堆内存中的对象，所以key2在拷贝的时候传递的是指向key2对象的地址，无论复制多少个key2，其值始终是指向父对象的key2对象的内存空间</p>
+<pre><code>//ES6实现浅拷贝的方法
+var a = {name:"暖风"}
+var b= Object.assign({},a);
+b.age = 18;
+console.log(a.age);//undefined
+----------------------------------
+//数组
+var a = [1,2,3];
+var b = a.slice();
+b.push(4);
+b//1,2,3,4
+a//1,2,3
+----------------------------------
+var a = [1,2,3];
+var b = a.concat();
+b.push(4);
+b//1,2,3,4
+a//1,2,3
+----------------------------------
+var a = [1,2,3];
+var b = [...a]
+b//1,2,3,4
+a//1,2,3</code></pre><h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><p>我们不希望父子对象之间产生关联，那么这时候可以用到深拷贝。既然属性值类型是数组和或象时只会传址，那么我们就用递归来解决这个问题，把父对象中所有属于对象的属性类型都遍历赋给子对象即可。测试代码如下：</p>
+<pre><code>var a={key1:"11111"}
+function Copy(p,c){
+   var c =c||{};
+   for (var i in p){
+    if(typeof p[i]==="object"){
+      c[i]=(p[i].constructor ===Array)?[]:{}
+      Copy(p[i],c[i]);
+    }else{
+       c[i]=p[i]
+    }
+   }    
+   return c;
+}
+a.key2 = ["小辉","小辉"]
+var b = {}
+b = Copy(a,b);
+b.key2.push("大辉");
+b.key2//小辉，小辉，大辉
+a.key2//小辉，小辉   </code></pre><p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E6%B7%B1%E6%8B%B7%E8%B4%9D.png" alt=""></p>
+<h4 id="最后：-总结基本数据类型和引用数据类型区别"><a href="#最后：-总结基本数据类型和引用数据类型区别" class="headerlink" title="最后： 总结基本数据类型和引用数据类型区别"></a>最后： 总结基本数据类型和引用数据类型区别</h4><p>1、声明变量时内存分配不同</p>
 <ul>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
+<li><p><strong>原始类型：</strong> 在栈中，因为占据空间是固定的，可以将他们存在较小的内存中-栈中，这样便于迅速查询变量的值</p>
+</li>
+<li><p><strong>引用类型：</strong> 存在堆中，栈中存储的变量，只是用来查找堆中的引用地址。</p>
+</li>
 </ul>
-</blockquote>
-<p>有序列表的标记方式是将上述的符号换成数字,并辅以<code>.</code>，如：</p>
-<blockquote>
-<p>1 . 第一项<br>2 . 第二项<br>3 . 第三项    </p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<ol>
-<li>第一项</li>
-<li>第二项</li>
-<li>第三项</li>
-</ol>
-</blockquote>
-<h4 id="4-7-分割线"><a href="#4-7-分割线" class="headerlink" title="4.7 分割线"></a>4.7 分割线</h4><p>分割线最常使用就是三个或以上<code>*</code>，还可以使用<code>-</code>和<code>_</code>。</p>
-<h4 id="4-8-链接"><a href="#4-8-链接" class="headerlink" title="4.8 链接"></a>4.8 链接</h4><p>链接可以由两种形式生成：<strong>行内式</strong>和<strong>参考式</strong>。<br><strong>行内式</strong>：</p>
-<blockquote>
-<p>[Harris的博客](<a href="http://haharris.com" target="_blank" rel="noopener">http://haharris.com</a>)</p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<p><a href="http://haharris.com" target="_blank" rel="noopener">Harris的博客</a></p>
-</blockquote>
-<p><strong>参考式</strong>：</p>
-<blockquote>
-<p>[Harris的博客][1]<br>[Harris的博客][2]<br>[1]:<a href="http://haharris.com&quot;" target="_blank" rel="noopener">http://haharris.com"</a><br>[2]:<a href="http://haharris.com&quot;" target="_blank" rel="noopener">http://haharris.com"</a>    </p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<p><a href="http://haharris.com" target="_blank" rel="noopener">Harris的博客</a><br><a href="http://haharris.com" target="_blank" rel="noopener">Harris的博客</a></p>
-</blockquote>
-<p><strong>注意</strong>：上述的<code>[1]:http://haharris.com</code>不出现在区块中。</p>
-<h4 id="4-9-图片"><a href="#4-9-图片" class="headerlink" title="4.9 图片"></a>4.9 图片</h4><p>添加图片的形式和链接相似，只需在链接的基础上前方加一个<code>！</code>。</p>
-<h4 id="4-10-反斜杠"><a href="#4-10-反斜杠" class="headerlink" title="4.10 反斜杠\"></a>4.10 反斜杠<code>\</code></h4><p>相当于<strong>反转义</strong>作用。使符号成为普通符号。</p>
-<h4 id="4-11-符号’-’"><a href="#4-11-符号’-’" class="headerlink" title="4.11 符号’`’"></a>4.11 符号’`’</h4><p>起到标记作用。如：</p>
-<blockquote>
-<p>`ctrl+a`</p>
-</blockquote>
-<p>效果：</p>
-<blockquote>
-<p><code>ctrl+a</code>    </p>
-</blockquote>
-<h4 id="5-谁在用？"><a href="#5-谁在用？" class="headerlink" title="5. 谁在用？"></a>5. <em>谁</em>在用？</h4><p>Markdown的使用者：</p>
-<ul>
-<li>GitHub</li>
-<li>简书</li>
-<li>Stack Overflow</li>
-<li>Apollo</li>
-<li>Moodle</li>
-<li>Reddit</li>
-<li>等等</li>
-</ul>
-<h4 id="6-尝试一下"><a href="#6-尝试一下" class="headerlink" title="6. 尝试一下"></a>6. 尝试一下</h4><ul>
-<li><strong>Chrome</strong>下的插件诸如<code>stackedit</code>与<code>markdown-here</code>等非常方便，也不用担心平台受限。</li>
-<li><strong>在线</strong>的dillinger.io评价也不错   </li>
-<li><strong>Windowns</strong>下的MarkdownPad也用过，不过免费版的体验不是很好。    </li>
-<li><strong>Mac</strong>下的Mou是国人贡献的，口碑很好。</li>
-<li><strong>Linux</strong>下的ReText不错。    </li>
-</ul>
-<p><strong>当然，最终境界永远都是笔下是语法，心中格式化 :)。</strong></p>
-<hr>
-<p><strong>注意</strong>：不同的Markdown解释器或工具对相应语法（扩展语法）的解释效果不尽相同，具体可参见工具的使用说明。<br>虽然有人想出面搞一个所谓的标准化的Markdown，[没想到还惹怒了健在的创始人John Gruber]<br>(<a href="http://blog.codinghorror.com/standard-markdown-is-now-common-markdown/" target="_blank" rel="noopener">http://blog.codinghorror.com/standard-markdown-is-now-common-markdown/</a> )。</p>
-<hr>
-<p>以上基本是所有traditonal markdown的语法。</p>
-<h3 id="其它："><a href="#其它：" class="headerlink" title="其它："></a>其它：</h3><p>列表的使用(非traditonal markdown)：</p>
-<p>用<code>|</code>表示表格纵向边界，表头和表内容用<code>-</code>隔开，并可用<code>:</code>进行对齐设置，两边都有<code>:</code>则表示居中，若不加<code>:</code>则默认左对齐。</p>
-<table>
-<thead>
-<tr>
-<th align="center">代码库</th>
-<th>链接</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">MarkDown</td>
-<td><a href="https://github.com/younghz/Markdown" target="_blank" rel="noopener" title="Markdown">https://github.com/younghz/Markdown</a></td>
-</tr>
-<tr>
-<td align="center">MarkDownCopy</td>
-<td><a href="https://github.com/younghz/Markdown" target="_blank" rel="noopener" title="Markdown">https://github.com/younghz/Markdown</a></td>
-</tr>
-</tbody></table>
-<p>关于其它扩展语法可参见具体工具的使用说明</p>
+<p>　   这是因为：引用值的大小会改变，所以不能把它放在栈中，否则会降低变量查寻的速度。相反，放在变量的栈空间中的值是该对象存储在堆中的地址。地址的大小是固定的，所以把它存储在栈中对变量性能无任何负面影响</p>
+<p>2、不同的内存分配带来不同的访问机制</p>
+<p>在javascript中是不允许直接访问保存在堆内存中的对象的，所以在访问一个对象时，首先得到的是这个对象在堆内存中的地址，然后再按照这个地址去获得这个对象中的值，这就是传说中的按引用访问。<br>而原始类型的值则是可以直接访问到的。</p>
+<p>3、复制变量时的不同</p>
+<p> 1）原始值：在将一个保存着原始值的变量复制给另一个变量时，会将原始值的副本赋值给新变量，此后这两个变量是完全独立的，他们只是拥有相同的value而已。</p>
+<p>2）引用值：在将一个保存着对象内存地址的变量复制给另一个变量时，会把这个内存地址赋值给新变量，</p>
+<p>　　也就是说这两个变量都指向了堆内存中的同一个对象，他们中任何一个作出的改变都会反映在另一个身上。</p>
+<p>（这里要理解的一点就是，复制对象时并不会在堆内存中新生成一个一模一样的对象，只是多了一个保存指向这个对象指针的变量罢了）。多了一个指针</p>
+<p>4、参数传递的不同（把实参复制给形参的过程）<br>首先我们应该明确一点：ECMAScript中所有函数的参数都是按值来传递的。<br>但是为什么涉及到原始类型与引用类型的值时仍然有区别呢？还不就是因为内存分配时的差别。</p>
+<p>1）原始值：只是把变量里的值传递给参数，之后参数和这个变量互不影响。</p>
+<p>2）引用值：对象变量它里面的值是这个对象在堆内存中的内存地址，这一点你要时刻铭记在心！</p>
+<p>因此它传递的值也就是这个内存地址，这也就是为什么函数内部对这个参数的修改会体现在外部的原因了，因为它们都指向同一个对象。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -764,7 +723,7 @@ Markdown是什么？谁创造了它？为什么要使用它？怎么使用？谁
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Haris-ha.github.io/2019/10/29/Markdown%E5%85%A8%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86/">http://Haris-ha.github.io/2019/10/29/Markdown%E5%85%A8%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86/</a>
+                    <a href="http://Haris-ha.github.io/2019/10/30/JS%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">http://Haris-ha.github.io/2019/10/30/JS%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -841,7 +800,7 @@ Markdown是什么？谁创造了它？为什么要使用它？怎么使用？谁
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-10-29T11-04-10',
+        id: '2019-10-30T16-14-11',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -862,9 +821,10 @@ Markdown是什么？谁创造了它？为什么要使用它？怎么使用？谁
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/10/30/JS%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">
                     <div class="card-image">
@@ -885,9 +845,9 @@ Markdown是什么？谁创造了它？为什么要使用它？怎么使用？谁
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-30
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -896,6 +856,7 @@ Markdown是什么？谁创造了它？为什么要使用它？怎么使用？谁
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -906,27 +867,26 @@ Markdown是什么？谁创造了它？为什么要使用它？怎么使用？谁
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/28/XML%E5%86%85%E5%AE%B9%E5%8F%8A%E8%AF%AD%E6%B3%95/">
+                <a href="/2019/10/29/Markdown%E5%85%A8%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="XML内容及语法">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Markdown全语法整理">
                         
-                        <span class="card-title">XML内容及语法</span>
+                        <span class="card-title">Markdown全语法整理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-为了灵活的实现不同路径执行不同的资源，我们需要使用XML进行配置，为了限制XML内容，我们又需要使用DTD或者Schema，为了获得XML内容，我们需要使用dom4j进行解析
-
-XMLXML 指可扩展标记语言（Extensible Mar
+                            主要内容
+Markdown是什么？谁创造了它？为什么要使用它？怎么使用？谁在用？尝试一下
+正文1. Markdown是什么？Markdown是一种轻量级标记语言，它以纯文本形式(易读、易写、易更改)编写文档，并最终以HTML格式发布。Mar
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-29
                             </span>
                         <span class="publish-author">
                             
