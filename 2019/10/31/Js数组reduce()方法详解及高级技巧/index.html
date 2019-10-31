@@ -4,11 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JS基本数据类型和引用数据类型的区别及深浅拷贝, blog">
-    <meta name="description" content="栈(stack)和堆（heap）stack为自动分配的内存空间，由系统自动释放；而heap是动态分配的内存，大小也不一定会释放
-数据类型JS分为两种数据类型：
-
-基本数据类型： Number、String、Boolean、Null、Unde">
+    <meta name="keywords" content="Js数组reduce()方法详解及高级技巧, blog">
+    <meta name="description" content="
+reduce()方法可以搞定的东西，for循环，或者forEach方法有时候也可以搞定，那为啥要用reduce()？这个问题，之前我也想过，要说原因还真找不到，唯一能找到的是：通往成功的道路有很多，但是总有一条路是最捷径的，亦或许redu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>JS基本数据类型和引用数据类型的区别及深浅拷贝 | Mr.Ha&#39;s blog</title>
+    <title>Js数组reduce()方法详解及高级技巧 | Mr.Ha&#39;s blog</title>
     <link rel="icon" type="image/png" href="/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -414,13 +412,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        JS基本数据类型和引用数据类型的区别及深浅拷贝
+                        Js数组reduce()方法详解及高级技巧
                     </div>
                 </div>
             </div>
@@ -543,7 +541,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-30
+                    2019-10-31
                 </div>
                 
                 
@@ -561,126 +559,101 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="栈-stack-和堆（heap）"><a href="#栈-stack-和堆（heap）" class="headerlink" title="栈(stack)和堆（heap）"></a>栈(stack)和堆（heap）</h3><p>stack为自动分配的内存空间，由系统自动释放；而heap是动态分配的内存，大小也不一定会释放</p>
-<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p><strong>JS分为两种数据类型：</strong></p>
-<ul>
-<li><p><strong>基本数据类型：</strong> Number、String、Boolean、Null、Undefined、Symbol(ES6)，这些类型可直接操作保存在变量当中的实际值</p>
-</li>
-<li><p><strong>引用数据类型：</strong> Object（在JS中除了基本数据类型以外的都是对象，数据是对象，函数是对象，正则表达式是对象）</p>
-</li>
-</ul>
-<h3 id="基本数据存放在栈-stack-中"><a href="#基本数据存放在栈-stack-中" class="headerlink" title="基本数据存放在栈(stack)中"></a>基本数据存放在栈(stack)中</h3><p>  基本数据类型是指存放在栈中的简单数据段，数据大小确定，内存空间大小可以分配，它们是直接按值存放的，所以可以直接按值访问</p>
-<pre><code>var a = 10;
-var b = a;
-b = 20;
-console.log(a);    //10
-console.log(b);    //20</code></pre><p>下图演示了这种基本数据类型赋值的过程：</p>
-<p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E8%B5%8B%E5%80%BC%E8%BF%87%E7%A8%8B.png" alt=""></p>
-<h3 id="引用数据类型（存放在堆内存中的对象，每个空间大小不一样，要根据情况进行特定的配置）"><a href="#引用数据类型（存放在堆内存中的对象，每个空间大小不一样，要根据情况进行特定的配置）" class="headerlink" title="引用数据类型（存放在堆内存中的对象，每个空间大小不一样，要根据情况进行特定的配置）"></a>引用数据类型（存放在堆内存中的对象，每个空间大小不一样，要根据情况进行特定的配置）</h3><ul>
-<li><p>引用数据类型（存放在堆内存中的对象，每个空间大小不一样，要根据情况进行特定的配置）</p>
-</li>
-<li><p>引用类型数据在栈内存中保存的实际上是对象在堆内存中的引用地址。通过这个引用地址可以快速查找到保存在堆内存中的对象</p>
-</li>
-</ul>
-<pre><code>var obj1 = new Object();
-var obj2 = obj1;
-obj2.name = "我的名字是帅哈";
-console.log(obj1.name);     //我的名字是帅哈</code></pre><p>说明这两个引用数据类型指向同一个堆内存对象。obj1赋值给obj2，实际上这个堆内对象在栈内存的引用复制了一份给obj2，实际上两个引用地址指向同一个对象，所以修改其一必会修改该对象</p>
-<p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E5%AF%B9%E8%B1%A1%E5%AD%98%E5%82%A8.png" alt=""></p>
-<pre><code>var a = [1,2,3,4,5];
-var b = a;   //  传址 ,对象中传给变量的数据是引用类型的，会存储在堆中
-var c = a[0];  //传值，把对象中的属性/数组中的数组项赋值给变量，这时变量C是基本数据类型，存储在栈内存中；改变栈中的数据不会影响堆中的数据
-alert(b);  // 1，2，3，4，5
-alert(c);  //1
-b[4] = 6;
-c = 7;
-alert(a[4]);  // 6
-alert(a[0]);  // 1</code></pre><p>当改变b中的数据时，a中数据也发生了变化；但是当我改变c的数据值时，a却没有发生改变,这就是传值与传址的区别</p>
-<p>因为a是数组，属于引用类型，所以它赋予给b的时候传的是栈中的地址（相当于新建了一个不同名“指针”），而不是堆内存中的对象。而c仅仅是从a堆内存中获取的一个数据值，并保存在栈中。所以b修改的时候，会根据地址回到a堆中修改，c则直接在栈中修改，并且不能指向a堆内存中</p>
-<p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B.png" alt=""></p>
-<h3 id="浅拷贝"><a href="#浅拷贝" class="headerlink" title="浅拷贝"></a>浅拷贝</h3><p>前面已经提到，在定义一个对象或数组时，变量存放的往往只是一个地址。当我们使用对象拷贝时，如果属性是对象或数组时，这时候我们传递的也只是一个地址。因此子对象在访问该属性时，会根据地址回溯到父对象指向的堆内存中，即父子对象发生了关联，两者的属性值会指向同一内存空间。</p>
-<pre><code>var a={key1:"11111"}
-function Copy(p){
-   var c ={};
-   for (var i in p){
-      c[i]=p[i]
-   }    
-   return c;
+                <blockquote>
+<p>reduce()方法可以搞定的东西，for循环，或者forEach方法有时候也可以搞定，那为啥要用reduce()？这个问题，之前我也想过，要说原因还真找不到，唯一能找到的是：通往成功的道路有很多，但是总有一条路是最捷径的，亦或许reduce()逼格更高…</p>
+</blockquote>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><pre><code>arr.reduce(callback,[initialValue])</code></pre><p>reduce为数组中的每一个元素依次执行回调函数，不包括数组中被删除或从未被赋值的元素，接受四个参数：<strong>初始值（或者上一次回调函数的返回值）</strong> 、<strong>当前元素值</strong> 、 <strong>当前索引</strong> 、 <strong>调用reduce的数组</strong></p>
+<pre><code>callback（执行数组中每个值的函数，包含四个参数）
+1、previousValue (上一次调用回调返回的值，或者提供的初始值(initialValue))
+2、currentValue (数组中当前被处理的元素)
+3、index (当前元素在数组中的索引)
+4、array (调用reduce的数组)
+
+initialValue (作为第一次调用callback的第一个参数)</code></pre><h2 id="实例解析-initialValue-参数"><a href="#实例解析-initialValue-参数" class="headerlink" title="实例解析 initialValue 参数"></a>实例解析 initialValue 参数</h2><p><strong>先看第一个例子：</strong></p>
+<pre><code>var arr = [1,2,3,4];
+var sum = arr.reduce(function(prev, cur, index, arr){
+  console.log(prev,cur,index);
+  return prev+cur;
+  })
+console.log(arr,sum);</code></pre><p>打印结果：</p>
+<p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E7%AC%AC%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90.png" alt=""></p>
+<p>这里可以看出，上面的例子index是从1开始的，第一次的prev的值是数组的第一个值。数组长度是4，但是reduce函数循环3次</p>
+<p><strong>再看第二个例子：</strong></p>
+<pre><code>var  arr = [1, 2, 3, 4];
+var sum = arr.reduce(function(prev, cur, index, arr) {
+    console.log(prev, cur, index);
+    return prev + cur;
+},0) //注意这里设置了初始值
+console.log(arr, sum);</code></pre><p>打印结果：</p>
+<p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E7%AC%AC%E4%BA%8C%E4%B8%AA%E4%BE%8B%E5%AD%90.png" alt=""></p>
+<p>这个例子index是从0开始的，第一次的prev的值是我们设置的初始值0，数组长度是4，reduce函数循环4次</p>
+<blockquote>
+<p>结论：如果没有提供initialValue，reduce 会从索引1的地方开始执行 callback 方法，跳过第一个索引。如果提供initialValue，从索引0开始</p>
+</blockquote>
+<p><strong>注意：如果这个数组为空，运用reduce是什么情况？</strong></p>
+<pre><code>var  arr = [];
+var sum = arr.reduce(function(prev, cur, index, arr) {
+console.log(prev, cur, index);
+return prev + cur;
+})
+//报错，"TypeError: Reduce of empty array with no initial value"</code></pre><p>但是要是我们设置了初始值就不会报错，如下：</p>
+<pre><code>var  arr = [];
+var sum = arr.reduce(function(prev, cur, index, arr) {
+console.log(prev, cur, index);
+return prev + cur;
+}，0)
+console.log(arr, sum); // [] 0</code></pre><blockquote>
+<p>所以一般来说我们提供初始值通常更安全</p>
+</blockquote>
+<h2 id="reduce的简单用法"><a href="#reduce的简单用法" class="headerlink" title="reduce的简单用法"></a>reduce的简单用法</h2><p>最简单的就是我们常用的数组求和，求乘积了。</p>
+<pre><code>var  arr = [1, 2, 3, 4];
+var sum = arr.reduce((x,y)=&gt;x+y)
+var mul = arr.reduce((x,y)=&gt;x*y)
+console.log( sum ); //求和，10
+console.log( mul ); //求乘积，24</code></pre><h2 id="reduce的高级用法"><a href="#reduce的高级用法" class="headerlink" title="reduce的高级用法"></a>reduce的高级用法</h2><p>（1）计算数组中每个元素出现的次数</p>
+<pre><code>let names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+let nameNum = names.reduce((pre,cur)=&gt;{
+if(cur in pre){
+pre[cur]++
+}else{
+pre[cur] = 1
 }
-a.key2 = ["小辉","小辉"]
-var b = Copy(a);
-b.key3 = "33333"
-alert(b.key1)//11111
-alert(b.key3)//33333
-alert(a.key3);//undefined
-
-
-b.key2.push("大辉")
-alert(a.key2);//小辉，小辉，大辉</code></pre><p>若是修改的属性变为对象或数组时，那么父子对象之间就发生关联，从上可知：</p>
-<p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E6%B5%85%E6%8B%B7%E8%B4%9D.png" alt=""></p>
-<p>原因是key1的值属于基本类型，所以拷贝的时候传递的就是该数据段；但是key2的值是堆内存中的对象，所以key2在拷贝的时候传递的是指向key2对象的地址，无论复制多少个key2，其值始终是指向父对象的key2对象的内存空间</p>
-<pre><code>//ES6实现浅拷贝的方法
-var a = {name:"暖风"}
-var b= Object.assign({},a);
-b.age = 18;
-console.log(a.age);//undefined
-----------------------------------
-//数组
-var a = [1,2,3];
-var b = a.slice();
-b.push(4);
-b//1,2,3,4
-a//1,2,3
-----------------------------------
-var a = [1,2,3];
-var b = a.concat();
-b.push(4);
-b//1,2,3,4
-a//1,2,3
-----------------------------------
-var a = [1,2,3];
-var b = [...a]
-b//1,2,3,4
-a//1,2,3</code></pre><h3 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h3><p>我们不希望父子对象之间产生关联，那么这时候可以用到深拷贝。既然属性值类型是数组和或象时只会传址，那么我们就用递归来解决这个问题，把父对象中所有属于对象的属性类型都遍历赋给子对象即可。测试代码如下：</p>
-<pre><code>var a={key1:"11111"}
-function Copy(p,c){
-   var c =c||{};
-   for (var i in p){
-    if(typeof p[i]==="object"){
-      c[i]=(p[i].constructor ===Array)?[]:{}
-      Copy(p[i],c[i]);
-    }else{
-       c[i]=p[i]
+return pre
+},{})
+console.log(nameNum); //{Alice: 2, Bob: 1, Tiff: 1, Bruce: 1}</code></pre><p>（2）数组去重</p>
+<pre><code>let arr = [1,2,3,4,4,1]
+let newArr = arr.reduce((pre,cur)=&gt;{
+if(!pre.includes(cur)){
+  return pre.concat(cur)
+}else{
+  return pre
+}
+},[])
+console.log(newArr);// [1, 2, 3, 4]</code></pre><p>（3）将二维数组转化为一维</p>
+<pre><code>let arr = [[0, 1], [2, 3], [4,[5,6,7]]]
+const newArr = function(arr){
+   return arr.reduce((pre,cur)=&gt;pre.concat(Array.isArray(cur)?newArr(cur):cur),[])
+}
+console.log(newArr(arr)); //[0, 1, 2, 3, 4, 5, 6, 7]</code></pre><p>（4）对象里的属性求和</p>
+<pre><code>var result = [
+    {
+        subject: 'math',
+        score: 10
+    },
+    {
+        subject: 'chinese',
+        score: 20
+    },
+    {
+        subject: 'english',
+        score: 30
     }
-   }    
-   return c;
-}
-a.key2 = ["小辉","小辉"]
-var b = {}
-b = Copy(a,b);
-b.key2.push("大辉");
-b.key2//小辉，小辉，大辉
-a.key2//小辉，小辉   </code></pre><p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E6%B7%B1%E6%8B%B7%E8%B4%9D.png" alt=""></p>
-<h4 id="最后：-总结基本数据类型和引用数据类型区别"><a href="#最后：-总结基本数据类型和引用数据类型区别" class="headerlink" title="最后： 总结基本数据类型和引用数据类型区别"></a>最后： 总结基本数据类型和引用数据类型区别</h4><p>1、声明变量时内存分配不同</p>
-<ul>
-<li><p><strong>原始类型：</strong> 在栈中，因为占据空间是固定的，可以将他们存在较小的内存中-栈中，这样便于迅速查询变量的值</p>
-</li>
-<li><p><strong>引用类型：</strong> 存在堆中，栈中存储的变量，只是用来查找堆中的引用地址。</p>
-</li>
-</ul>
-<p>　   这是因为：引用值的大小会改变，所以不能把它放在栈中，否则会降低变量查寻的速度。相反，放在变量的栈空间中的值是该对象存储在堆中的地址。地址的大小是固定的，所以把它存储在栈中对变量性能无任何负面影响</p>
-<p>2、不同的内存分配带来不同的访问机制</p>
-<p>在javascript中是不允许直接访问保存在堆内存中的对象的，所以在访问一个对象时，首先得到的是这个对象在堆内存中的地址，然后再按照这个地址去获得这个对象中的值，这就是传说中的按引用访问。<br>而原始类型的值则是可以直接访问到的。</p>
-<p>3、复制变量时的不同</p>
-<p> 1）原始值：在将一个保存着原始值的变量复制给另一个变量时，会将原始值的副本赋值给新变量，此后这两个变量是完全独立的，他们只是拥有相同的value而已。</p>
-<p>2）引用值：在将一个保存着对象内存地址的变量复制给另一个变量时，会把这个内存地址赋值给新变量，</p>
-<p>　　也就是说这两个变量都指向了堆内存中的同一个对象，他们中任何一个作出的改变都会反映在另一个身上。</p>
-<p>（这里要理解的一点就是，复制对象时并不会在堆内存中新生成一个一模一样的对象，只是多了一个保存指向这个对象指针的变量罢了）。多了一个指针</p>
-<p>4、参数传递的不同（把实参复制给形参的过程）<br>首先我们应该明确一点：ECMAScript中所有函数的参数都是按值来传递的。<br>但是为什么涉及到原始类型与引用类型的值时仍然有区别呢？还不就是因为内存分配时的差别。</p>
-<p>1）原始值：只是把变量里的值传递给参数，之后参数和这个变量互不影响。</p>
-<p>2）引用值：对象变量它里面的值是这个对象在堆内存中的内存地址，这一点你要时刻铭记在心！</p>
-<p>因此它传递的值也就是这个内存地址，这也就是为什么函数内部对这个参数的修改会体现在外部的原因了，因为它们都指向同一个对象。</p>
-<script>
+];
+
+var sum = result.reduce(function(prev, cur) {
+    return cur.score + prev;
+}, 0);
+console.log(sum) //60</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -723,7 +696,7 @@ a.key2//小辉，小辉   </code></pre><p><img src="https://raw.githubuserconten
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Haris-ha.github.io/2019/10/30/JS%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">http://Haris-ha.github.io/2019/10/30/JS%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/</a>
+                    <a href="http://Haris-ha.github.io/2019/10/31/Js%E6%95%B0%E7%BB%84reduce()%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3%E5%8F%8A%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/">http://Haris-ha.github.io/2019/10/31/Js%E6%95%B0%E7%BB%84reduce()%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3%E5%8F%8A%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -800,7 +773,7 @@ a.key2//小辉，小辉   </code></pre><p><img src="https://raw.githubuserconten
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-10-30T16-14-11',
+        id: '2019-10-31T09-53-11',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -821,9 +794,10 @@ a.key2//小辉，小辉   </code></pre><p><img src="https://raw.githubuserconten
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/10/31/Js%E6%95%B0%E7%BB%84reduce()%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3%E5%8F%8A%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/">
                     <div class="card-image">
@@ -842,9 +816,9 @@ reduce()方法可以搞定的东西，for循环，或者forEach方法有时候�
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -853,6 +827,7 @@ reduce()方法可以搞定的东西，for循环，或者forEach方法有时候�
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -863,26 +838,27 @@ reduce()方法可以搞定的东西，for循环，或者forEach方法有时候�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/29/Markdown%E5%85%A8%E8%AF%AD%E6%B3%95%E6%95%B4%E7%90%86/">
+                <a href="/2019/10/30/JS%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Markdown全语法整理">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="JS基本数据类型和引用数据类型的区别及深浅拷贝">
                         
-                        <span class="card-title">Markdown全语法整理</span>
+                        <span class="card-title">JS基本数据类型和引用数据类型的区别及深浅拷贝</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            主要内容
-Markdown是什么？谁创造了它？为什么要使用它？怎么使用？谁在用？尝试一下
-正文1. Markdown是什么？Markdown是一种轻量级标记语言，它以纯文本形式(易读、易写、易更改)编写文档，并最终以HTML格式发布。Mar
+                            栈(stack)和堆（heap）stack为自动分配的内存空间，由系统自动释放；而heap是动态分配的内存，大小也不一定会释放
+数据类型JS分为两种数据类型：
+
+基本数据类型： Number、String、Boolean、Null、Unde
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-30
                             </span>
                         <span class="publish-author">
                             
