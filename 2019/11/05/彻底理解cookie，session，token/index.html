@@ -4,14 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="《JavaScript权威指南》读书笔记1-5, blog">
+    <meta name="keywords" content="彻底理解cookie，session，token, blog">
     <meta name="description" content="
-这本书太难啃了啊啊！
-
-
-类型、值和变量JavaScript支持更加复杂的算术运算，这些复杂运算通过作为Math对象的属性定义的函数和常量来实现：
-Math.pow(2,53)//=＞9007199254740992:2的53次幂
-Mat">
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +16,7 @@ Mat">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>《JavaScript权威指南》读书笔记1-5 | Mr.Ha&#39;s blog</title>
+    <title>彻底理解cookie，session，token | Mr.Ha&#39;s blog</title>
     <link rel="icon" type="image/png" href="/logo.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -417,13 +414,13 @@ Mat">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        《JavaScript权威指南》读书笔记1-5
+                        彻底理解cookie，session，token
                     </div>
                 </div>
             </div>
@@ -546,14 +543,9 @@ Mat">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-31
-                </div>
-                
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
                     2019-11-05
                 </div>
+                
                 
 
                 
@@ -569,75 +561,7 @@ Mat">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p>这本书太难啃了啊啊！</p>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/kk_image.png" alt=""></p>
-<h1 id="类型、值和变量"><a href="#类型、值和变量" class="headerlink" title="类型、值和变量"></a>类型、值和变量</h1><p>JavaScript支持更加复杂的算术运算，这些<br>复杂运算通过作为Math对象的属性定义的函数和常量来实现：</p>
-<pre><code>Math.pow(2,53)//=＞9007199254740992:2的53次幂
-Math.round(.6)//=＞1.0:四舍五入
-Math.ceil(.6)//=＞1.0:向上求整
-Math.floor(.6)//=＞0.0:向下求整
-Math.abs(-5)//=＞5:求绝对值
-Math.max(x,y,z)//返回最大值
-Math.min(x,y,z)//返回最小值
-Math.random()//生成一个大于等于0小于1.0的伪随机数
-Math.PI//π:圆周率
-Math.E//e:自然对数的底数
-Math.sqrt(3)//3的平方根
-Math.pow(3,1/3)//3的立方根
-Math.sin(0)//三角函数:还有Math.cos,Math.atan等
-Math.log(10)//10的自然对数
-Math.log(100)/Math.LN10//以10为底100的对数
-Math.log(512)/Math.LN2//以2为底512的对数
-Math.exp(3)//e的三次幂</code></pre><h4 id="下溢（underflow）"><a href="#下溢（underflow）" class="headerlink" title="下溢（underflow）"></a>下溢（underflow）</h4><p>是当运算结果无限接近于零并比JavaScript能表<br>示的最小值还小的时候发生的一种情形。这种情况下，JavaScript将会返<br>回0。当一个负数发生下溢时，JavaScript返回一个特殊的值“负零”。这<br>个值（负零）几乎和正常的零完全一样，JavaScript程序员很少用到负<br>零。</p>
-<p>被零整除在JavaScript并不报错：它只是简单的返回无穷大<br>（Infinity）或负无穷大（-Infinity）。但有一个例外，零除以零是没有意<br>义的，这种整除运算结果也是一个非数字（not-a-number）值，用NaN表<br>示。无穷大除以无穷大、给任意负数作开方运算或者算术运算符与不是<br>数字或无法转换为数字的操作数一起使用时都将返回NaN。</p>
-<h4 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h4><p>JavaScript中的非数字值有一点特殊：它和任何值都不相等，包括自身。也就是说，没办法通过x==NaN来判断变量x是否是NaN。相反，应<br>当使用x!=x来判断，当且仅当x为NaN的时候，表达式的结果才为true。<br>函数isNaN()的作用与此类似，如果参数是NaN或者是一个非数字值（比<br>如字符串和对象），则返回true。JavaScript中有一个类似的函数<br>isFinite()，在参数不是NaN、Infinity或-Infinity的时候返回true。</p>
-<h4 id="布尔转换"><a href="#布尔转换" class="headerlink" title="布尔转换"></a>布尔转换</h4><p>任意JavaScript的值都可以转换为布尔值。<br>下面这些值会被转换成false：</p>
-<pre><code>undefined
-null
-0
--0
-NaN
-""   //空字符串</code></pre><p>所有其他值，包括所有对象（数组）都会转换成true</p>
-<h4 id="null和undefined"><a href="#null和undefined" class="headerlink" title="null和undefined"></a>null和undefined</h4><p>null是JavaScript语言的关键字，它表示一个特殊值，常用来描述“空<br>值”。对null执行typeof预算，结果返回字符串”object”，也就是说，可以<br>将null认为是一个特殊的对象值，含义是“非对象”。但实际上，通常认<br>为null是它自有类型的唯一一个成员，它可以表示数字、字符串和对象<br>是“无值”的。</p>
-<p>用未定义的值表示更深层<br>次的“空值”。它是变量的一种取值，表明变量没有初始化，如果要查询<br>对象属性或数组元素的值时返回undefined则说明这个属性或元素不存<br>在。如果函数没有返回任何值，则返回undefined。引用没有提供实参的<br>函数形参的值也只会得到undefined。undefined是预定义的全局变量（它<br>和null不一样，它不是关键字），它的值就是“未定义”。</p>
-<p><strong>undefined是表示系统级的、出乎意料的或类似错误的值<br>的空缺，而null是表示程序级的、正常的或在意料之中的值的空缺。如<br>果你想将它们赋值给变量或者属性，或将它们作为参数传入函数，最佳<br>选择是使用null。</strong></p>
-<h4 id="包装对象"><a href="#包装对象" class="headerlink" title="包装对象"></a>包装对象</h4><p>存取字符串、数字或布尔值的属性时创建的临时对象称做包装对象，它只是偶尔用来区分字符串值和字符串对象、数字和数值对象以及布尔值和布尔对象</p>
-<p>由于字符串不是对象，但是却有相应的属性，比如length属性。这时JavaScript就会将字符串通过调用new String()的方式转换成对象，这个对象继承了字符串的方法。同时这个对象是一个临时对象，一旦属性引用结束，这个新创建的对象就会销毁。</p>
-<p>所有的修改知识发生在临时对象上，而这个临时对象并未继续保留下来</p>
-<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2.png" alt=""></p>
-<h6 id="对象到字符串的转换步骤"><a href="#对象到字符串的转换步骤" class="headerlink" title="对象到字符串的转换步骤"></a>对象到字符串的转换步骤</h6><blockquote>
-<p>如果对象具有toString()方法，则调用这个方法。如果它返回一个原始值，JavaScript将这个值转换为字符串，并返回这个结果。</p>
-</blockquote>
-<blockquote>
-<p>如果对象没有toString()方法，或者这个方法并不返回一个原始值，那么JavaScript会调用valueOf()方法。如果存在这个方法，则JavaScript调用它。如果返回值是原始值，JavaScript将这个值转换为字符串，并返回结果。</p>
-</blockquote>
-<blockquote>
-<p>如果JavaScript无法从以上2个方法获取一个原始值，这时将抛出一个类型错误异常。</p>
-</blockquote>
-<h6 id="对象到数字的转换过程"><a href="#对象到数字的转换过程" class="headerlink" title="对象到数字的转换过程"></a>对象到数字的转换过程</h6><blockquote>
-<p>如果对象具有valueOf()方法，后者返回一个原始值，则JavaScript<br>将这个原始值转换为数字（如果需要的话）并返回这个数字</p>
-</blockquote>
-<blockquote>
-<p>如果对象具有toString()方法，后者返回一个原始值，则<br>JavaScript将其转换并返回</p>
-</blockquote>
-<blockquote>
-<p>否则，JavaScript抛出一个类型错误异常</p>
-</blockquote>
-<p>对象转换为数字的细节解释了为什么空数组会被转换为数字0以及<br>为什么具有单个元素的数组同样会转换成一个数字。数组继承了默认的<br>valueOf()方法，这个方法返回一个对象而不是一个原始值，因此，数组<br>到数字的转换则调用toString()方法。空数组转换成为空字符串，空字符<br>串转换成为数字0。含有一个元素的数组转换为字符串的结果和这个元<br>素转换字符串的结果一样。如果数组只包含一个数字元素，这个数字转<br>换为字符串，再转换回数字。</p>
-<h4 id="表达式和运算符"><a href="#表达式和运算符" class="headerlink" title="表达式和运算符"></a>表达式和运算符</h4><p>原始表达式是表达式的最小单位—不再包含其他表达式。JavaScript原始表达式包含常量或直接量、关键字和变量。需要注意一点的是，undefined是全局变量，和null不同，不是关键字。当JavaScript代码中出现了标识符，JavaScript会将其当做变量去查找它的值。如果变量名不存在，运算结果为undefined。严格模式中，对不存在的变量进行求值会抛出一个引用错误。</p>
-<h4 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h4><p>严格模式与非严格模式的区别（前三条很重要）：</p>
-<pre><code>1、在严格模式下禁止使用with语句。
-2、在严格模式中，所有变量都要先声明。如果给一个未声明的变量、函数、函数参数、catch从句参数或全局对象的属性赋值，将抛出错误。（非严格模式中，隐式声明的全局变量的方法是给全局对象新添加一个新属性）。
-3、在严格模式中，调用的函数中的一个this值是undefined。（非严格模式中，调用的函数中的this总是全局对象，比如window）。
-4、严格模式中，当通过call()或apply()来调用函数时，其中的this值就是通过call()或apply()传入的第一个参数。（非严格模式中，null和undefined值被全局对象和转换 为对象的非对象值所代替）。
-5、严格模式中，给只读属性赋值和给不可扩展的对象创建新成员会抛出类型错误（非严格模式下，只是操作失败，并不报错）。
-6、严格模式中，函数里的arguments对象拥有传入函数值的静态副本（？不是很理解）。非严格模式下，arguments里的数组元素和函数参数都是指向同一个值得引用。
-7、严格模式下，当delete运算符后跟随非法的标识符（如变量、函数等）时，将抛出语法错误。非严格模式中，这种delete表达式什么也不做，并返回false。
-8、严格模式中，在一个对象直接量中定义两个或多个同名属性将产生一个语法错误。（非严格模式不会报错）。同时在es6中，会进行覆盖，后声明的会覆盖先前的。
-9、严格模式中，函数声明中存在两个或多个同名的参数将产生一个语法错误（非严格模式不报错）。
-10、严格模式不允许使用八进制整数直接量。</code></pre><script>
+                <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -680,7 +604,7 @@ NaN
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Haris-ha.github.io/2019/10/31/%E3%80%8AJavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B01-5/">http://Haris-ha.github.io/2019/10/31/%E3%80%8AJavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B01-5/</a>
+                    <a href="http://Haris-ha.github.io/2019/11/05/%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3cookie%EF%BC%8Csession%EF%BC%8Ctoken/">http://Haris-ha.github.io/2019/11/05/%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3cookie%EF%BC%8Csession%EF%BC%8Ctoken/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -757,7 +681,7 @@ NaN
         repo: '',
         owner: '',
         admin: null,
-        id: '2019-10-31T14-40-43',
+        id: '2019-11-05T15-05-40',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -778,9 +702,10 @@ NaN
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2019/11/05/%E5%BD%BB%E5%BA%95%E7%90%86%E8%A7%A3cookie%EF%BC%8Csession%EF%BC%8Ctoken/">
                     <div class="card-image">
@@ -801,9 +726,9 @@ NaN
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-11-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-11-05
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -812,6 +737,7 @@ NaN
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -822,20 +748,25 @@ NaN
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/10/31/Js%E6%95%B0%E7%BB%84reduce()%E6%96%B9%E6%B3%95%E8%AF%A6%E8%A7%A3%E5%8F%8A%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7/">
+                <a href="/2019/10/31/%E3%80%8AJavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B01-5/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Js数组reduce()方法详解及高级技巧">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="《JavaScript权威指南》读书笔记1-5">
                         
-                        <span class="card-title">Js数组reduce()方法详解及高级技巧</span>
+                        <span class="card-title">《JavaScript权威指南》读书笔记1-5</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-reduce()方法可以搞定的东西，for循环，或者forEach方法有时候也可以搞定，那为啥要用reduce()？这个问题，之前我也想过，要说原因还真找不到，唯一能找到的是：通往成功的道路有很多，但是总有一条路是最捷径的，亦或许redu
+这本书太难啃了啊啊！
+
+
+类型、值和变量JavaScript支持更加复杂的算术运算，这些复杂运算通过作为Math对象的属性定义的函数和常量来实现：
+Math.pow(2,53)//=＞9007199254740992:2的53次幂
+Mat
                         
                     </div>
                     <div class="publish-info">
