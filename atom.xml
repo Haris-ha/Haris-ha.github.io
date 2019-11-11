@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Haris-ha.github.io/"/>
-  <updated>2019-11-06T08:50:54.236Z</updated>
+  <updated>2019-11-11T08:43:42.718Z</updated>
   <id>http://Haris-ha.github.io/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的第一个十万存储计划</title>
+    <link href="http://Haris-ha.github.io/2019/11/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%81%E4%B8%87%E5%AD%98%E5%82%A8%E8%AE%A1%E5%88%92/"/>
+    <id>http://Haris-ha.github.io/2019/11/11/我的第一个十万存储计划/</id>
+    <published>2019-11-11T06:25:10.983Z</published>
+    <updated>2019-11-11T08:43:42.718Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>刚刚经历了剁手节，其实也没有参与到浩浩荡荡的购物大军中，也就只是为天猫爆红的数字填了一笔，看看钱包看看余额看看负债忽然之间经历了一些事情而后知后觉</p></blockquote><h3 id="停止透支，量力消费"><a href="#停止透支，量力消费" class="headerlink" title="停止透支，量力消费"></a>停止透支，量力消费</h3><p>入职以来，其实感慨许多，终于可以用自己的能力作产出了，也初步实现了财务自由，不需要家人父母的经济支持</p><p>但这听起来颇感欣慰的事情也只有我明白它是多么的容易，薪水过万，有公寓有食堂甚至有班车接送，我很感激能在超一线城市中得到如此待遇，我已心满意足，时常感动到哭泣（心理戏真多），但是看看自己的帐户，摸摸自己的钱包，四处发来的负债短信才在某一瞬间明白，我已然把生活弄得一团糟</p><p>从明白自己可以收到薪水之时开始，贪婪的心从没停止过，想起曾经的校园时光，一个一百块的东西都犹豫，为了一张演唱会门票可以攒很久的钱，不舍得买名牌也要把很少的钱用去穷游用去感受世界，而如今，那些拮据时的遗憾像凶猛的野兽扑了出来，行走在高楼大厦之间，像是被迷了眼，时尚大牌高档餐厅慢慢的都变得好像没那么犹豫了，曾经一双名牌鞋都要想了又想而如今好像“果断了很多”</p><p>如今已经明白在得到了当初得不到的物质后，一身名牌，一台相机，新的科技产品，才能真正的把心中的欲望压下去</p><p>我一直是个感性的人，所以在我的生命里物质永远在情感面前低头，在这段恋爱里我付出了太多，从精神到物质，我竭尽所能的在爱着一个人</p><p>每一顿饭，每一趟旅行，每一份礼物我都主动承担用心并且舍得，我明白这都是我自己的选择，而如今无数的投入真情实感物质金钱却在一些争吵中把慢慢好起来热起来的关系又打回不瘟不火，叫人心冷无力</p><h3 id="从今天开始用最短的时间，用勤俭节约的生活完成人生的第一个十万"><a href="#从今天开始用最短的时间，用勤俭节约的生活完成人生的第一个十万" class="headerlink" title="从今天开始用最短的时间，用勤俭节约的生活完成人生的第一个十万"></a>从今天开始用最短的时间，用勤俭节约的生活完成人生的第一个十万</h3><p>今天开始将债务存款以及收入开销记录下来，直到第一个十万目标达成，加油！</p><h4 id="2019-11-11-（十万计划起步状态）"><a href="#2019-11-11-（十万计划起步状态）" class="headerlink" title="2019-11-11 （十万计划起步状态）"></a>2019-11-11 （十万计划起步状态）</h4><p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/2019-11-11.png" alt="2019-11-11"></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;刚刚经历了剁手节，其实也没有参与到浩浩荡荡的购物大军中，也就只是为天猫爆红的数字填了一笔，看看钱包看看余额看看负债忽然之间经历了一些事情而后知后觉&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;停止透支，量力消费&quot;&gt;&lt;a href=&quot;#停止透
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>DOM库及常用方法封装</title>
+    <link href="http://Haris-ha.github.io/2019/11/08/DOM%E5%BA%93%E5%8F%8A%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E5%B0%81%E8%A3%85/"/>
+    <id>http://Haris-ha.github.io/2019/11/08/DOM库及常用方法封装/</id>
+    <published>2019-11-08T02:19:20.202Z</published>
+    <updated>2019-11-08T02:19:20.202Z</updated>
+    
+    <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>彻底理解cookie，session，token</title>
@@ -422,52 +473,6 @@
       
       
         &lt;h1 id=&quot;递归行为&quot;&gt;&lt;a href=&quot;#递归行为&quot; class=&quot;headerlink&quot; title=&quot;递归行为&quot;&gt;&lt;/a&gt;递归行为&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;“大事化小”&lt;/strong&gt; 讲的就是一个递归的思想，把一个规模大的问题通过划分成小问题去解决，小问题继续
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>荷兰国旗问题详解</title>
-    <link href="http://Haris-ha.github.io/2019/10/28/%E8%8D%B7%E5%85%B0%E5%9B%BD%E6%97%97%E9%97%AE%E9%A2%98%E8%AF%A6%E8%A7%A3/"/>
-    <id>http://Haris-ha.github.io/2019/10/28/荷兰国旗问题详解/</id>
-    <published>2019-10-28T03:31:12.104Z</published>
-    <updated>2019-10-28T12:57:54.707Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="荷兰国旗问题"><a href="#荷兰国旗问题" class="headerlink" title="荷兰国旗问题"></a>荷兰国旗问题</h1><p>代码是Javascript语言写的（几乎是伪代码）</p><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p><strong>荷兰国旗问题</strong> 给定一个数组arr，和一个数num，请把小于num的数放在数组的左边，等于num的数放在数组的中间，大于num的数放在数组的右边。要求额外空间复杂度O(1)，时间复杂度O(N)</p><h2 id="解决思想"><a href="#解决思想" class="headerlink" title="解决思想"></a>解决思想</h2><p>在数组两边个准备一个区域，一个小于num区域放在数组左边，一个大于num区域放在数组右边，通过对数组里的数字与num进行比较，如果小于num就将其放在小于区域，如果等于num则不动，比较下一个数字，如果大于则将其放在大于区域，<strong>类似于发货</strong></p><h2 id="分析记忆"><a href="#分析记忆" class="headerlink" title="分析记忆"></a>分析记忆</h2><p>为数组准备两个区域：<strong>{小于区域}</strong> <strong>[即将操作的数组]</strong> <strong>{大于区域}</strong><br>我们定义两个下标用于确定两个区域的边界：<br>less初始停留在整个数组的最左边，表示小于区域没有数字，more初始停留在整个数组的最右边，表示大于区域没有数字，定义一个cur下标来记录待比较的数字，以及我们拿到一个num，这是整个的准备工作<br><img src="https://img-blog.csdnimg.cn/2018112415021081.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng**,size_16,color_FFFFFF,t_70" alt=""></p><p>随后进行比较的过程“类似于发货”<br>1）当cur指的数等于num，cur下标跳下一个继续比较，例如当num=5，cur指的数也是5<br><img src="https://img-blog.csdnimg.cn/20181124150701600.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng**,size_16,color_FFFFFF,t_70" alt=""></p><p>2）如果cur指的数小于num，则将cur指的数与小于区域下一个数交换，小于区域扩一下，cur跳下一个<br><img src="https://img-blog.csdnimg.cn/2018112415172189.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng**,size_16,color_FFFFFF,t_70" alt=""></p><p>3）如果cur指的数大于num，则将cur指的数与大于区域的前一个数交换，大于区域像前扩大一位，cur不动，继续比较换过来的数与num的大小，继续进行操作<br><img src="https://img-blog.csdnimg.cn/20181124152815830.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng**,size_16,color_FFFFFF,t_70" alt=""></p><p><strong>当cur和more撞上的时候，整个发货过程结束，完成</strong><br>因为cur和more必有一个在移动，小于等于过程cur移动，大于过程more移动，所以必撞在一起</p><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre><code>var partitionArr = [5,5,8,6,5,8,1,3,6,9,9];function partition(arr,l,r,num){    var less = l-1;    var more = r+1;    var cur = l;    while(cur&lt;more){        if(arr[cur]&lt;num){            swap(arr, ++less, cur++);//小于区域扩大一位，cur向后移一位        }        else if(arr[cur]&gt;num){            swap(arr, --more, cur);//大于区域扩大一位，cur不动，继续比较换过来的数        }        else{            cur++;        }    }}function swap(arr,i,j){    var tmp = arr[i];        arr[i] = arr[j];        arr[j] = tmp;}partition(partitionArr,0,partitionArr.length-1,5);console.log(partitionArr);</code></pre><p>运行结果：<br><img src="https://img-blog.csdnimg.cn/20181124153216997.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng**,size_16,color_FFFFFF,t_70" alt=""></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;荷兰国旗问题&quot;&gt;&lt;a href=&quot;#荷兰国旗问题&quot; class=&quot;headerlink&quot; title=&quot;荷兰国旗问题&quot;&gt;&lt;/a&gt;荷兰国旗问题&lt;/h1&gt;&lt;p&gt;代码是Javascript语言写的（几乎是伪代码）&lt;/p&gt;
-&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>归并排序</title>
-    <link href="http://Haris-ha.github.io/2019/10/28/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/"/>
-    <id>http://Haris-ha.github.io/2019/10/28/归并排序/</id>
-    <published>2019-10-28T03:29:46.618Z</published>
-    <updated>2019-10-28T12:59:05.660Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><p>代码是Javascript语言写的（几乎是伪代码）</p><h2 id="算法介绍"><a href="#算法介绍" class="headerlink" title="算法介绍"></a>算法介绍</h2><p><strong>归并排序</strong>（Merge Sort）把两个排好序的序列合并成一个排好序的序列</p><h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>我们在拿到一个无序的序列时，其实用了“分治”的思想，先“分”后“治”，先将整个序列通过划分为子序列，再将子序列不断划分为子序列，直到只有单个元素为止，再通过两两合并使其有序，再将合并后的数组继续通过比较大小拷贝的方法继续合并，最终实现整体有序。</p><h2 id="算法简单记忆说明"><a href="#算法简单记忆说明" class="headerlink" title="算法简单记忆说明"></a>算法简单记忆说明</h2><p><img src="https://img-blog.csdnimg.cn/20181115100805928.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""><br><strong>“分”</strong> 阶段采用递归的方法，将整个数组不断划分为最小的数组个体</p><p>代码实现：</p><pre><code>function mergeSort(arr,l,r){    if (l == r) {            return;        }        var mid = l + ((r - l) &gt;&gt; 1);        mergeSort(arr, l, mid);        mergeSort(arr, mid + 1, r);    }</code></pre><p>与我们上一篇文章的递归思想举的例子完全一样，mid为序列的中间数的位置，通过递归让它们不断一分为二。</p><p><strong>“治”</strong> 阶段将划分好的子序列两两归并排序合并在一起，合并后的序列继续两两合并，最终全部整合形成完整的有序序列</p><p>“治”的过程的实现时通是通过准备一个拷贝数组，比较两个待合并的序列，分别给两个索引，谁小拿下来填谁，谁的索引向后移动一位，直到有一边的序列全部被填入拷贝数组，则把剩下的序列的剩下的数填入拷贝数组，最后将拷贝后的数组拷贝回原数组。<br>待合并两数组<br>|8| 3 |<br>|–|–|<br>| i |j  |<br>help辅助拷贝数组<br>|  |  |<br>|–|–|<br>3&lt;8，将3填入help数组，j向后移，但是数组耗尽了，所以将8拷入help数组中得到<br>| 3 | 8 |<br>|–|–|<br>同理2和9也通过比较拷贝得到<br>|2  | 9 |<br>|–|–|<br>继续合并合并后的数组<br>小的填入而后索引后移直到耗尽一方，然后将剩下的序列的剩下的元素填入数组中。<br>        mermaid<br>        graph LR<br>        A[2    3 8 9]<br>        B[1 4 5 7]</p><p>最后大合并<br>        mermaid<br>        graph LR<br>        A[1 2    3 4 5 6 7 8 9]</p><h2 id="算法复杂度和稳定性"><a href="#算法复杂度和稳定性" class="headerlink" title="算法复杂度和稳定性"></a>算法复杂度和稳定性</h2><p><strong>归并排序的时间复杂度是O(N*logN)</strong><br>归并排序采用递归的思想来做<br>master公式 T(N) = a*T(N/b) + O(N^d^)</p><p>从父问题与子问题的大层面关系来看，整个数组样本量为N，左边一半，样本量为N/2，右边一般，样本量为N/2，左边跑完跑右边，样本量为N/2的过程发生了2次，得到两个排好序的子样本，剩下要做的是在外排的过程中划过N个数，因为两个下标依此在动，最后整体拷贝回数组，剩下的操作为N<br>则a=2，b=2，d=1<br>由==log(b,a) = d -&gt; 复杂度为O(Nd * logN)==<br>得到归并排序的时间复杂度是O(N*logN)</p><p><strong>归并排序是稳定排序算法</strong></p><p>算法稳定性的定义： 假设在数列中存在a[i]=a[j]，若在排序之前，a[i]在a[j]前面；并且排序之后，a[i]仍然在a[j]前面。则这个排序算法是稳定的。<br>举例<br>1，3，2，5，==2==，4<br>排序的过程中1，2，3与==2==，4，5排序后为1，2，==2==，3，4，5<br>所以为稳定排序</p><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre><code>function mergeSort(arr,l,r){ //递归    if (l == r) {            return;        }        var mid = l + ((r - l) &gt;&gt; 1);        mergeSort(arr, l, mid);        mergeSort(arr, mid + 1, r);        merge(arr, l, mid, r);    }function merge(arr,l,m,r){    var help = new Array(r-l+1);//创立辅助数组用来拷贝数字    var i = 0;    var p1 = l;//左边部分首位    var p2 = m+1;//右边部分首位    while(p1 &lt;= m&amp;&amp;p2 &lt;= r){        help[i++] = arr[p1]&lt;arr[p2]?arr[p1++]:arr[p2++];        //完成比较合并，p1小填p1，p2小填p2，填入数组的那个部分++向后移动一位，辅助数组也要向后移动一位    } //必定有且只有一个部分越界    while(p1&lt;=m){        help[i++] = arr[p1++]; //p2越界，把p1剩下的填了    }    while(p2&lt;=r){        help[i++] = arr[p2++]; //p1越界，把p2剩下的填了    }    for(i = 0;i&lt;help.length;i++){        arr[l+i] = help[i]; //拷贝回原数组    }}function startMerge(arr){    if(arr == null||arr.length&lt;2){        return arr;    }    mergeSort(arr,0,arr.length-1);}//对数器function sortNumber(a,b){return a - b}function rightMethod(arr) {    arr.sort(sortNumber);}function generateRandomArray(maxSize, maxValue) {    var arr = new Array(Math.floor((maxSize + 1) * Math.random()));    for (var i = 0; i &lt; arr.length; i++) {        arr[i] = Math.floor((maxValue + 1) * Math.random())-Math.floor(maxValue * Math.random());    }    return arr;}function isEqual(arr1, arr2) {    if ((arr1 == null &amp;&amp; arr2 != null ) || (arr1 != null &amp;&amp; arr2 == null)) {        return false;    }    if (arr1 == null &amp;&amp; arr2 == null) {        return true;    }    if (arr1.length != arr2.length) {        return false;    }    for (let i = 0; i &lt; arr1.length; i++) {        if (arr1[i] != arr2[i]) {            return false        }    }    return true;}function copyArray(arr) {    if (arr == null) {        return null;    }    return [].concat(arr);}function Test() {    var testTimes = 10000;    var maxmaxSize = 10;    var maxValue = 100;    var succeed = true;    for (var i = 0; i &lt; testTimes; i++) {        var arr1 = generateRandomArray(maxmaxSize,maxValue);        var arr2 = copyArray(arr1);        var arr3 = copyArray(arr1);        startMerge(arr1);        rightMethod(arr2);        console.log(arr1);        if (!isEqual(arr1, arr2)) {            succeed = false;            console.log(arr3);            break;        }    }    console.log(succeed ? "Good job!" : "Damn it！");}Test();</code></pre><p><img src="https://img-blog.csdnimg.cn/20181115110714911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""><br>通过对数器的验证！Good job！</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;归并排序&quot;&gt;&lt;a href=&quot;#归并排序&quot; class=&quot;headerlink&quot; title=&quot;归并排序&quot;&gt;&lt;/a&gt;归并排序&lt;/h1&gt;&lt;p&gt;代码是Javascript语言写的（几乎是伪代码）&lt;/p&gt;
-&lt;h2 id=&quot;算法介绍&quot;&gt;&lt;a href=&quot;#算法介绍&quot; cl
       
     
     </summary>
