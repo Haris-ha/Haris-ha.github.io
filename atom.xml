@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Haris-ha.github.io/"/>
-  <updated>2019-11-12T07:12:27.569Z</updated>
+  <updated>2019-11-12T08:10:07.312Z</updated>
   <id>http://Haris-ha.github.io/</id>
   
   <author>
@@ -17,13 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>(W3C)JavaScript笔记</title>
+    <link href="http://Haris-ha.github.io/2019/11/12/(W3C)JavaScript%E7%AC%94%E8%AE%B0/"/>
+    <id>http://Haris-ha.github.io/2019/11/12/(W3C)JavaScript笔记/</id>
+    <published>2019-11-12T08:10:07.312Z</published>
+    <updated>2019-11-12T08:10:07.312Z</updated>
+    
+    <content type="html"><![CDATA[<script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>我的第一个十万存储计划</title>
     <link href="http://Haris-ha.github.io/2019/11/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%81%E4%B8%87%E5%AD%98%E5%82%A8%E8%AE%A1%E5%88%92/"/>
     <id>http://Haris-ha.github.io/2019/11/11/我的第一个十万存储计划/</id>
     <published>2019-11-11T06:25:10.983Z</published>
-    <updated>2019-11-12T07:12:27.569Z</updated>
+    <updated>2019-11-13T07:00:17.834Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>刚刚经历了剁手节，其实也没有参与到浩浩荡荡的购物大军中，也就只是为天猫爆红的数字填了一笔，看看钱包看看余额看看负债忽然之间经历了一些事情而后知后觉</p></blockquote><h3 id="停止透支，量力消费"><a href="#停止透支，量力消费" class="headerlink" title="停止透支，量力消费"></a>停止透支，量力消费</h3><p>入职以来，其实感慨许多，终于可以用自己的能力作产出了，也初步实现了财务自由，不需要家人父母的经济支持</p><p>但这听起来颇感欣慰的事情也只有我明白它是多么的容易，薪水过万，有公寓有食堂甚至有班车接送，我很感激能在超一线城市中得到如此待遇，我已心满意足，时常感动到哭泣（心理戏真多），但是看看自己的帐户，摸摸自己的钱包，四处发来的负债短信才在某一瞬间明白，我已然把生活弄得一团糟</p><p>从明白自己可以收到薪水之时开始，贪婪的心从没停止过，想起曾经的校园时光，一个一百块的东西都犹豫，为了一张演唱会门票可以攒很久的钱，不舍得买名牌也要把很少的钱用去穷游用去感受世界，而如今，那些拮据时的遗憾像凶猛的野兽扑了出来，行走在高楼大厦之间，像是被迷了眼，时尚大牌高档餐厅慢慢的都变得好像没那么犹豫了，曾经一双名牌鞋都要想了又想而如今好像“果断了很多”</p><p>如今已经明白在得到了当初得不到的物质后，一身名牌，一台相机，新的科技产品，才能真正的把心中的欲望压下去</p><p>我一直是个感性的人，所以在我的生命里物质永远在情感面前低头，在这段恋爱里我付出了太多，从精神到物质，我竭尽所能的在爱着一个人</p><p>每一顿饭，每一趟旅行，每一份礼物我都主动承担用心并且舍得，我明白这都是我自己的选择，如今无数的投入真情实感物质金钱却在一些争吵中把慢慢好起来热起来的关系又打回不瘟不火，叫人心寒，我不知道还要怎么做才能让她看到未来，不再彷徨，或许一开始就用尽全力也只会变得麻木变得厌倦吧</p><p>我不要再当傻瓜了，也要学会沉下来好好的发展，我很害怕这一路走来我的廉价的爱廉价的关心终将被别人替代，到了谈婚论嫁的年纪我却依然一穷二白毫无成绩，那个人可能比我有钱比我帅比我有才华，也会轻而易举的会赢下整场比赛，我不敢奢望人心不变，我能做的只有好好努力变得更好，能在未来那个重要的时候到来之时可以准备好，不用无力悔恨，剩下的聚散就给命运吧</p><h3 id="从今天开始用最短的时间，用勤俭节约的生活完成人生的第一个十万"><a href="#从今天开始用最短的时间，用勤俭节约的生活完成人生的第一个十万" class="headerlink" title="从今天开始用最短的时间，用勤俭节约的生活完成人生的第一个十万"></a>从今天开始用最短的时间，用勤俭节约的生活完成人生的第一个十万</h3><p>今天开始将债务存款以及收入开销记录下来，直到第一个十万目标达成，加油！</p><h4 id="2019-11-11-（十万计划起步状态）"><a href="#2019-11-11-（十万计划起步状态）" class="headerlink" title="2019-11-11 （十万计划起步状态）"></a>2019-11-11 （十万计划起步状态）</h4><p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/2019-11-11.png" alt="2019-11-11"></p><h4 id="2019-11-12-（今日无收支）"><a href="#2019-11-12-（今日无收支）" class="headerlink" title="2019-11-12 （今日无收支）"></a>2019-11-12 （今日无收支）</h4><p>今天忍住了贪吃的嘴做到了零支出（加油！）</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>刚刚经历了剁手节，其实也没有参与到浩浩荡荡的购物大军中，也就只是为天猫爆红的数字填了一笔，看看钱包看看余额看看负债忽然之间经历了一些事情而后知后觉</p></blockquote><h3 id="停止透支，量力消费"><a href="#停止透支，量力消费" class="headerlink" title="停止透支，量力消费"></a>停止透支，量力消费</h3><p>入职以来，其实感慨许多，终于可以用自己的能力作产出了，也初步实现了财务自由，不需要家人父母的经济支持</p><p>但这听起来颇感欣慰的事情也只有我明白它是多么的容易，薪水过万，有公寓有食堂甚至有班车接送，我很感激能在超一线城市中得到如此待遇，我已心满意足，时常感动到哭泣（心理戏真多），但是看看自己的帐户，摸摸自己的钱包，四处发来的负债短信才在某一瞬间明白，我已然把生活弄得一团糟</p><p>从明白自己可以收到薪水之时开始，贪婪的心从没停止过，想起曾经的校园时光，一个一百块的东西都犹豫，为了一张演唱会门票可以攒很久的钱，不舍得买名牌也要把很少的钱用去穷游用去感受世界，而如今，那些拮据时的遗憾像凶猛的野兽扑了出来，行走在高楼大厦之间，像是被迷了眼，时尚大牌高档餐厅慢慢的都变得好像没那么犹豫了，曾经一双名牌鞋都要想了又想而如今好像“果断了很多”</p><p>如今已经明白在得到了当初得不到的物质后，一身名牌，一台相机，新的科技产品，才能真正的把心中的欲望压下去</p><p>我一直是个感性的人，所以在我的生命里物质永远在情感面前低头，在这段恋爱里我付出了太多，从精神到物质，我竭尽所能的在爱着一个人</p><p>每一顿饭，每一趟旅行，每一份礼物我都主动承担用心并且舍得，我明白这都是我自己的选择，如今无数的投入真情实感物质金钱却在一些争吵中把慢慢好起来热起来的关系又打回不瘟不火，叫人心寒，我不知道还要怎么做才能让她看到未来，不再彷徨，或许一开始就用尽全力也只会变得麻木变得厌倦吧</p><p>我不要再当傻瓜了，也要学会沉下来好好的发展，我很害怕这一路走来我的廉价的爱廉价的关心终将被别人替代，到了谈婚论嫁的年纪我却依然一穷二白毫无成绩，那个人可能比我有钱比我帅比我有才华，也会轻而易举的会赢下整场比赛，我不敢奢望人心不变，我能做的只有好好努力变得更好，能在未来那个重要的时候到来之时可以准备好，不用无力悔恨，剩下的聚散就给命运吧</p><h3 id="从今天开始用最短的时间，用勤俭节约的生活完成人生的第一个十万"><a href="#从今天开始用最短的时间，用勤俭节约的生活完成人生的第一个十万" class="headerlink" title="从今天开始用最短的时间，用勤俭节约的生活完成人生的第一个十万"></a>从今天开始用最短的时间，用勤俭节约的生活完成人生的第一个十万</h3><p>今天开始将债务存款以及收入开销记录下来，直到第一个十万目标达成，加油！</p><h4 id="2019-11-11-（十万计划起步状态）"><a href="#2019-11-11-（十万计划起步状态）" class="headerlink" title="2019-11-11 （十万计划起步状态）"></a>2019-11-11 （十万计划起步状态）</h4><p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/2019-11-11.png" alt="2019-11-11"></p><h4 id="2019-11-12-（今日无收支）"><a href="#2019-11-12-（今日无收支）" class="headerlink" title="2019-11-12 （今日无收支）"></a>2019-11-12 （今日无收支）</h4><p>今天忍住了贪吃的嘴做到了零支出（加油！）</p><h4 id="2019-11-13-（今日无收支）"><a href="#2019-11-13-（今日无收支）" class="headerlink" title="2019-11-13 （今日无收支）"></a>2019-11-13 （今日无收支）</h4><p>今天舍友喊吃花甲粉（想了想没有钱又省了20块）加油！</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
     
     <summary type="html">
     
@@ -451,28 +477,6 @@
       
       
         &lt;h1 id=&quot;《HTML5揭秘》&quot;&gt;&lt;a href=&quot;#《HTML5揭秘》&quot; class=&quot;headerlink&quot; title=&quot;《HTML5揭秘》&quot;&gt;&lt;/a&gt;《HTML5揭秘》&lt;/h1&gt;&lt;h2 id=&quot;第1章-从开始到现在&quot;&gt;&lt;a href=&quot;#第1章-从开始到现在&quot; cla
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>掌握归并排序前首先理解递归行为</title>
-    <link href="http://Haris-ha.github.io/2019/10/28/%E6%8E%8C%E6%8F%A1%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E5%89%8D%E9%A6%96%E5%85%88%E7%90%86%E8%A7%A3%E9%80%92%E5%BD%92%E8%A1%8C%E4%B8%BA/"/>
-    <id>http://Haris-ha.github.io/2019/10/28/掌握归并排序前首先理解递归行为/</id>
-    <published>2019-10-28T03:32:10.856Z</published>
-    <updated>2019-10-28T12:56:47.315Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="递归行为"><a href="#递归行为" class="headerlink" title="递归行为"></a>递归行为</h1><p><strong>“大事化小”</strong> 讲的就是一个递归的思想，把一个规模大的问题通过划分成小问题去解决，小问题继续划分</p><h1 id="递归的联想理解"><a href="#递归的联想理解" class="headerlink" title="递归的联想理解"></a>递归的联想理解</h1><p>递归像是你在金字塔的顶端，要收集最底的宝藏，你每下一层看没有宝藏，找到了去往下一层的门，继续去下一层，层和层之间的楼梯都是一样的，看上去走的行程是一样的，实际上它们是不同的楼梯，等你走到底拿了宝藏，你还要一层一层再爬回去。</p><h1 id="递归的基本思想"><a href="#递归的基本思想" class="headerlink" title="递归的基本思想"></a>递归的基本思想</h1><p><strong>“有来有回”</strong> 以及常听到的 <strong>“自己调用自己”</strong></p><p>当划分为多个子问题处理时，重要的一点是子问题解决了，才可以继续解决基于子问题的问题</p><h1 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h1><p>一个数组左边界是L，右边界是R，（L和R都是位置），我们想要寻找这个数组的最大值，我们现在将数组一分为二，分别找出数组左部分的最大值，和数组右部分的最大值，最后返回二者之中的最大值。<br>5，3，1，8，6，2<br><strong>L</strong>，1，2，3，4，<strong>R</strong></p><pre><code>var maxArr = [5,3,1,8,6,2];function getMax(arr,L,R){    if(L == R){    return arr[L];    }    var mid = (L+R)/2;    var maxLeft = getMax(arr,L,mid);    var maxRight = getMax(arr,mid+1,R);    return max = Math.max(maxLeft,maxRight);}getMax(maxArr,0,maxArr.length-1);console.log(max);</code></pre><p><img src="https://img-blog.csdnimg.cn/20181114135423524.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjUwNzc1Ng==,size_16,color_FFFFFF,t_70" alt=""></p><p>可以看到提示代码错误：<br><strong>“Maximum call stack size exceeded”</strong> 超过最大调用栈大小</p><p>原来系统用的是栈结构来解决这个问题，不过我们先改写代码使它通过随后详细讲解。</p><p>我们将<code>var mid = (L+R)/2;</code>改为<code>var mid = L + ((R - L) &gt;&gt; 1);</code><br><img src="https://img-blog.csdnimg.cn/20181114140731874.png" alt=""><br>打印出数组最大值8</p><p>因为L，R表示下标时，L不会溢出，R不会溢出，L+R可能溢出，mid = (L+R)/2算出的mid可能是错误的，这样是不安全的，但mid = （L+(R-L)/2）&lt;R，R不溢出，所以绝对不会有溢出问题，最后用右移运算抖机灵。</p><h1 id="深入剖析递归行为"><a href="#深入剖析递归行为" class="headerlink" title="深入剖析递归行为"></a>深入剖析递归行为</h1><p>==递归就是系统帮你压栈==<br>递归函数getMax(arr,L,R)开始，系统准备一个栈，首先L和R相等吗，相等则说明数组只有一个元素则直接返回，否则继续。首先L=0，R=5，产生一个变量mid = 2，随后变量maxLeft需要子过程来产生，系统做的工作是把getMax(arr,0,5)以及代码跑到第几行，mid = 2等信息全部压入栈中，然后调用子过程，先当与这个函数被归挡，先跑子过程，继续跑getMax(arr,0,2),一直继续直到触发L == R，即执行 return arr[L]返回。然后进行弹栈操作，读取弹栈后的栈顶的信息，完全还原现场当时的信息，即发生到哪个子过程，代码跑到第几行，再继续执行之后的子过程，最终串起来子过程和父过程的通信。</p><p>==<strong>任何递归行为都可以改成非递归</strong>==<br>将系统压栈改成自己压栈，就变成了非递归，即迭代</p><h1 id="递归行为的复杂度"><a href="#递归行为的复杂度" class="headerlink" title="递归行为的复杂度"></a>递归行为的复杂度</h1><p>==<strong>Master公式</strong>==<br>T(N) = aT(N/b) + O(N^d^)<br>T(N)表示样本量为N的时间复杂度<br>T(N/b)表示子样本的样本量<br>a表示子过程发生的次数<br>O(N^d^)表示除过子样本发生之后剩下的操作的时间复杂度</p><p>以之前的例子为例，在一个数组中寻找最大值，数组一切为2，整个数组样本量为N，左边一半，样本量为N/2，右边一般，样本量为N/2，左边跑完跑右边，样本量为N/2的过程发生了2次，跑完子过程之后，比对最大的数值然后返回，是常数量的复杂度。<br>即：T(N) = 2T(N/2)+O(1)</p><p>==Master公式的使用==</p><p><strong>T(N) = a*T(N/b) + O(N^d^)</strong></p><ol><li>log(b,a) &gt; d -&gt; 复杂度为O(N^log(b,a)^)</li><li>log(b,a) = d -&gt; 复杂度为O(N^d^ * logN)</li><li>log(b,a) &lt; d -&gt; 复杂度为O(N^d^)</li></ol><p>==划分子问题的规模一样才可以用master公式==</p><p>上面的例子，a = 2， b = 2，d = 0 则O(N) = O(N）</p><h1 id="一些补充"><a href="#一些补充" class="headerlink" title="一些补充"></a>一些补充</h1><p>我们在分析一个问题写算法的时候，只关心一步，即父问题转换为子问题那一步，我们只需要知道它们大层面的关系，子问题继续转换子问题以及如何转换，转换多少次，不需要去关心。<br>划分是一个大范围对等的划分，例如：如果是奇数个数数组，划分为两部分，数据不对等也属于正确。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;递归行为&quot;&gt;&lt;a href=&quot;#递归行为&quot; class=&quot;headerlink&quot; title=&quot;递归行为&quot;&gt;&lt;/a&gt;递归行为&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;“大事化小”&lt;/strong&gt; 讲的就是一个递归的思想，把一个规模大的问题通过划分成小问题去解决，小问题继续
       
     
     </summary>
