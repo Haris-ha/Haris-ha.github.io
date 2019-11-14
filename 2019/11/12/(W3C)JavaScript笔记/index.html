@@ -5,10 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="(W3C)JavaScript笔记, blog">
-    <meta name="description" content="
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return">
+    <meta name="description" content="如何识别数组常见的问题是：我如何知晓某个变量是否是数组？
+问题在于 JavaScript 运算符 typeof 返回 “object”：
+var fruits = [&#34;Banana&#34;,&#34;Orange&#34;,&#34;Apple&#34;,&#34;Mango&#34;];
+t">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -547,6 +547,11 @@
                 </div>
                 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-11-14
+                </div>
+                
 
                 
 				
@@ -561,7 +566,177 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h4 id="如何识别数组"><a href="#如何识别数组" class="headerlink" title="如何识别数组"></a>如何识别数组</h4><p>常见的问题是：我如何知晓某个变量是否是数组？</p>
+<p>问题在于 <strong>JavaScript</strong> 运算符 <strong>typeof</strong> 返回 <strong>“object”：</strong></p>
+<pre><code>var fruits = ["Banana","Orange","Apple","Mango"];
+typeod fruits;</code></pre><p><strong>typeof</strong> 运算符返回 <strong>“object”</strong>，因为 <strong>JavaScript</strong> 数组属于对象</p>
+<h5 id="解决方案1："><a href="#解决方案1：" class="headerlink" title="解决方案1："></a>解决方案1：</h5><p><strong>ECMAScript 5</strong> 定义了新方法 <strong>Array.isArray()：</strong></p>
+<pre><code>Array.isAarray(fruits);     //返回true</code></pre><p>但此方案的问题在于 <strong>ECMAScript 5</strong> 不支持老的浏览器</p>
+<h5 id="解决方案2："><a href="#解决方案2：" class="headerlink" title="解决方案2："></a>解决方案2：</h5><p>创建您自己的 <strong>isArray()</strong> 函数以解决此问题：</p>
+<pre><code>function isArray(x) {
+  return x.constructor.toString().indexOf("Array") &gt; -1;
+}</code></pre><p>假如参数为数组，则上面的函数始终返回true<br>或者更准确的解释是：假如对象原型包含单词 <strong>“Array”</strong> 则返回 <strong>true</strong></p>
+<h5 id="解决方案3："><a href="#解决方案3：" class="headerlink" title="解决方案3："></a>解决方案3：</h5><p>假如对象由给定的构造器创建，则 <strong>instanceof</strong> 运算符返回 <strong>true：</strong></p>
+<pre><code>var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits instanceof Array     // 返回 true</code></pre><h4 id="数组的方法"><a href="#数组的方法" class="headerlink" title="数组的方法"></a>数组的方法</h4><p><strong>pop()</strong> 方法从数组中删除最后一个元素,返回”被弹出”的值</p>
+<p><strong>push()</strong> 方法在数组结尾处向数组添加一个新元素，返回数组的长度</p>
+<p><strong>shift()</strong> 方法会删除首个数组元素，并把所有其他元素“位移”到更低的索引，返回被”位移出”的字符串</p>
+<p><strong>unshift()</strong> 方法（在开头）向数组添加新元素，并“反向位移”旧元素,返回数组长度</p>
+<p><strong>splice()</strong> 方法可用于向数组添加新项</p>
+<pre><code>var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");</code></pre><ul>
+<li>第一个参数（2）定义了应添加新元素的位置（拼接）</li>
+<li>第二个参数（0）定义应删除多少元素</li>
+<li>其余参数（”Lemon”，”Kiwi”）定义要添加的新元素</li>
+</ul>
+<p><strong>slice()</strong> 方法用数组的某个片段切出一个新数组</p>
+<p>本例从数组元素 1 （”Orange”）开始切出一段数组：</p>
+<pre><code>var fruits = ["Banana","Orange","Lemon","Apple","Mango"];
+var citrus = fruits.slice(1);  //Orange,Lemon,Apple,Mango</code></pre><p><strong>slice()</strong> 方法创建新数组,它不会从源数组中删除任何元素</p>
+<p><strong>slice()</strong> 可接受两个参数，比如 (1, 3)，<br>该方法会从开始参数选取元素，直到结束参数（不包括）为止</p>
+<h4 id="JavaScript数组排序"><a href="#JavaScript数组排序" class="headerlink" title="JavaScript数组排序"></a>JavaScript数组排序</h4><p><strong>sort()</strong> 方法以字母顺序对数组进行排序：</p>
+<p>通过比值函数来修正数字排序问题</p>
+<pre><code>var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a,b){return a-b});   //1,5,10,25,40,100</code></pre><p><strong>比值函数</strong></p>
+<p>比较函数的目的是定义另一种排序顺序，比较函数应该返回一个负，零或正值，这取决于参数：</p>
+<pre><code>function(a, b){return a-b}</code></pre><p><strong>以随机顺序排序数组</strong></p>
+<pre><code>var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return 0.5 - math.random()});</code></pre><p><strong>对数组使用 Math.max()</strong><br>您可以使用 <strong>Math.max.apply</strong> 来查找数组中的最高值：</p>
+<pre><code>function myArrayMax(arr) {
+  return Math.max.apply(null,arr);
+}</code></pre><p><strong>Math.max.apply([1, 2, 3])</strong> 等于 <strong>Math.max(1, 2, 3)</strong></p>
+<h4 id="我的-Min-Max-JavaScript-方法"><a href="#我的-Min-Max-JavaScript-方法" class="headerlink" title="我的 Min / Max JavaScript 方法"></a>我的 Min / Max JavaScript 方法</h4><p>最快的解决方法是使用“自制”方法。</p>
+<p>此函数遍历数组，用找到的最高值与每个值进行比较：</p>
+<p><strong>查找MAX</strong></p>
+<pre><code>function myArrayMax(arr) {
+  var len = arr.length;
+  var max = -Infinity;
+  while (len--) {
+    if (arr[len] &gt; max) {
+      max = arr[len];
+    }
+  }
+  return max;
+}</code></pre><p><strong>查找MIN</strong></p>
+<pre><code>function myArrayMin(arr) {
+  var len = arr.length;
+  var min = Infinity;
+  while(len--) {
+    if(arr[len] &lt; min) {
+      min = arr[len];
+    }
+  }
+  return min;
+}</code></pre><h4 id="JavaScript数组迭代方法"><a href="#JavaScript数组迭代方法" class="headerlink" title="JavaScript数组迭代方法"></a>JavaScript数组迭代方法</h4><h5 id="Array-forEach"><a href="#Array-forEach" class="headerlink" title="Array.forEach()"></a>Array.forEach()</h5><p><strong>forEach()</strong> 方法为每个数组元素调用一次函数（回调函数）</p>
+<pre><code>var txt = "";
+var numbers = [45, 4, 9, 16, 25];
+numbers.forEach(myFunction);
+
+function myFunction(value, index, array) {
+    txt = txt + value + "&lt;br&gt;";
+}</code></pre><p>注释：该函数接受3个参数：</p>
+<ul>
+<li>项目值</li>
+<li>项目索引</li>
+<li>数组本身</li>
+</ul>
+<h5 id="Array-map"><a href="#Array-map" class="headerlink" title="Array.map()"></a>Array.map()</h5><p><strong>map()</strong> 方法通过对每个数组元素执行函数来创建新数组<br><strong>map()</strong> 方法不会对没有值的数组元素执行函数<br><strong>map()</strong> 方法不会更改原始数组</p>
+<h5 id="Array-filter"><a href="#Array-filter" class="headerlink" title="Array.filter()"></a>Array.filter()</h5><p><strong>filter()</strong> 方法创建一个包含通过测试的数组元素的新数组</p>
+<pre><code>var numbers = [45, 4, 9, 16, 25];
+var over18 = numbers.filter(myFunction);
+function myFunction(value, index, array) {
+    return value &gt; 18;
+}</code></pre><p>请此函数接受 3 个参数：</p>
+<ul>
+<li>项目值</li>
+<li>项目索引</li>
+<li>数组本身</li>
+</ul>
+<h5 id="Array-reduce"><a href="#Array-reduce" class="headerlink" title="Array.reduce()"></a>Array.reduce()</h5><p><strong>reduce()</strong> 方法在每个数组元素上运行函数，以生成（减少它）单个值</p>
+<p><strong>reduce()</strong> 方法在数组中从左到右工作</p>
+<p><strong>reduce()</strong> 方法不会减少原始数组</p>
+<pre><code>var numbers1 = [45, 4, 9, 16, 25];
+var sum = numbers1.reduce(myFunction);
+
+function myFunction(total, value, index, array) {
+  return total + value;
+}</code></pre><p>此函数接受 4 个参数：</p>
+<ul>
+<li>总数（初始值/先前返回的值）</li>
+<li>项目值</li>
+<li>项目索引</li>
+<li>数组本身</li>
+</ul>
+<h5 id="Array-every"><a href="#Array-every" class="headerlink" title="Array.every()"></a>Array.every()</h5><p><strong>every()</strong> 方法检查所有数组值是否通过测试</p>
+<p>这个例子检查所有数组是否大于18</p>
+<pre><code>var numbers = [45, 4, 9, 16, 25];
+var allover18 = numbers.every(myFunction);
+
+function myFunction(value, index, array) {
+  return value &gt; 18;    //false返回一个布尔值
+}</code></pre><p>此函数接受 3 个参数：</p>
+<ul>
+<li>项目值</li>
+<li>项目索引</li>
+<li>数组本身</li>
+</ul>
+<p>如果回掉函数只使用第一个参数，可以省略其他参数</p>
+<h5 id="Array-some"><a href="#Array-some" class="headerlink" title="Array.some()"></a>Array.some()</h5><p><strong>some()</strong> 方法检查某些数组值是否通过了测试</p>
+<p>这个例子检查某些数组值是否大于 18：</p>
+<pre><code>var numbers = [45, 4, 9, 16, 25];
+var someOver18 = numbers.some(myFunction);
+
+function myFunction(value, index, array) {
+    return value &gt; 18;    //true
+}</code></pre><p>此函数接受 3 个参数：</p>
+<ul>
+<li>项目值</li>
+<li>项目索引</li>
+<li>数组本身</li>
+</ul>
+<h4 id="一个适当的随机函数"><a href="#一个适当的随机函数" class="headerlink" title="一个适当的随机函数"></a>一个适当的随机函数</h4><p>创建一个随机函数用于生成所有随机整数，这个 <strong>JavaScript</strong> 函数始终返回介于 <strong>min</strong>（包括）和 <strong>max</strong>（不包括）之间的随机数：</p>
+<pre><code>function getRandInteger(min, max) {
+    return Math.floor(Math.random()*(max - min)) + min;
+}</code></pre><p>这个 <strong>JavaScript</strong> 函数始终返回介于 <strong>min</strong> 和 <strong>max</strong>（都包括）之间的随机数：</p>
+<pre><code>function getRandInteger(min, max) {
+    return Math.floor(Math.random()*(max - min + 1)) + min;
+}</code></pre><h4 id="JavaScript-标签"><a href="#JavaScript-标签" class="headerlink" title="JavaScript 标签"></a>JavaScript 标签</h4><p>如需标记 <strong>JavaScript</strong> 语句，请将标签名和冒号置于语句之前：</p>
+<pre><code>label:
+statements</code></pre><p><strong>break</strong> 和 <strong>continue</strong> 语句是仅有的可“跳出”代码块的 <strong>JavaScript</strong> 语句<br>语法：</p>
+<pre><code>break labelname;
+continue labelname;</code></pre><p><strong>continue</strong> 语句（不论有无标签引用）只能用于跳过一个迭代</p>
+<p><strong>break</strong> 语句，如果没有标签引用，只能用于跳出一个循环或一个 <code>switch</code></p>
+<p>如果有标签引用，则 <code>break</code> 语句可用于跳出任意代码块：</p>
+<pre><code>var  cars = ["BMW", "Volvo", "Saab", "Ford"];
+list: {
+    text += cars[0] + "&lt;br&gt;";
+    text += cars[1] + "&lt;br&gt;";
+    text += cars[2] + "&lt;br&gt;";
+    break list;
+    text += cars[3] + "&lt;br&gt;";
+    text += cars[4] + "&lt;br&gt;";
+    text += cars[5] + "&lt;br&gt;";
+}    //BMW Volvo</code></pre><h4 id="constructor-属性"><a href="#constructor-属性" class="headerlink" title="constructor 属性"></a>constructor 属性</h4><p><strong>constructor</strong> 属性返回所有 <strong>JavaScript</strong> 变量的构造器函数</p>
+<p>您可以通过检查 <strong>constructor</strong> 属性来确定某个对象是否为数组（包含单词 <strong>“Array”</strong> ）：</p>
+<pre><code>function isArray(myArray) {
+  return myArray.constructor.indexof("Array") &gt; -1;
+}</code></pre><h4 id="JavaScript-使用-32-位按位运算数"><a href="#JavaScript-使用-32-位按位运算数" class="headerlink" title="JavaScript 使用 32 位按位运算数"></a>JavaScript 使用 32 位按位运算数</h4><p><strong>JavaScript</strong> 将数字存储为 64 位浮点数，但所有按位运算都以 32 位二进制数执行</p>
+<p>在执行位运算之前，<strong>JavaScript</strong> 将数字转换为 32 位有符号整数</p>
+<p>执行按位操作后，结果将转换回 64 位 <strong>JavaScript</strong> 数</p>
+<h4 id="把十进制转换为二进制"><a href="#把十进制转换为二进制" class="headerlink" title="把十进制转换为二进制"></a>把十进制转换为二进制</h4><pre><code>function dec2bin(dec) {
+  return (dec &gt;&gt;&gt; 0).toString(2);
+}</code></pre><h4 id="把二进制转换为十进制"><a href="#把二进制转换为十进制" class="headerlink" title="把二进制转换为十进制"></a>把二进制转换为十进制</h4><pre><code>function bin2dec(bin) {
+    return parseInt(bin, 2).toString(10);
+}</code></pre><h4 id="JavaScript-正则表达式"><a href="#JavaScript-正则表达式" class="headerlink" title="JavaScript 正则表达式"></a>JavaScript 正则表达式</h4><p>正则表达式是构成搜索模式（search pattern）的字符序列</p>
+<p>正则表达式可用于执行所有类型的文本搜索和文本替换操作</p>
+<pre><code>/pattern/modifiers;</code></pre><p><strong>pattern</strong> 是模式在搜索中使用，<strong>modifiers</strong> 是修饰符</p>
+<p>正则表达式常用于两个字符串方法：<strong>search()</strong> 和 <strong>replace()</strong></p>
+<p><strong>search()</strong> 方法使用表达式来搜索匹配，然后返回匹配的位置</p>
+<p><strong>replace()</strong> 方法返回模式被替换处修改后的字符串</p>
+<h5 id="使用-test"><a href="#使用-test" class="headerlink" title="使用 test()"></a>使用 test()</h5><p>test() 是一个正则表达式方法,它通过模式来搜索字符串，然后根据结果返回 true 或 false</p>
+<pre><code>var patt = /e/;
+patt.test("The best things in life are free!");   //返回true</code></pre><h5 id="使用exec"><a href="#使用exec" class="headerlink" title="使用exec()"></a>使用exec()</h5><p>exec() 是一个正则表达式方法，它通过指定的模式（pattern）搜索字符串，并返回已找到的文本，如果未找到匹配，则返回 null</p>
+<pre><code>/e/.exec("The best things in life are free!");  //e</code></pre><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -719,10 +894,10 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            如何识别数组常见的问题是：我如何知晓某个变量是否是数组？
+问题在于 JavaScript 运算符 typeof 返回 “object”：
+var fruits = ["Banana","Orange","Apple","Mango"];
+t
                         
                     </div>
                     <div class="publish-info">

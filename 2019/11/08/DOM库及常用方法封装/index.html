@@ -5,10 +5,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="DOM库及常用方法封装, blog">
-    <meta name="description" content="
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return">
+    <meta name="description" content="DOM库及常用方法的封装
+节点
+DOM元素的增、删、改、移动&amp;lt;div id = &#34;box&#34;&amp;gt;
+    &amp;lt;div id = &#34;father&#34;&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;添加：
+容器.append">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -547,6 +549,11 @@
                 </div>
                 
                 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2019-11-14
+                </div>
+                
 
                 
 				
@@ -561,7 +568,43 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h1 id="DOM库及常用方法的封装"><a href="#DOM库及常用方法的封装" class="headerlink" title="DOM库及常用方法的封装"></a>DOM库及常用方法的封装</h1><p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/Dom%E5%BA%93%E5%B0%81%E8%A3%85.gif" alt=""></p>
+<h3 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h3><p><img src="https://raw.githubusercontent.com/Haris-ha/picGo/master/img/%E8%8A%82%E7%82%B9.png" alt=""></p>
+<h3 id="DOM元素的增、删、改、移动"><a href="#DOM元素的增、删、改、移动" class="headerlink" title="DOM元素的增、删、改、移动"></a>DOM元素的增、删、改、移动</h3><pre><code>&lt;div id = "box"&gt;
+    &lt;div id = "father"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre><p><strong>添加：</strong></p>
+<p>容器.appendChild(元素) —–<br>将元素添加到指定容器的末尾</p>
+<pre><code>var title = document.creatElement('h3');
+title.innerHTML = 'woshi nibaba';
+father.appendChild(title);</code></pre><p>容器.insertBefore(新元素,旧元素) —–<br>在指定容器内将新元素插入到旧元素的前面</p>
+<pre><code>father.insertBefore(newTit,title);</code></pre><p><strong>移除：</strong></p>
+<p>容器.removeChild(元素) —–<br>在指定容器内删除元素节点</p>
+<pre><code>father.removeChild(title);</code></pre><p><strong>替换：</strong></p>
+<p>容器.replaceChild(新元素,旧元素) —– 在指定容器内用新元素替换掉旧元素</p>
+<pre><code>father.removeChild(title,father);</code></pre><blockquote>
+<p>联想：参数是新，旧的函数，基本都是新的在前，旧的在后，唯有字符串方法的 str.replace() 第一个参数是旧的(str中的待替换的字符串或者相应的正则表达式),第二个参数是新的(替换成什么)</p>
+</blockquote>
+<p><strong>克隆：</strong></p>
+<p>要克隆的元素.cloneNode()<br>返回值就是克隆后的元素，默认只克隆当前元素，不会克隆子孙后代元素，如果为cloneNode(true)则会克隆当前元素及子孙后代元素</p>
+<p><strong>移动：</strong><br>利用DOM映射的特性</p>
+<pre><code>&lt;div id="outer"&gt;
+    &lt;div="middle"&gt;
+        &lt;div id="inner"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    setTimeout(function(){
+          outer.appendChild(inner);
+      },2000)
+&lt;/script&gt;</code></pre><h3 id="属性节点"><a href="#属性节点" class="headerlink" title="属性节点"></a>属性节点</h3><p><strong>创建：</strong><br>目标对象.setAttribute(“属性名”,”属性值”)<br>会显示在html元素的标签内</p>
+<p><strong>获取：</strong><br>目标对象.getAttribute(“属性名”)</p>
+<h3 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h3><p>obj.name = “xxx”<br>不会显示在html中</p>
+<blockquote>
+<p>联想：jquery中获取表单自带的属性，比如checked等，需要使用ele.prop(‘checked’)，ele.prop(‘checked’,’checked’);不能使用attr(),attr一般用于自己添加的属性节点</p>
+</blockquote>
+<pre><code>//创建文档碎片
+var frag = document.creatDocumentFragment();</code></pre><h3 id="DOM库封装"><a href="#DOM库封装" class="headerlink" title="DOM库封装"></a>DOM库封装</h3><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
