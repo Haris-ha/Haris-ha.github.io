@@ -549,7 +549,7 @@ t">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2019-11-14
+                    2019-11-20
                 </div>
                 
 
@@ -736,7 +736,26 @@ list: {
 <h5 id="使用-test"><a href="#使用-test" class="headerlink" title="使用 test()"></a>使用 test()</h5><p>test() 是一个正则表达式方法,它通过模式来搜索字符串，然后根据结果返回 true 或 false</p>
 <pre><code>var patt = /e/;
 patt.test("The best things in life are free!");   //返回true</code></pre><h5 id="使用exec"><a href="#使用exec" class="headerlink" title="使用exec()"></a>使用exec()</h5><p>exec() 是一个正则表达式方法，它通过指定的模式（pattern）搜索字符串，并返回已找到的文本，如果未找到匹配，则返回 null</p>
-<pre><code>/e/.exec("The best things in life are free!");  //e</code></pre><script>
+<pre><code>/e/.exec("The best things in life are free!");  //e</code></pre><h4 id="JavaScript-错误-Throw-和-Try-to-Catch"><a href="#JavaScript-错误-Throw-和-Try-to-Catch" class="headerlink" title="JavaScript 错误 - Throw 和 Try to Catch"></a>JavaScript 错误 - Throw 和 Try to Catch</h4><p><strong>try</strong> 语句使您能够测试代码块中的错误。</p>
+<p><strong>catch</strong> 语句允许您处理错误。</p>
+<p><strong>throw</strong> 语句允许您创建自定义错误。</p>
+<p><strong>finally</strong> 使您能够执行代码，在 try 和 catch 之后，无论结果如何</p>
+<h5 id="JavaScript-抛出错误"><a href="#JavaScript-抛出错误" class="headerlink" title="JavaScript 抛出错误"></a>JavaScript 抛出错误</h5><p>当发生错误时，JavaScript 通常会停止并产生错误消息。</p>
+<p>技术术语是这样描述的：JavaScript 将抛出异常（抛出错误）。</p>
+<p>JavaScript 实际上会创建带有两个属性的 Error 对象：name 和 message</p>
+<h4 id="自动全局"><a href="#自动全局" class="headerlink" title="自动全局"></a>自动全局</h4><p>如果您为尚未声明的变量赋值，此变量会自动成为全局变量。</p>
+<p>这段代码将声明一个全局变量 carName，即使在函数内进行了赋值。</p>
+<pre><code>myFunction();
+
+// 此处的代码能够使用 carName 变量
+
+function myFunction() {
+    carName = "porsche";
+}</code></pre><p>严格模式下不会自动创建全局变量</p>
+<h4 id="this-是什么？"><a href="#this-是什么？" class="headerlink" title="this 是什么？"></a>this 是什么？</h4><p>JavaScript this 关键词指的是它所属的对象。</p>
+<p>它拥有不同的值，具体取决于它的使用位置：</p>
+<p>在方法中，this 指的是所有者对象。<br>单独的情况下，this 指的是全局对象。<br>在函数中，this 指的是全局对象。<br>在函数中，严格模式下，this 是 undefined。<br>在事件中，this 指的是接收事件的元素。<br>像 call() 和 apply() 这样的方法可以将 this 引用到任何对象</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
